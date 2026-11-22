@@ -1,24 +1,24 @@
 // ARCHIVO GENERADO por tools/generar-banco.mjs — no editar a mano.
 export const LECCIONES = {
- "para_que": "Evaluar financieramente un proyecto es responder UNA pregunta: ¿conviene invertir? Se comparan los flujos de caja que el proyecto devolverá contra la inversión, teniendo en cuenta el tiempo y la tasa mínima que exige el inversionista (TMAR). La decisión es aceptar, rechazar o escoger entre alternativas.",
- "insumos": "Los insumos son las cifras con las que se arma el flujo: inversión inicial (activos y capital de trabajo), ingresos, costos y gastos, depreciación, impuestos, valor de salvamento y horizonte (cuántos años se evalúan). Si un insumo está mal, todo lo demás sale mal.",
- "depreciacion": "La depreciación reparte el costo de un activo en su vida útil. En línea recta: (costo − valor de salvamento) ÷ vida útil. NO es plata que sale cada año: se resta para calcular impuestos y luego se vuelve a sumar en el flujo. Ese ahorro de impuestos se llama escudo fiscal.",
- "impuestos": "El impuesto de renta se calcula sobre la utilidad gravable: ingresos − costos y gastos − depreciación. Nunca sobre los ingresos brutos. Impuesto = utilidad antes de impuestos × tasa.",
- "capital_trabajo": "El capital de trabajo es la plata que el negocio necesita \"amarrada\" para operar: inventario, materia prima, caja. Se invierte al inicio (año 0) y se recupera al final del horizonte. No se deprecia.",
- "salvamento": "El valor de salvamento es lo que valen los activos al final del horizonte (por ejemplo, vender la máquina usada). Entra como un ingreso en el último año. El horizonte es el número de periodos que se evalúan.",
- "flujo_estructura": "Flujo de caja operativo: Ingresos − Costos − Depreciación = Utilidad antes de impuestos; − Impuestos = Utilidad neta; + Depreciación = Flujo operativo. Al flujo se le resta la inversión (año 0) y en el último año se suman el salvamento y la recuperación del capital de trabajo.",
- "flujo_relevante": "Solo entra al flujo lo que cambia con la decisión. Costo hundido (ya gastado pase lo que pase): NO entra. Costo de oportunidad (lo que dejas de ganar por usar algo propio): SÍ entra. En el flujo del proyecto no se restan intereses: se evalúa el negocio, no cómo se paga.",
- "valor_tiempo": "Un peso hoy vale más que un peso mañana, porque hoy lo puedes invertir. Valor futuro: VF = VP × (1 + i)ⁿ. Valor presente: VP = VF ÷ (1 + i)ⁿ. Traer al presente es \"descontar\". El interés es compuesto: los intereses también ganan intereses.",
- "tmar": "La TMAR (tasa mínima atractiva de rendimiento) es lo mínimo que el inversionista le exige al proyecto. En este juego te la damos como dato. Es la tasa con la que se descuentan los flujos: si el proyecto no rinde al menos eso, no conviene.",
- "vpn": "VPN = −Inversión + suma de cada flujo ÷ (1 + TMAR)ᵗ. Mide cuánto valor, en pesos de hoy, crea el proyecto por encima de la TMAR. VPN > 0: se acepta. VPN = 0: rinde justo la TMAR. VPN < 0: se rechaza.",
- "tir": "La TIR es la tasa que hace el VPN igual a cero: la rentabilidad propia del proyecto, en % anual. Regla: si TIR > TMAR se acepta; si TIR < TMAR se rechaza. Con interés compuesto, la TIR no es un promedio simple de ganancias.",
- "bc": "Relación B/C = VP de los beneficios ÷ VP de los costos (inversión incluida), todo descontado a la TMAR. B/C > 1: se acepta (equivale a VPN > 0). B/C < 1: se rechaza.",
- "pr": "Periodo de recuperación: cuánto tarda el proyecto en devolver la inversión. Simple: con flujos sin descontar. Descontado: con flujos traídos a presente a la TMAR (siempre tarda igual o más). Mide liquidez y riesgo, NO rentabilidad.",
- "criterios": "En proyectos convencionales, VPN > 0, TIR > TMAR y B/C > 1 dicen lo mismo. Si los indicadores se contradicen al elegir entre proyectos excluyentes, manda el VPN: mide valor en pesos. La TIR y la B/C son porcentajes o razones y no ven el tamaño del proyecto.",
- "restriccion": "Con presupuesto limitado y proyectos independientes, se busca la combinación que quepa en el presupuesto y sume el MAYOR VPN total, no el proyecto con el mayor VPN individual.",
- "sensibilidad": "El análisis de sensibilidad cambia UNA variable a la vez (precio, ventas, costos) y mide cuánto se mueve el VPN. La variable más sensible es la que más lo mueve. El valor crítico es el cambio que deja el VPN en cero.",
- "escenarios": "Los escenarios mueven VARIAS variables juntas: pesimista, probable y optimista. Si cada escenario tiene probabilidad, el VPN esperado es la suma de cada VPN multiplicado por su probabilidad.",
- "equilibrio": "Punto de equilibrio: las ventas con las que no se gana ni se pierde. En unidades: costos fijos ÷ (precio − costo variable unitario). En pesos: costos fijos ÷ % de margen de contribución."
+ "para_que": "Antes de meter plata a un negocio hay que decidir si conviene. Evaluar es comparar lo que el negocio va a devolver con lo que cuesta montarlo, recordando que la plata de hoy vale más que la de mañana.",
+ "insumos": "Los insumos son las cifras con las que se arma el cálculo: cuánto cuesta montar el negocio, cuánto vende, cuánto gasta, los impuestos y cuántos años se mira. Si una cifra sale mal, todo el resultado sale mal.",
+ "depreciacion": "Una máquina se desgasta con los años. La depreciación reparte su costo entre esos años: (costo − lo que valdrá al final) ÷ años de vida. No es plata que sale, pero sirve para pagar menos impuestos.",
+ "impuestos": "El impuesto no se paga sobre lo que vendes sino sobre lo que te queda de ganancia: ventas − costos − depreciación. Ese resultado se multiplica por la tasa de impuesto.",
+ "capital_trabajo": "Es la plata que el negocio deja \"guardada\" para poder operar: inventario, materia prima y caja. Sale al inicio y se recupera al final. No se desgasta como una máquina.",
+ "salvamento": "Es lo que se puede vender un activo al terminar el proyecto, por ejemplo la máquina usada. Cuenta como plata que entra en el último año.",
+ "flujo_estructura": "El flujo de caja es la plata que de verdad entra y sale. Se parte de ventas − costos − depreciación, se restan los impuestos y se vuelve a sumar la depreciación (esa plata no salió). En el último año también entran el salvamento y el capital de trabajo recuperado.",
+ "flujo_relevante": "Solo cuenta lo que cambia por decidir el proyecto. Lo que ya se pagó (costo hundido) no cuenta. Lo que dejas de ganar por usar algo tuyo (costo de oportunidad) sí cuenta. Los intereses del préstamo no se restan.",
+ "valor_tiempo": "Un peso hoy vale más que uno mañana, porque hoy lo puedes invertir. Para llevar plata futura al presente se divide entre (1 + tasa) por cada año. A eso se le llama descontar.",
+ "tmar": "La TMAR es la ganancia mínima que le exigimos a un negocio para invertir en él. Aquí te la damos como dato y con ella se descuentan los flujos.",
+ "vpn": "El VPN dice cuánto valor crea el proyecto, en pesos de hoy: los flujos descontados menos la inversión. Si es mayor que 0 se acepta; si es menor que 0 se rechaza.",
+ "tir": "La TIR es la rentabilidad propia del proyecto, en % por año. Si es mayor que la TMAR se acepta; si es menor se rechaza.",
+ "bc": "La B/C compara lo que el proyecto trae contra lo que cuesta, ambos en pesos de hoy. Si es mayor que 1 se acepta; si es menor que 1 se rechaza.",
+ "pr": "El periodo de recuperación es cuánto tarda el proyecto en devolver la inversión. Sirve para ver liquidez y riesgo, no la rentabilidad. El descontado usa flujos traídos a hoy y tarda igual o más.",
+ "criterios": "En un proyecto normal, VPN, TIR y B/C llegan a la misma decisión. Si no coinciden al escoger entre proyectos excluyentes, manda el VPN, porque mide valor en pesos.",
+ "restriccion": "Con poco presupuesto y varios proyectos independientes, escoge la combinación que quepa y sume el mayor VPN total, no el proyecto que sea mejor por sí solo.",
+ "sensibilidad": "Sensibilidad: cambias una sola cosa (precio, ventas o costos) y ves cuánto se mueve el VPN. La que más lo mueve es la más delicada.",
+ "escenarios": "Escenarios: cambias varias cosas a la vez (pesimista, probable, optimista). Con probabilidades, el VPN esperado es cada VPN por su probabilidad, sumados.",
+ "equilibrio": "Punto de equilibrio: cuánto hay que vender para no ganar ni perder. En unidades: costos fijos ÷ (precio − costo por unidad)."
 };
 export const PREGUNTAS = [
  {
@@ -31,7 +31,7 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "para_que",
   "tipo": "concepto",
-  "enunciado": "Tu equipo tiene el plan de negocio de una tienda de café especial. ¿Qué decisión principal se toma con la evaluación financiera?",
+  "enunciado": "Tu equipo tiene el plan de negocio de una tienda de café especial. Antes de invertir, ¿qué decisión se toma con la evaluación financiera?",
   "opciones": [
    {
     "t": "A qué precio vender cada tinto",
@@ -61,14 +61,14 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "para_que",
   "tipo": "concepto",
-  "enunciado": "¿Desde qué punto de vista se hace la evaluación FINANCIERA de un proyecto?",
+  "enunciado": "¿Desde el punto de vista de quién se evalúa financieramente un proyecto?",
   "opciones": [
    {
     "t": "Del cliente: si el precio es justo",
     "porque": "El cliente no pone la inversión ni recibe los flujos."
    },
    {
-    "t": "Del inversionista: ¿la plata que pongo rinde al menos lo que exijo (TMAR)?"
+    "t": "Del inversionista: ¿mi plata rinde al menos lo que exijo?"
    },
    {
     "t": "Del gobierno: cuánto va a recaudar",
@@ -94,7 +94,7 @@ export const PREGUNTAS = [
   "enunciado": "En una frase, la evaluación financiera compara…",
   "opciones": [
    {
-    "t": "Lo que el proyecto devuelve (flujos futuros) contra lo que cuesta, teniendo en cuenta el tiempo y la TMAR"
+    "t": "Lo que el proyecto devuelve en el futuro contra lo que cuesta montarlo, contando el valor del tiempo"
    },
    {
     "t": "Las ventas totales contra las de la competencia",
@@ -122,7 +122,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "depreciacion",
   "tipo": "calculo",
-  "enunciado": "Una tostadora industrial cuesta $50 M, vida útil 5 años, sin valor de salvamento. Depreciación en línea recta. ¿Cuánto se deprecia por año?",
+  "enunciado": "Una tostadora cuesta $50 M y dura 5 años; al final ya no vale nada. Si el desgaste se reparte parejo, ¿cuánto se deprecia por año?",
   "opciones": [
    {
     "t": "$250 M",
@@ -163,7 +163,7 @@ export const PREGUNTAS = [
   "tiempo": 75,
   "leccion": "depreciacion",
   "tipo": "calculo",
-  "enunciado": "Un camión cuesta $90 M, vida útil 4 años y valor de salvamento contable de $10 M. ¿Depreciación anual en línea recta?",
+  "enunciado": "Un camión cuesta $90 M, dura 4 años y al final se puede vender en $10 M. Si el desgaste se reparte parejo, ¿cuánto se deprecia por año?",
   "opciones": [
    {
     "t": "$20 M"
@@ -205,7 +205,7 @@ export const PREGUNTAS = [
   "tiempo": 75,
   "leccion": "impuestos",
   "tipo": "calculo",
-  "enunciado": "Año 1: ingresos $100 M, costos y gastos $40 M, depreciación $20 M. Impuesto de renta 30 %. ¿Cuánto impuesto se paga?",
+  "enunciado": "En un año la cafetería vendió $100 M, gastó $40 M en operar y tuvo $20 M de depreciación. El impuesto es 30 %. ¿Cuánto impuesto paga?",
   "opciones": [
    {
     "t": "$18 M",
@@ -439,7 +439,7 @@ export const PREGUNTAS = [
   "tiempo": 90,
   "leccion": "flujo_estructura",
   "tipo": "calculo",
-  "enunciado": "Año 2: ingresos $200 M, costos y gastos $80 M, depreciación $40 M, impuesto 30 %. ¿Flujo de caja operativo del año?",
+  "enunciado": "En el año 2 la tienda vendió $200 M, gastó $80 M, tuvo $40 M de depreciación y paga 30 % de impuesto. ¿Cuánta plata le queda de verdad (flujo de caja operativo)?",
   "opciones": [
    {
     "t": "$96 M"
@@ -525,7 +525,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "flujo_estructura",
   "tipo": "calculo",
-  "enunciado": "Año 5 (el último): flujo operativo $50 M. Además se recupera el capital de trabajo ($20 M) y se vende la maquinaria en $10 M (sin impuesto sobre la venta). ¿Flujo total del año 5?",
+  "enunciado": "Último año: la operación deja $50 M. Además se recupera el capital de trabajo ($20 M) y se vende la maquinaria en $10 M (sin impuesto sobre la venta). ¿Cuánta plata entra en total ese año?",
   "opciones": [
    {
     "t": "$70 M",
@@ -732,7 +732,7 @@ export const PREGUNTAS = [
   "tiempo": 90,
   "leccion": "flujo_estructura",
   "tipo": "calculo",
-  "enunciado": "Año 1: ingresos $150 M, costos y gastos $50 M, depreciación $20 M, impuesto 25 %. ¿Flujo de caja operativo?",
+  "enunciado": "En el año 1 el negocio vendió $150 M, gastó $50 M, tuvo $20 M de depreciación y paga 25 % de impuesto. ¿Cuánta plata le queda de verdad (flujo de caja operativo)?",
   "opciones": [
    {
     "t": "$100 M",
@@ -860,7 +860,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "valor_tiempo",
   "tipo": "calculo",
-  "enunciado": "Inviertes $100 M a la TMAR del 10 % anual compuesto. ¿Cuánto tienes en 2 años?",
+  "enunciado": "Inviertes $100 M y ganas 10 % al año, con interés compuesto. ¿Cuánto tienes en 2 años?",
   "opciones": [
    {
     "t": "$100 M",
@@ -902,7 +902,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "valor_tiempo",
   "tipo": "calculo",
-  "enunciado": "Te prometen $121 M dentro de 2 años. Con una TMAR del 10 %, ¿cuánto valen hoy?",
+  "enunciado": "Te prometen $121 M dentro de 2 años. Si tu plata rinde 10 % al año, ¿cuánto valen hoy?",
   "opciones": [
    {
     "t": "$146,41 M",
@@ -1004,7 +1004,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "valor_tiempo",
   "tipo": "calculo",
-  "enunciado": "Recibirás $200 M dentro de un año. TMAR 25 %. ¿Cuál es su valor presente?",
+  "enunciado": "Recibirás $200 M dentro de un año y exiges ganar 25 % al año. ¿Cuánto vale hoy esa plata?",
   "opciones": [
    {
     "t": "$150 M",
@@ -1046,7 +1046,7 @@ export const PREGUNTAS = [
   "tiempo": 90,
   "leccion": "valor_tiempo",
   "tipo": "calculo",
-  "enunciado": "Recibirás $110 M en el año 1 y $121 M en el año 2. TMAR 10 %. ¿Cuál es el valor presente de los dos?",
+  "enunciado": "Recibirás $110 M en el año 1 y $121 M en el año 2. Exiges 10 % al año. ¿Cuánto valen hoy los dos pagos juntos?",
   "opciones": [
    {
     "t": "$181,8 M",
@@ -1089,7 +1089,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "valor_tiempo",
   "tipo": "concepto",
-  "enunciado": "¿Qué prefieres: $100 M hoy o $115 M dentro de un año? Tu TMAR es 20 %.",
+  "enunciado": "¿Qué prefieres: $100 M hoy o $115 M dentro de un año? Exiges ganar 20 % al año.",
   "opciones": [
    {
     "t": "Los $115 M: es más plata",
@@ -1132,7 +1132,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "valor_tiempo",
   "tipo": "calculo",
-  "enunciado": "Con TMAR del 10 %, ¿cuánto deberías recibir dentro de un año para que te dé igual que tener $50 M hoy?",
+  "enunciado": "Si exiges ganar 10 % al año, ¿cuánto deberías recibir dentro de un año para que te dé igual que tener $50 M hoy?",
   "opciones": [
    {
     "t": "$55 M"
@@ -1174,7 +1174,7 @@ export const PREGUNTAS = [
   "tiempo": 90,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Inversión $150 M. Flujos: año 1 $110 M, año 2 $121 M. TMAR 10 %. ¿Cuál es el VPN?",
+  "enunciado": "Montar el negocio cuesta $150 M. Devuelve $110 M el año 1 y $121 M el año 2. Exiges 10 % al año. ¿Cuál es el VPN?",
   "opciones": [
    {
     "t": "$50 M"
@@ -1219,7 +1219,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Inviertes $100 M y recibes $132 M dentro de un año. TMAR 20 %. ¿Cuál es el VPN?",
+  "enunciado": "Inviertes $100 M y recibes $132 M dentro de un año. Exiges 20 % al año. ¿Cuál es el VPN?",
   "opciones": [
    {
     "t": "$10 M"
@@ -1380,7 +1380,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "bc",
   "tipo": "calculo",
-  "enunciado": "VP de los beneficios (entradas): $300 M. VP de los costos (inversión + egresos): $250 M. ¿Cuál es la relación B/C?",
+  "enunciado": "Los beneficios del proyecto valen hoy $300 M y sus costos (inversión incluida) valen hoy $250 M. ¿Cuál es la relación B/C?",
   "opciones": [
    {
     "t": "1,2"
@@ -1451,7 +1451,7 @@ export const PREGUNTAS = [
   "tiempo": 75,
   "leccion": "pr",
   "tipo": "calculo",
-  "enunciado": "Inversión $90 M. Flujos de $40 M cada año durante 3 años. ¿Periodo de recuperación simple?",
+  "enunciado": "Se invierten $90 M y el negocio deja $40 M cada año durante 3 años. ¿En cuántos años se recupera la inversión (sin descontar)?",
   "opciones": [
    {
     "t": "2,25 años"
@@ -1496,7 +1496,7 @@ export const PREGUNTAS = [
   "tiempo": 90,
   "leccion": "pr",
   "tipo": "calculo",
-  "enunciado": "Inversión $150 M. Flujos: año 1 $110 M, año 2 $121 M. TMAR 10 %. ¿Periodo de recuperación DESCONTADO?",
+  "enunciado": "Se invierten $150 M y el negocio deja $110 M el año 1 y $121 M el año 2. Exiges 10 % al año. ¿En cuántos años se recupera la inversión DESCONTADA a hoy?",
   "opciones": [
    {
     "t": "1,33 años",
@@ -1602,7 +1602,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "criterios",
   "tipo": "concepto",
-  "enunciado": "Proyectos EXCLUYENTES (solo puedes hacer uno) y hay plata para cualquiera. TMAR 12 %. A: VPN $50 M, TIR 20 %. B: VPN $30 M, TIR 35 %. ¿Cuál eliges?",
+  "enunciado": "Solo puedes hacer UNO de dos proyectos (excluyentes) y hay plata para cualquiera. Exiges 12 %. A: VPN $50 M, TIR 20 %. B: VPN $30 M, TIR 35 %. ¿Cuál eliges?",
   "opciones": [
    {
     "t": "Los dos",
@@ -2024,7 +2024,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "equilibrio",
   "tipo": "calculo",
-  "enunciado": "Costos fijos $30 M. El margen de contribución es el 40 % de las ventas. ¿Cuáles son las ventas de equilibrio?",
+  "enunciado": "Costos fijos $30 M. De cada $100 que se venden, $40 quedan para cubrir esos costos (margen de contribución 40 %). ¿Cuánto hay que vender para no perder?",
   "opciones": [
    {
     "t": "$12 M",
@@ -2095,7 +2095,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "sensibilidad",
   "tipo": "calculo",
-  "enunciado": "VPN base: $60 M. Por cada 1 % que cae el precio, el VPN baja $5 M. ¿Cuánto puede caer el precio antes de que el VPN llegue a 0?",
+  "enunciado": "El VPN es $60 M. Cada 1 % que baja el precio, el VPN baja $5 M. ¿Cuánto puede bajar el precio antes de que el VPN llegue a 0?",
   "opciones": [
    {
     "t": "300 %",
@@ -2136,7 +2136,7 @@ export const PREGUNTAS = [
   "tiempo": 90,
   "leccion": "escenarios",
   "tipo": "calculo",
-  "enunciado": "Escenarios: pesimista VPN −$20 M (probabilidad 20 %), probable $30 M (50 %), optimista $70 M (30 %). ¿Cuál es el VPN esperado?",
+  "enunciado": "Tres futuros posibles: malo (VPN −$20 M, 20 % de probabilidad), normal ($30 M, 50 %) y bueno ($70 M, 30 %). ¿Cuál es el VPN esperado?",
   "opciones": [
    {
     "t": "$80 M",
