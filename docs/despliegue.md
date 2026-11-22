@@ -27,7 +27,13 @@ Si se recarga la pantalla en plena partida, el juego pregunta si quieres **conti
 
 ## 2. Publicar en internet (una vez, y cada vez que cambies algo)
 
-Requisitos (ya hechos): `firebase-tools` instalado, `firebase login` y las reglas publicadas.
+Requisitos: `firebase-tools` instalado y `firebase login` hecho.
+
+**Una sola vez: activar la autenticación anónima.** Las reglas la usan para que solo la pantalla pueda escribir el estado del juego y solo cada celular pueda enviar las acciones de su equipo. A los jugadores no se les pide ningún dato.
+1. En la consola de Firebase: **Build → Authentication → Comenzar**.
+2. Pestaña **Método de acceso** → **Anónimo** → **Habilitar** → Guardar.
+
+Luego, publicar la página y las reglas:
 
 ```
 firebase deploy

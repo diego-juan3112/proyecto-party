@@ -12,13 +12,17 @@ const FB_VERSION = '10.12.2';
 let fbCache = null;
 async function cargarFirebase() {
   if (fbCache) return fbCache;
-  const [{ initializeApp }, db, { firebaseConfig }] = await Promise.all([
+  const [{ initializeApp }, db, auth, { firebaseConfig }] = await Promise.all([
     import(`https://www.gstatic.com/firebasejs/${FB_VERSION}/firebase-app.js`),
     import(`https://www.gstatic.com/firebasejs/${FB_VERSION}/firebase-database.js`),
+    import(`https://www.gstatic.com/firebasejs/${FB_VERSION}/firebase-auth.js`),
     import('./firebase-config.js'),
   ]);
   const app = initializeApp(firebaseConfig);
-  fbCache = { db, base: db.getDatabase(app) };
+  // Identidad anónima: no pide datos y se conserva al recargar (las reglas la usan para
+  // que solo la pantalla escriba el estado y solo cada celular envíe las acciones de su equipo).
+  const cred = await auth.signInAnonymously(auth.getAuth(app));
+  fbCache = { db, base: db.getDatabase(app), uid: cred.user.uid };
   return fbCache;
 }
 
@@ -31,7 +35,10 @@ export async function abrirSalaAnfitrion(modo, codigo, { onUnirse, onAccion, onC
     canal.onmessage = async ({ data }) => {
       if (data.tipo === 'unirse') { const r = await onUnirse(data.datos); canal.postMessage({ tipo: 'unirse-resp', req: data.req, r }); }
       else if (data.tipo === 'accion') onAccion(data.equipo, data.accion);
-      else if (data.tipo === 'hola') canal.postMessage({ tipo: 'estado', v: ultimo.estado }), ultimo.equipos[data.equipo] && canal.postMessage({ tipo: 'equipo', id: data.equipo, v: ultimo.equipos[data.equipo] });
+      else if (data.tipo === 'hola') {
+        canal.postMessage({ tipo: 'estado', v: ultimo.estado });
+        if (ultimo.equipos[data.equipo]) canal.postMessage({ tipo: 'equipo', id: data.equipo, v: ultimo.equipos[data.equipo] });
+      }
     };
     const ultimo = { estado: null, equipos: {} };
     onConexion?.(true);
@@ -43,17 +50,21 @@ export async function abrirSalaAnfitrion(modo, codigo, { onUnirse, onAccion, onC
     };
   }
 
-  const { db, base } = await cargarFirebase();
+  const { db, base, uid } = await cargarFirebase();
   const { ref, set, update, remove, onChildAdded, onValue } = db;
   const raiz = `salas/${codigo}`;
   const escuchados = new Set();
   const desuscribir = [];
 
+  // Reclamar la sala: las reglas solo dejan escribir el estado a este uid.
+  await set(ref(base, `${raiz}/host`), uid);
   desuscribir.push(onValue(ref(base, '.info/connected'), s => onConexion?.(!!s.val())));
   desuscribir.push(onChildAdded(ref(base, `${raiz}/unirse`), async snap => {
     const sol = snap.val();
     if (!sol || sol.respuesta) return;
     const r = await onUnirse(sol);
+    // El equipo queda atado al celular que lo creó: solo ese uid podrá enviar sus acciones.
+    if (r?.id && sol.uid) await set(ref(base, `${raiz}/miembros/${r.id}`), sol.uid);
     await set(ref(base, `${raiz}/unirse/${snap.key}/respuesta`), limpio(r));
   }));
 
@@ -99,7 +110,7 @@ export async function conectarCliente(modo, codigo, { onEstado, onEquipo, onCone
     };
   }
 
-  const { db, base } = await cargarFirebase();
+  const { db, base, uid } = await cargarFirebase();
   const { ref, set, push, onValue, off } = db;
   const raiz = `salas/${codigo}`;
   const subs = [];
@@ -109,7 +120,7 @@ export async function conectarCliente(modo, codigo, { onEstado, onEquipo, onCone
   return {
     async unirse(datos) {
       const nodo = push(ref(base, `${raiz}/unirse`));
-      await set(nodo, limpio({ ...datos, t: Date.now() }));
+      await set(nodo, limpio({ ...datos, uid, t: Date.now() }));
       return new Promise(res => {
         const r = ref(base, `${raiz}/unirse/${nodo.key}/respuesta`);
         const timer = setTimeout(() => { off(r); res({ error: 'La pantalla no responde. Revisa el código de la sala y que la partida esté abierta.' }); }, 10000);

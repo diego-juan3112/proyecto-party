@@ -5,10 +5,43 @@
     "salas": {
       "$sala": {
         ".validate": "$sala.matches(/^[A-Z0-9]{4,6}$/)",
-        "estado": { ".read": true, ".write": true },
-        "equipos": { "$equipo": { ".read": true, ".write": true } },
-        "acciones": { ".read": true, "$equipo": { ".write": true } },
-        "unirse": { ".read": true, "$solicitud": { ".write": true } }
+        "host": {
+          ".read": true,
+          ".write": "auth != null && (!data.exists() || data.val() === auth.uid) && newData.val() === auth.uid"
+        },
+        "estado": {
+          ".read": true,
+          ".write": "auth != null && root.child('salas').child($sala).child('host').val() === auth.uid"
+        },
+        "equipos": {
+          ".read": true,
+          ".write": "auth != null && root.child('salas').child($sala).child('host').val() === auth.uid"
+        },
+        "miembros": {
+          ".read": true,
+          ".write": "auth != null && root.child('salas').child($sala).child('host').val() === auth.uid"
+        },
+        "acciones": {
+          ".read": "auth != null && root.child('salas').child($sala).child('host').val() === auth.uid",
+          ".write": "auth != null && root.child('salas').child($sala).child('host').val() === auth.uid",
+          "$equipo": {
+            "$accion": {
+              ".write": "auth != null && !data.exists() && root.child('salas').child($sala).child('miembros').child($equipo).val() === auth.uid",
+              ".validate": "newData.hasChild('tipo') && newData.child('tipo').isString() && newData.child('tipo').val().length < 20"
+            }
+          }
+        },
+        "unirse": {
+          ".read": "auth != null && root.child('salas').child($sala).child('host').val() === auth.uid",
+          "$solicitud": {
+            ".read": "auth != null && data.child('uid').val() === auth.uid",
+            ".write": "auth != null && !data.exists() && newData.child('uid').val() === auth.uid",
+            ".validate": "newData.hasChildren(['uid', 'mascota'])",
+            "respuesta": {
+              ".write": "auth != null && root.child('salas').child($sala).child('host').val() === auth.uid"
+            }
+          }
+        }
       }
     }
   }

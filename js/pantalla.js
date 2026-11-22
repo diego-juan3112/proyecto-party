@@ -513,7 +513,14 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
     const R = motor.ranking();
     const filas = [['puesto', 'equipo', 'mascota', 'integrantes', 'estrellas', 'monedas', 'aciertos', 'intentos', 'pct_aciertos', 'duelos_ganados', 'salida_aciertos', 'salida_total']];
     R.forEach((e, i) => filas.push([i + 1, e.nombre, mascota(e.mascota).nombre, e.integrantes.join(' / '), e.estrellas, e.monedas, e.stats.aciertos, e.stats.intentos, e.stats.intentos ? Math.round((100 * e.stats.aciertos) / e.stats.intentos) : '', e.stats.duelosGanados, e.salida?.aciertos ?? '', e.salida?.total ?? '']));
-    const csv = filas.map(f => f.map(c => `"${String(c).replace(/"/g, '""')}"`).join(';')).join('\r\n');
+    // Los nombres los escriben los jugadores: un texto que empiece por = + - @ se neutraliza
+    // con un apóstrofo para que Excel no lo ejecute como fórmula.
+    const celda = c => {
+      let s = String(c);
+      if (typeof c === 'string' && /^[=+\-@\t\r]/.test(s)) s = "'" + s;
+      return `"${s.replace(/"/g, '""')}"`;
+    };
+    const csv = filas.map(f => f.map(celda).join(';')).join('\r\n');
     descargar(`expedicion-vpn-${codigo}.csv`, csv);
   }
 
