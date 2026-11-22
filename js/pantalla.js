@@ -12,11 +12,12 @@ const CLAVE_HOST = 'expedicion-vpn:anfitrion';
 const ALFABETO = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 const NOMBRES_FASE = {
   lobby: 'Abordaje', intro: 'Reglas', practica: 'Pregunta de práctica', zona_intro: 'Llegada a la zona',
-  tirar: 'Tiren el dado', mover: 'Avanzando', casillas: 'Resolviendo casillas', resultado_turno: 'Fin del turno',
+  tirar: 'Tiren el dado', mover: 'Avanzando', casillas: 'Resuelvan su casilla en el celular', resultado_turno: 'Así quedó el turno',
   apuesta: 'Apuestas', minijuego: 'Mini-juego', minijuego_res: 'Resultados del mini-juego',
   jefe_intro: 'Jefe final', jefe1: 'Junta: fase 1', jefe1_res: 'Defensa de los Voceros', jefe2: 'Junta: el giro', jefe2_res: 'Veredicto final',
   bonus: 'Estrellas sorpresa', podio: 'Podio', cierre: 'Cierre', salida: 'Preguntas de salida', fin: 'Fin',
 };
+const PASO_TURNO = { tirar: 1, mover: 1, casillas: 2, resultado_turno: 3 };
 const MG_NOMBRE = { entra: '¿Entra o no entra al flujo?', carrera: 'Carrera del descuento', termometro: 'Termómetro del riesgo' };
 const MG_INSTR = {
   entra: 'En el celular aparecen 10 conceptos. Toquen ENTRA si va en el flujo de caja del proyecto, o NO ENTRA si no. Gana quien acierte más y más rápido.',
@@ -170,7 +171,7 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
     else if (S.fase.startsWith('jefe')) limpiar(nodos.letrero, h('span.bloque', '🏔️'), h('span.nombre', 'Cumbre del Nevado'));
     else limpiar(nodos.letrero, h('span.nombre', 'Expedición VPN'));
     const turno = ['tirar', 'mover', 'casillas', 'resultado_turno'].includes(S.fase) ? h('span', ` · turno ${S.turno + 1} de ${CONFIG.turnosPorZona[S.zona]}`) : null;
-    limpiar(nodos.fase, h('b', NOMBRES_FASE[S.fase] || S.fase), turno, reloj.pausado ? h('b', { style: { color: 'var(--amarillo)' } }, ' · en pausa') : null);
+    limpiar(nodos.fase, PASO_TURNO[S.fase] ? h('span.etapa', `Paso ${PASO_TURNO[S.fase]} de 3`) : null, h('b', NOMBRES_FASE[S.fase] || S.fase), turno, reloj.pausado ? h('b', { style: { color: 'var(--amarillo)' } }, ' · en pausa') : null);
     nodos.red.classList.toggle('ok', ui.conectado);
     nodos.red.title = ui.conectado ? `Conectado (${red})` : 'Sin conexión';
   }
@@ -315,6 +316,7 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
         (S.regalos || []).length ? h('p', `🎁 Últimas paradas: ${S.regalos.map(r => `${motor.eq(r.id).nombre} ${ICONOS_ITEM[r.item]}`).join(', ')}`) : null);
       case 'tirar': case 'mover': return h('div',
         h('h2', S.fase === 'tirar' ? '¡Tiren el dado!' : 'Avanzando…'),
+        h('p.instruccion', S.fase === 'tirar' ? '📱 Cada equipo toca el dado en su celular.' : 'Las mascotas se mueven por el anillo.'),
         h('div.dados-rejilla', E.map(e => h('div.par' + (e.dado ? '' : '.esperando'),
           h('div.ficha', { style: { '--c': mascota(e.mascota).color } }, mascotaSVG(e.mascota)),
           e.dado ? e.dado.valores.map(v => dadoSVG(v, 'dado rodando')) : dadoSVG(0, 'dado')))));
@@ -322,6 +324,7 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
         const duelos = S.duelosTurno || [];
         return h('div',
           h('h2', 'Resuelvan su casilla'),
+          h('p.instruccion', '📱 Miren su celular y resuelvan.'),
           h('p', `${listos} de ${E.length} equipos listos`),
           h('div.medidor', h('i', { style: { width: `${(100 * listos) / E.length}%` } })),
           duelos.length ? h('div', { style: { marginTop: '.8em' } }, duelos.map(d => h('p', `⚔️ ${motor.eq(d.a).nombre} vs ${motor.eq(d.b).nombre}${d.ganador ? ` → gana ${motor.eq(d.ganador).nombre}` : ''}`))) : null);

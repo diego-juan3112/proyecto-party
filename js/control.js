@@ -33,7 +33,7 @@ export function renderTarea(t, enviar, local, ctx = {}) {
   if (local.relojDe !== t.id + (t.etapa || '')) { reloj.fijar(t.restante, t.restante); local.relojDe = t.id + (t.etapa || ''); }
   const mandar = (a, ...hijosEspera) => { if (local.enviado) return; local.enviado = true; enviar({ ...a, tareaId: t.id }); if (local.repintar) local.repintar(); };
   const barra = (total) => {
-    const i = h('i'); const txt = h('span'); const b = h('div', h('div.barra-tiempo', i), h('div.tiempo-texto', h('span', 'Tiempo'), txt));
+    const i = h('i'); const txt = h('span'); const b = h('div', h('div.barra-tiempo', i), h('div.tiempo-texto', h('span', '⏱ Tiempo'), txt));
     local.tics = local.tics || [];
     local.tics.push(() => { const r = reloj.restante(); i.style.width = `${100 * reloj.fraccion()}%`; txt.textContent = mmss(r); });
     return b;
@@ -49,6 +49,7 @@ export function renderTarea(t, enviar, local, ctx = {}) {
       const caras = t.caras || 6;
       const chk = h('input', { type: 'checkbox', checked: !!local.doble, on: { change: e => { local.doble = e.target.checked; } } });
       return h('div.tarjeta',
+        h('span.etapa', 'Paso 1 de 3 · Tiren el dado'),
         h('h2', '¡Tiren el dado!'),
         h('p', caras === 4 ? 'Paro camionero: en esta zona el dado va de 1 a 4.' : 'Toquen el dado para avanzar en el anillo.'),
         h('button.dado-boton', { on: { click: () => mandar({ tipo: 'tirar', doble: !!local.doble }) }, 'aria-label': 'Tirar el dado' }, dadoSVG(5, 'dado'), h('span', 'Tirar')),
@@ -65,6 +66,7 @@ export function renderTarea(t, enviar, local, ctx = {}) {
     case 'duelo': case 'dueloBanco': case 'caza': case 'practica': {
       const titulos = { desafio: 'Desafío', duelo: `Duelo contra ${t.rival || 'otro equipo'}`, dueloBanco: 'Duelo contra el Banco', caza: 'Caza el error', practica: 'Pregunta de práctica' };
       return h('div.tarjeta',
+        h('span.etapa', 'Paso 2 de 3 · Respondan juntos'),
         h('span.etq', `${titulos[t.tipo]} · bloque ${t.bloque}${t.calculadora ? ' · Calculadora dorada: +30 s' : ''}`),
         barra(),
         h('p.enunciado', t.enunciado),
