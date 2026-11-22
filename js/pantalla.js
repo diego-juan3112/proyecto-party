@@ -47,27 +47,38 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
     motor = new Motor({ config: CONFIG, banco: BANCO, semilla: Math.floor(Math.random() * 2 ** 31) });
     reloj.acumulado = 0;
   }
-  const urlJugar = `${location.origin}${location.pathname}?sala=${codigo}${red === 'local' ? '&red=local' : ''}`;
-
   // ───── Red ─────
   const ui = { conectado: false, modalEquipo: null, modalLocal: {}, ultimaVersion: -1, tableroZona: null, posMostrada: {}, llegadasVistas: new Set() };
+  const eventosRed = {
+    onUnirse: datos => {
+      const r = motor.unirse(norm(datos), ahora());
+      if (r.id) sala.escucharEquipo(r.id);
+      publicar(); if (ui.listo) pintarTodo();
+      return r;
+    },
+    onAccion: (id, a) => { motor.accion(id, norm(a), ahora()); motor.tick(ahora()); },
+    onConexion: ok => { ui.conectado = ok; if (ui.listo) pintarCabecera(); },
+  };
   let sala;
-  try {
-    sala = await abrirSalaAnfitrion(red, codigo, {
-      onUnirse: datos => {
-        const r = motor.unirse(norm(datos), ahora());
-        if (r.id) sala.escucharEquipo(r.id);
-        publicar(); if (ui.listo) pintarTodo();
-        return r;
-      },
-      onAccion: (id, a) => { motor.accion(id, norm(a), ahora()); motor.tick(ahora()); },
-      onConexion: ok => { ui.conectado = ok; if (ui.listo) pintarCabecera(); },
-    });
-  } catch (e) {
-    console.error('No se pudo abrir la sala:', e);
-    limpiar(raiz, h('div.portada', h('div.portada-caja', h('h1', 'Sin conexión'), h('p.sub', 'No se pudo conectar con Firebase. Para jugar sin internet, abre la pantalla en modo local.'), h('a.boton', { href: '?modo=pantalla&red=local' }, 'Abrir en modo local'))));
+  // Si el código ya lo reclamó otro navegador (reglas: un dueño por sala), se prueba otro código.
+  // Una partida recuperada conserva su código: el dueño es el mismo navegador.
+  const intentos = codigo === guardado?.codigo ? 1 : 5;
+  let ultimoError = null;
+  for (let i = 0; i < intentos && !sala; i++) {
+    try {
+      sala = await abrirSalaAnfitrion(red, codigo, eventosRed);
+    } catch (e) {
+      ultimoError = e;
+      console.warn(`No se pudo abrir la sala ${codigo}:`, e);
+      if (i + 1 < intentos) codigo = nuevoCodigo();
+    }
+  }
+  if (!sala) {
+    console.error('No se pudo abrir ninguna sala:', ultimoError);
+    limpiar(raiz, h('div.portada', h('div.portada-caja', h('h1', 'Sin conexión'), h('p.sub', 'No se pudo abrir la sala en Firebase. Revisa el internet del portátil (y que la autenticación anónima esté activada). Para jugar sin internet, abre la pantalla en modo local.'), h('a.boton', { href: '?modo=pantalla&red=local' }, 'Abrir en modo local'))));
     return;
   }
+  const urlJugar = `${location.origin}${location.pathname}?sala=${codigo}${red === 'local' ? '&red=local' : ''}`;
   motor.S.equipos.forEach(e => sala.escucharEquipo(e.id));
 
   // ───── Demo con bots ─────
