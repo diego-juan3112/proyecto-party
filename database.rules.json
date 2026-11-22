@@ -1,0 +1,15 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "salas": {
+      "$sala": {
+        ".validate": "$sala.matches(/^[A-Z0-9]{4,6}$/)",
+        "estado": { ".read": true, ".write": true },
+        "equipos": { "$equipo": { ".read": true, ".write": true } },
+        "acciones": { ".read": true, "$equipo": { ".write": true } },
+        "unirse": { ".read": true, "$solicitud": { ".write": true } }
+      }
+    }
+  }
+}

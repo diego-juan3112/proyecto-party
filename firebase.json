@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "database.rules.json",
+      ".firebaserc",
+      "**/.*",
+      "**/node_modules/**",
+      "tools/**",
+      "docs/**",
+      "package.json",
+      "capturas/**",
+      "package-lock.json"
+    ]
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
+}
