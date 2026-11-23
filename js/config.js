@@ -1,7 +1,7 @@
 // Configuración del juego. Todo lo ajustable vive aquí; tools/simular.mjs la usa para balancear.
 
 export const CONFIG = {
-  tmar: 0.10, // TMAR del juego (para el "VPN de tu partida")
+  tmar: 0.10, // mínimo exigido (TMAR) del juego: se usa para "Lo que vale hoy su partida"
   maxEquipos: 10,
 
   // Economía (monedas = flujo de caja)
@@ -28,8 +28,8 @@ export const CONFIG = {
   tienda: [
     { id: 'calculadora', nombre: 'Calculadora dorada', precio: 3, desc: '+30 s en tu próximo desafío o duelo.' },
     { id: 'pista', nombre: 'Pista del Analista', precio: 3, desc: 'Elimina 2 opciones incorrectas en tu próxima pregunta.' },
-    { id: 'escudo', nombre: 'Escudo de sensibilidad', precio: 4, desc: 'Anula el próximo golpe: costo, impuesto, evento negativo o duelo perdido.' },
-    { id: 'tasaBaja', nombre: 'Tasa baja', precio: 5, desc: 'Tu próximo desafío correcto paga el doble ("descuentas menos, vale más").' },
+    { id: 'escudo', nombre: 'Escudo', precio: 4, desc: 'Te protege del próximo golpe: costo, impuesto, evento negativo o duelo perdido.' },
+    { id: 'tasaBaja', nombre: 'Doble premio', precio: 5, desc: 'Tu próximo desafío correcto paga el doble.' },
     { id: 'dadoDoble', nombre: 'Dado doble', precio: 5, desc: 'En tu próxima tirada lanzas dos dados.' },
   ],
 
@@ -66,12 +66,12 @@ export const CONFIG = {
   anillo: ['desafio', 'ingreso', 'desafio', 'tienda', 'evento', 'desafio', 'duelo', 'costo', 'desafio', 'inversion', 'impuesto', 'minijuego'],
 
   zonas: [
-    { bloque: 'B', nombre: 'Plaza de Mercado de Insumos', leccion: 'insumos', color: '#e8a33d', icono: '🧺' },
-    { bloque: 'C', nombre: 'Río del Flujo', leccion: 'flujo_estructura', color: '#3d8fe8', icono: '🌊', minijuego: 'entra' },
-    { bloque: 'D', nombre: 'Valle del Tiempo', leccion: 'valor_tiempo', color: '#4caf6a', icono: '⏳' },
-    { bloque: 'E', nombre: 'Cordillera de los Indicadores', leccion: 'vpn', color: '#8d5cd6', icono: '⛰️', minijuego: 'carrera' },
-    { bloque: 'F', nombre: 'Encrucijada de Criterios', leccion: 'criterios', color: '#d65c7a', icono: '🧭' },
-    { bloque: 'G', nombre: 'Volcán del Riesgo', leccion: 'sensibilidad', color: '#e0582b', icono: '🌋', minijuego: 'termometro' },
+    { bloque: 'B', nombre: 'Plaza de Mercado de Insumos', pregunta: '¿Qué cifras necesito para evaluar un negocio?', leccion: 'insumos', color: '#e8a33d', icono: '🧺' },
+    { bloque: 'C', nombre: 'Río del Flujo', pregunta: '¿Cuánta plata entra y sale de verdad?', leccion: 'flujo_estructura', color: '#3d8fe8', icono: '🌊', minijuego: 'entra' },
+    { bloque: 'D', nombre: 'Valle del Tiempo', pregunta: '¿Por qué la plata de hoy vale más que la de mañana?', leccion: 'valor_tiempo', color: '#4caf6a', icono: '⏳' },
+    { bloque: 'E', nombre: 'Cordillera de los Indicadores', pregunta: '¿Cómo sé si el negocio conviene?', leccion: 'vpn', color: '#8d5cd6', icono: '⛰️', minijuego: 'carrera' },
+    { bloque: 'F', nombre: 'Encrucijada de Criterios', pregunta: 'Si solo puedo hacer uno, ¿cuál escojo?', leccion: 'criterios', color: '#d65c7a', icono: '🧭' },
+    { bloque: 'G', nombre: 'Volcán del Riesgo', pregunta: '¿Y si algo sale mal?', leccion: 'sensibilidad', color: '#e0582b', icono: '🌋', minijuego: 'termometro' },
   ],
 
   mascotas: [
@@ -91,22 +91,22 @@ export const CONFIG = {
 
   // Eventos globales al entrar a las zonas D, E, F y G
   eventosGlobales: [
-    { id: 'alzaTasas', nombre: 'Alza de tasas', texto: 'La TMAR sube: en esta zona la estrella cuesta 5 monedas más.', vpn: 'Si la tasa de descuento sube, los flujos futuros valen menos hoy: el VPN baja.' },
-    { id: 'competidor', nombre: 'Nuevo competidor', texto: 'Llegó la competencia: los desafíos pagan 2 monedas menos en esta zona.', vpn: 'Menos ingresos → menor flujo de caja → menor VPN.' },
-    { id: 'reforma', nombre: 'Reforma tributaria', texto: 'La casilla de impuesto cobra 30 % en esta zona.', vpn: 'Más impuestos → menor flujo después de impuestos → menor VPN.' },
-    { id: 'devaluacion', nombre: 'Devaluación', texto: 'Los insumos importados se encarecen: la casilla de costo cobra el doble.', vpn: 'Costos más altos → menor flujo → menor VPN. ¡Por eso se hace sensibilidad!' },
-    { id: 'nino', nombre: 'Fenómeno de El Niño', texto: 'Sequía en el Eje Cafetero: todos pierden 2 monedas (el escudo protege).', vpn: 'Un choque externo puede volver negativo un VPN que parecía seguro.' },
-    { id: 'tlc', nombre: 'Boom exportador', texto: 'Un nuevo acuerdo comercial dispara la demanda: la casilla de ingreso paga el doble.', vpn: 'Más ventas → más flujo → mayor VPN. El riesgo también tiene lado bueno.' },
-    { id: 'paro', nombre: 'Paro camionero', texto: 'Bloqueos en las vías: en esta zona el dado va de 1 a 4.', vpn: 'Los retrasos corren los flujos hacia el futuro: valen menos al descontarlos.' },
+    { id: 'alzaTasas', nombre: 'Alza de tasas', texto: 'Las inversiones seguras ahora pagan más: en esta zona la estrella cuesta 5 monedas más.', vpn: 'Si la opción segura paga más, a un negocio le cuesta más ganarle: algunos dejan de convenir.' },
+    { id: 'competidor', nombre: 'Nuevo competidor', texto: 'Llegó la competencia: los desafíos pagan 2 monedas menos en esta zona.', vpn: 'Menos ventas → entra menos plata → el negocio gana menos.' },
+    { id: 'reforma', nombre: 'Reforma tributaria', texto: 'La casilla de impuesto cobra 30 % en esta zona.', vpn: 'Más impuestos → queda menos plata en el bolsillo.' },
+    { id: 'devaluacion', nombre: 'Devaluación', texto: 'Los insumos importados se encarecen: la casilla de costo cobra el doble.', vpn: 'Costos más altos → el negocio gana menos. ¡Por eso hay que probar qué pasa si algo sube!' },
+    { id: 'nino', nombre: 'Fenómeno de El Niño', texto: 'Sequía en el Eje Cafetero: todos pierden 2 monedas (el escudo protege).', vpn: 'Algo que nadie controla puede volver pérdida una ganancia que parecía segura.' },
+    { id: 'tlc', nombre: 'Boom exportador', texto: 'Un nuevo acuerdo comercial dispara la demanda: la casilla de ingreso paga el doble.', vpn: 'Más ventas → entra más plata. El riesgo también tiene lado bueno.' },
+    { id: 'paro', nombre: 'Paro camionero', texto: 'Bloqueos en las vías: en esta zona el dado va de 1 a 4.', vpn: 'Si la plata llega más tarde, vale menos hoy.' },
   ],
 
   // Eventos personales (casilla de riesgo)
   eventosPersonales: [
-    { texto: '¡Un hotel te hizo un pedido grande!', delta: 4, vpn: 'Más ingresos → mayor flujo.' },
-    { texto: 'Tu proveedor subió los precios.', delta: -3, vpn: 'Costos más altos → menor flujo.' },
-    { texto: 'Se dañó la máquina tostadora.', delta: -4, vpn: 'Un costo inesperado → menor flujo.' },
-    { texto: 'Ganaste una licitación de la Alcaldía.', delta: 5, vpn: 'Ingreso extra → mayor flujo.' },
-    { texto: 'Abrieron un competidor en tu cuadra.', delta: -3, vpn: 'Menos ventas → menor flujo.' },
-    { texto: 'Bajó el precio del dólar y tus insumos importados salen más baratos.', delta: 3, vpn: 'Menores costos → mayor flujo.' },
+    { texto: '¡Un hotel te hizo un pedido grande!', delta: 4, vpn: 'Más ventas → entra más plata.' },
+    { texto: 'Tu proveedor subió los precios.', delta: -3, vpn: 'Costos más altos → queda menos plata.' },
+    { texto: 'Se dañó la máquina tostadora.', delta: -4, vpn: 'Un gasto inesperado → queda menos plata.' },
+    { texto: 'Ganaste una licitación de la Alcaldía.', delta: 5, vpn: 'Ingreso extra → entra más plata.' },
+    { texto: 'Abrieron un competidor en tu cuadra.', delta: -3, vpn: 'Menos ventas → entra menos plata.' },
+    { texto: 'Bajó el precio del dólar y tus insumos importados salen más baratos.', delta: 3, vpn: 'Costos más bajos → queda más plata.' },
   ],
 };

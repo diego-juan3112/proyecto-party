@@ -332,7 +332,7 @@ export class Motor {
       for (const e of S.equipos) {
         if (e.inversiones.length) {
           const d = this.mover(e, e.inversiones.length * C.inversion.flujoPorZona);
-          e.ultimoResultado = { titulo: 'Tus inversiones pagan', texto: `Recibes ${d} monedas de flujo de tus ${e.inversiones.length} inversión(es).`, delta: d };
+          e.ultimoResultado = { titulo: 'Tus inversiones pagan', texto: `Recibes ${d} monedas de tus ${e.inversiones.length} inversión(es).`, delta: d };
         }
       }
       // Capital semilla para el último lugar
@@ -469,19 +469,19 @@ export class Motor {
       }
       case 'ingreso': {
         const d = this.mover(e, C.ingreso * (ev === 'tlc' ? 2 : 1));
-        res('💰 Ingreso', `Vendiste bien: +${d} monedas.`, d, 'Los ingresos son entradas del flujo de caja.');
+        res('💰 Ingreso', `Vendiste bien: +${d} monedas.`, d, 'Las ventas son plata que entra al negocio.');
         break;
       }
       case 'costo': {
         const g = this.golpe(e, C.costo * (ev === 'devaluacion' ? 2 : 1), 'un costo');
-        res('🧾 Costo', g.bloqueado ? 'Tu escudo absorbió el costo.' : `Pagaste costos de operación: ${g.delta} monedas.`, g.delta, 'Los costos y gastos son salidas del flujo de caja.');
+        res('🧾 Costo', g.bloqueado ? 'Tu escudo absorbió el costo.' : `Pagaste costos de operación: ${g.delta} monedas.`, g.delta, 'Los gastos son plata que sale del negocio.');
         break;
       }
       case 'impuesto': {
         const pct = ev === 'reforma' ? 0.3 : C.impuestoPct;
         const monto = Math.floor(e.monedas * pct);
         const g = this.golpe(e, monto, 'el impuesto');
-        res('🏛️ Impuesto', g.bloqueado ? 'Tu escudo te salvó del impuesto.' : `Impuesto del ${Math.round(pct * 100)} %: ${g.delta} monedas.`, g.delta, 'El impuesto se paga sobre la utilidad: la depreciación lo reduce (escudo fiscal).');
+        res('🏛️ Impuesto', g.bloqueado ? 'Tu escudo te salvó del impuesto.' : `Impuesto del ${Math.round(pct * 100)} %: ${g.delta} monedas.`, g.delta, 'El impuesto se paga sobre lo que el negocio gana: ventas menos gastos.');
         break;
       }
       case 'evento': {
@@ -636,11 +636,11 @@ export class Motor {
     } else if (opcion === s.correcta) {
       this.mover(e, -precio, 'estrella');
       e.estrellas++; e.stats.estrellasCompradas++;
-      e.ultimoResultado = { titulo: '⭐ ¡Sello VPN+ conseguido!', texto: `Pagaste ${precio} monedas. ${s.explicacion}`, delta: -precio, estrella: true };
+      e.ultimoResultado = { titulo: '⭐ ¡Sello Buen Negocio conseguido!', texto: `Pagaste ${precio} monedas. ${s.explicacion}`, delta: -precio, estrella: true };
       this.log(`⭐ ${e.nombre} consiguió una estrella.`);
       this.S.estrellaMovida = true;
     } else {
-      e.ultimoResultado = { titulo: '⭐ El VPN no era ese', texto: `${s.opciones[s.correcta].t}. ${s.explicacion} No pagaste nada.`, delta: 0 };
+      e.ultimoResultado = { titulo: '⭐ Esta vez no era esa', texto: `${s.opciones[s.correcta].t}. ${s.explicacion} No pagaste nada.`, delta: 0 };
     }
     this.terminarTarea(e, ahora);
     return { ok: true };
@@ -653,9 +653,9 @@ export class Motor {
       this.mover(e, -C.inversion.costo);
       e.inversiones.push({ zona: this.S.zona });
       e.stats.invirtio++;
-      e.ultimoResultado = { titulo: '🏗️ Invertiste', texto: `Pagaste ${C.inversion.costo}. Recibirás ${C.inversion.flujoPorZona} por cada zona que falte (${restantes}) y ${C.inversion.salvamento} de salvamento al final.`, delta: -C.inversion.costo };
+      e.ultimoResultado = { titulo: '🏗️ Invertiste', texto: `Pagaste ${C.inversion.costo}. Recibirás ${C.inversion.flujoPorZona} por cada zona que falte (${restantes}) y ${C.inversion.salvamento} más al final.`, delta: -C.inversion.costo };
     } else {
-      e.ultimoResultado = { titulo: '🏗️ No invertiste', texto: restantes <= 1 ? 'Buena lectura: con tan poco horizonte la inversión no se recupera.' : 'Guardaste tus monedas.', delta: 0 };
+      e.ultimoResultado = { titulo: '🏗️ No invertiste', texto: restantes <= 1 ? 'Buena lectura: con tan pocas zonas por delante, esa inversión no alcanzaba a devolverse.' : 'Guardaste tus monedas.', delta: 0 };
     }
     this.terminarTarea(e, ahora);
     return { ok: true };

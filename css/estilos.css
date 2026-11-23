@@ -195,6 +195,7 @@ p { margin: 0 0 .6em; }
 .llegada-zona .cabeza-zona .icono-zona { font-size: 3.2em; line-height: 1; }
 .llegada-zona .cabeza-zona h2 { margin: 0; }
 .llegada-zona .cabeza-zona small { display: block; font-family: var(--texto); font-size: .9rem; color: var(--tinto-suave); }
+.llegada-zona .pregunta-zona { font-family: var(--display); font-size: 1.6em; line-height: 1.2; margin: 0 0 .5em; color: var(--tinto); }
 .llegada-zona .leccion-grande { font-size: 1.35em; line-height: 1.5; max-width: 44ch; border-left: .35em solid var(--c, var(--azul)); padding-left: .8em; }
 .llegada-zona .lado { display: grid; gap: .8em; }
 .llegada-zona .nota-zona { background: rgba(42, 26, 18, .07); border-radius: 16px; padding: .7em 1em; margin-bottom: .6em; }
@@ -218,6 +219,7 @@ p { margin: 0 0 .6em; }
 .tabla th, .tabla td { padding: .4em .6em; text-align: left; border-bottom: 2px solid var(--costal-borde); }
 .tabla th { font-weight: 700; color: var(--tinto-suave); font-size: .9em; }
 .tabla td.num, .tabla th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.tabla .sigla { display: block; font-size: .72em; font-weight: 400; opacity: .75; letter-spacing: .04em; }
 .tabla .mejor { background: rgba(255, 201, 52, .35); font-weight: 700; }
 .tabla .malo { color: var(--rojo); font-weight: 700; }
 

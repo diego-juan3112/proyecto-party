@@ -1,24 +1,24 @@
 // ARCHIVO GENERADO por tools/generar-banco.mjs — no editar a mano.
 export const LECCIONES = {
- "para_que": "Antes de meter plata a un negocio hay que decidir si conviene. Evaluar es comparar lo que el negocio va a devolver con lo que cuesta montarlo, recordando que la plata de hoy vale más que la de mañana.",
- "insumos": "Los insumos son las cifras con las que se arma el cálculo: cuánto cuesta montar el negocio, cuánto vende, cuánto gasta, los impuestos y cuántos años se mira. Si una cifra sale mal, todo el resultado sale mal.",
- "depreciacion": "Una máquina se desgasta con los años. La depreciación reparte su costo entre esos años: (costo − lo que valdrá al final) ÷ años de vida. No es plata que sale, pero sirve para pagar menos impuestos.",
- "impuestos": "El impuesto no se paga sobre lo que vendes sino sobre lo que te queda de ganancia: ventas − costos − depreciación. Ese resultado se multiplica por la tasa de impuesto.",
- "capital_trabajo": "Es la plata que el negocio deja \"guardada\" para poder operar: inventario, materia prima y caja. Sale al inicio y se recupera al final. No se desgasta como una máquina.",
- "salvamento": "Es lo que se puede vender un activo al terminar el proyecto, por ejemplo la máquina usada. Cuenta como plata que entra en el último año.",
- "flujo_estructura": "El flujo de caja es la plata que de verdad entra y sale. Se parte de ventas − costos − depreciación, se restan los impuestos y se vuelve a sumar la depreciación (esa plata no salió). En el último año también entran el salvamento y el capital de trabajo recuperado.",
- "flujo_relevante": "Solo cuenta lo que cambia por decidir el proyecto. Lo que ya se pagó (costo hundido) no cuenta. Lo que dejas de ganar por usar algo tuyo (costo de oportunidad) sí cuenta. Los intereses del préstamo no se restan.",
- "valor_tiempo": "Un peso hoy vale más que uno mañana, porque hoy lo puedes invertir. Para llevar plata futura al presente se divide entre (1 + tasa) por cada año. A eso se le llama descontar.",
- "tmar": "La TMAR es la ganancia mínima que le exigimos a un negocio para invertir en él. Aquí te la damos como dato y con ella se descuentan los flujos.",
- "vpn": "El VPN dice cuánto valor crea el proyecto, en pesos de hoy: los flujos descontados menos la inversión. Si es mayor que 0 se acepta; si es menor que 0 se rechaza.",
- "tir": "La TIR es la rentabilidad propia del proyecto, en % por año. Si es mayor que la TMAR se acepta; si es menor se rechaza.",
- "bc": "La B/C compara lo que el proyecto trae contra lo que cuesta, ambos en pesos de hoy. Si es mayor que 1 se acepta; si es menor que 1 se rechaza.",
- "pr": "El periodo de recuperación es cuánto tarda el proyecto en devolver la inversión. Sirve para ver liquidez y riesgo, no la rentabilidad. El descontado usa flujos traídos a hoy y tarda igual o más.",
- "criterios": "En un proyecto normal, VPN, TIR y B/C llegan a la misma decisión. Si no coinciden al escoger entre proyectos excluyentes, manda el VPN, porque mide valor en pesos.",
- "restriccion": "Con poco presupuesto y varios proyectos independientes, escoge la combinación que quepa y sume el mayor VPN total, no el proyecto que sea mejor por sí solo.",
- "sensibilidad": "Sensibilidad: cambias una sola cosa (precio, ventas o costos) y ves cuánto se mueve el VPN. La que más lo mueve es la más delicada.",
- "escenarios": "Escenarios: cambias varias cosas a la vez (pesimista, probable, optimista). Con probabilidades, el VPN esperado es cada VPN por su probabilidad, sumados.",
- "equilibrio": "Punto de equilibrio: cuánto hay que vender para no ganar ni perder. En unidades: costos fijos ÷ (precio − costo por unidad)."
+ "para_que": "Evaluar un proyecto es responder una sola pregunta: ¿vale la pena meterle plata? Para saberlo se compara lo que cuesta montarlo con lo que va a devolver. Y como un peso hoy vale más que un peso dentro de un año, todo se compara en pesos de hoy.",
+ "insumos": "Para evaluar un negocio se necesitan unas cifras básicas: cuánto cuesta montarlo, cuánto va a vender, cuánto gasta cada año, cuánto paga de impuestos y cuántos años se van a mirar. Si una de esas cifras está mal, la decisión también.",
+ "depreciacion": "Las máquinas se desgastan. Ese desgaste (depreciación) reparte el costo de la máquina entre los años que dura: costo ÷ años. No es plata que sale del bolsillo, porque la máquina se pagó al comprarla. Solo sirve para pagar un poco menos de impuesto.",
+ "impuestos": "El impuesto no se cobra sobre todo lo que vendes, sino sobre lo que ganas: ventas menos gastos. Si vendes 100 y gastas 60, ganas 40, y el impuesto se calcula sobre esos 40.",
+ "capital_trabajo": "Para abrir el primer día hay que tener mercancía, materia prima y algo de efectivo en caja. Esa plata para arrancar (capital de trabajo) se pone al inicio y se recupera al final, cuando el negocio termina.",
+ "salvamento": "Cuando el proyecto termina, las máquinas usadas todavía se pueden vender. Esa plata (valor de salvamento) entra en el último año.",
+ "flujo_estructura": "El flujo de caja es la plata que de verdad entra y sale del negocio cada año. Entran las ventas. Salen los gastos, los impuestos y lo que se invierte. Lo que queda es lo que el negocio deja en el bolsillo.",
+ "flujo_relevante": "Pregunta clave para cada cifra: ¿esto cambia si hago el proyecto? Lo que ya se gastó y no se recupera no cuenta. Lo que dejas de ganar por usar algo tuyo, como un local que podrías arrendar, sí cuenta.",
+ "valor_tiempo": "Un peso hoy vale más que un peso dentro de un año, porque hoy lo puedes poner a ganar. Si una inversión segura paga 10 % al año, $100 de hoy serán $110 en un año. Al revés: $110 dentro de un año valen $100 hoy (110 ÷ 1,1).",
+ "tmar": "Antes de invertir, cada quien decide lo mínimo que quiere ganar al año, por ejemplo lo que le pagaría una inversión segura. Ese mínimo se llama TMAR. Si un negocio no lo alcanza, no vale la pena.",
+ "vpn": "Para saber si un negocio conviene: pasa a pesos de hoy lo que va a devolver y réstale lo que cuesta. Si queda positivo, gana más que lo mínimo que pedías: conviene. Si queda negativo, no conviene. Ese resultado se llama VPN.",
+ "tir": "La rentabilidad de un negocio (TIR) es cuánto gana en % por año. Se compara con lo mínimo que quieres ganar: si el negocio rinde más, conviene; si rinde menos, no.",
+ "bc": "La relación beneficio/costo (B/C) dice cuántos pesos devuelve el negocio por cada peso que cuesta, todo en pesos de hoy. Más de 1: devuelve más de lo que cuesta. Menos de 1: pierde.",
+ "pr": "El periodo de recuperación es cuánto tarda el negocio en devolver la plata invertida. Dice qué tan rápido vuelve la plata, pero no si el negocio gana mucho o poco.",
+ "criterios": "Si solo puedes escoger un negocio, escoge el que deja más plata en pesos de hoy. Un porcentaje alto sobre poca plata puede dejar menos que un porcentaje menor sobre mucha plata.",
+ "restriccion": "Si tienes poco presupuesto y varios negocios que se pueden combinar, busca la combinación que quepa y sume más ganancia en total. A veces dos negocios pequeños dejan más que uno grande.",
+ "sensibilidad": "Las cifras de un proyecto son estimaciones. Por eso se prueba qué pasa si algo sale distinto: si el precio baja, si se vende menos, si los costos suben. Mover una sola cifra a la vez se llama análisis de sensibilidad.",
+ "escenarios": "Otra forma de medir el riesgo es imaginar tres futuros: uno malo, uno normal y uno bueno, cambiando varias cifras a la vez. Eso es el análisis de escenarios.",
+ "equilibrio": "El punto de equilibrio es cuánto hay que vender para no ganar ni perder. Cada unidad vendida deja algo (precio menos lo que cuesta hacerla). Hay que vender las suficientes para pagar los gastos fijos."
 };
 export const PREGUNTAS = [
  {
@@ -31,26 +31,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "para_que",
   "tipo": "concepto",
-  "enunciado": "Tu equipo tiene el plan de negocio de una tienda de café especial. Antes de invertir, ¿qué decisión se toma con la evaluación financiera?",
+  "enunciado": "Un amigo quiere abrir una tienda de café y te pide ayuda con la \"evaluación financiera\". ¿Qué pregunta responde esa evaluación?",
   "opciones": [
    {
-    "t": "A qué precio vender cada tinto",
-    "porque": "El precio es un insumo que viene del estudio de mercado, no la decisión final."
+    "t": "Qué nombre ponerle a la tienda",
+    "porque": "Eso es mercadeo, no evaluación financiera."
    },
    {
     "t": "De qué banco sacar el préstamo",
-    "porque": "Eso es financiación, otra gestión (la expone otro equipo)."
+    "porque": "Eso es cómo conseguir la plata. Primero hay que saber si el negocio vale la pena."
    },
    {
-    "t": "Cuánta utilidad contable reportar el año 1",
-    "porque": "La evaluación mira todos los flujos del horizonte, no un solo año contable."
+    "t": "Cuántos empleados contratar",
+    "porque": "Ese es un dato de la operación; la evaluación lo usa para decidir si conviene invertir."
    },
    {
-    "t": "Si conviene invertir o no: aceptar, rechazar o escoger entre alternativas"
+    "t": "Si vale la pena meterle plata al negocio"
    }
   ],
   "correcta": 3,
-  "explicacion": "La evaluación financiera existe para decidir si se invierte. Todo lo demás (flujo, indicadores, riesgo) sirve para tomar esa decisión con fundamento."
+  "explicacion": "La evaluación financiera existe para decidir si se invierte. Todo lo demás del juego sirve para tomar esa decisión con buenos argumentos."
  },
  {
   "id": "A02",
@@ -61,26 +61,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "para_que",
   "tipo": "concepto",
-  "enunciado": "¿Desde el punto de vista de quién se evalúa financieramente un proyecto?",
+  "enunciado": "La evaluación financiera mira el proyecto con los ojos de una persona. ¿De quién?",
   "opciones": [
    {
-    "t": "Del cliente: si el precio es justo",
-    "porque": "El cliente no pone la inversión ni recibe los flujos."
+    "t": "Del gobierno",
+    "porque": "El gobierno cobra impuestos, pero no invierte en el proyecto."
    },
    {
-    "t": "Del inversionista: ¿mi plata rinde al menos lo que exijo?"
+    "t": "De quien pone la plata y quiere saber si le conviene"
    },
    {
-    "t": "Del gobierno: cuánto va a recaudar",
-    "porque": "Los impuestos son un insumo del flujo, no el punto de vista."
+    "t": "De la competencia",
+    "porque": "A la competencia no le interesa si tu negocio conviene."
    },
    {
-    "t": "De la sociedad: empleos e impacto ambiental",
-    "porque": "Eso corresponde a la evaluación económica o social."
+    "t": "Del cliente que compra el producto",
+    "porque": "El cliente no pone la plata del proyecto."
    }
   ],
   "correcta": 1,
-  "explicacion": "La evaluación financiera mira el proyecto con los ojos de quien pone la plata y espera recuperarla con un rendimiento mínimo (TMAR)."
+  "explicacion": "Se evalúa desde quien invierte: ¿mi plata va a ganar al menos lo que espero?"
  },
  {
   "id": "A03",
@@ -91,26 +91,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "para_que",
   "tipo": "concepto",
-  "enunciado": "En una frase, la evaluación financiera compara…",
+  "enunciado": "Para decidir si un negocio conviene, ¿qué se compara?",
   "opciones": [
    {
-    "t": "Lo que el proyecto devuelve en el futuro contra lo que cuesta montarlo, contando el valor del tiempo"
+    "t": "Lo que cuesta montarlo contra lo que va a devolver, todo en pesos de hoy"
    },
    {
-    "t": "Las ventas totales contra las de la competencia",
-    "porque": "Eso es análisis de mercado."
+    "t": "Lo que venden los competidores",
+    "porque": "Eso ayuda a estimar las ventas, pero no decide si conviene invertir."
    },
    {
-    "t": "Los ingresos del año 1 contra los costos del año 1",
-    "porque": "Un solo año no muestra todo el horizonte ni el valor del dinero en el tiempo."
+    "t": "Solo las ventas del primer mes",
+    "porque": "Un mes no muestra toda la vida del negocio."
    },
    {
-    "t": "La utilidad contable acumulada, sin importar cuándo llega",
-    "porque": "Sí importa cuándo llega la plata: un peso hoy vale más que uno mañana."
+    "t": "Cuánto cuesta la decoración",
+    "porque": "Es solo uno de los costos."
    }
   ],
   "correcta": 0,
-  "explicacion": "Flujos que entran vs. inversión que sale, puestos en la misma fecha (descontados a la TMAR)."
+  "explicacion": "Lo que entra contra lo que sale, y todo llevado a la misma fecha: hoy."
  },
  {
   "id": "B01",
@@ -122,26 +122,26 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "depreciacion",
   "tipo": "calculo",
-  "enunciado": "Una tostadora cuesta $50 M y dura 5 años; al final ya no vale nada. Si el desgaste se reparte parejo, ¿cuánto se deprecia por año?",
+  "enunciado": "Una tostadora cuesta $50 M y dura 5 años. Su desgaste se reparte igual cada año: costo ÷ años. ¿Cuánto se desgasta por año?",
   "opciones": [
    {
     "t": "$250 M",
-    "porque": "Multiplicaste por la vida útil en vez de dividir."
+    "porque": "Multiplicaste por los años; hay que dividir."
    },
    {
     "t": "$10 M"
    },
    {
     "t": "$50 M",
-    "porque": "Ese es el costo total, no el valor anual."
+    "porque": "Ese es el costo total, no lo de un año."
    },
    {
     "t": "$12,5 M",
-    "porque": "Dividiste entre 4 años; la vida útil es 5."
+    "porque": "Dividiste entre 4; la tostadora dura 5 años."
    }
   ],
   "correcta": 1,
-  "explicacion": "(50 − 0) ÷ 5 = $10 M por año.",
+  "explicacion": "50 ÷ 5 = $10 M por año.",
   "calc": {
    "formula": "depreciacion",
    "datos": {
@@ -160,25 +160,25 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 75,
+  "tiempo": 60,
   "leccion": "depreciacion",
   "tipo": "calculo",
-  "enunciado": "Un camión cuesta $90 M, dura 4 años y al final se puede vender en $10 M. Si el desgaste se reparte parejo, ¿cuánto se deprecia por año?",
+  "enunciado": "Un camión cuesta $90 M, dura 4 años y al final se vende usado en $10 M. El desgaste por año es (costo − lo que se vende al final) ÷ años. ¿Cuánto da?",
   "opciones": [
    {
     "t": "$20 M"
    },
    {
     "t": "$80 M",
-    "porque": "Ese es el total a depreciar; falta dividir entre 4 años."
+    "porque": "Ese es el total; falta dividir entre los 4 años."
    },
    {
     "t": "$22,5 M",
-    "porque": "No le restaste el valor de salvamento al costo."
+    "porque": "No le restaste los $10 M de la venta final."
    },
    {
     "t": "$25 M",
-    "porque": "Sumaste el salvamento en vez de restarlo."
+    "porque": "Sumaste los $10 M en vez de restarlos."
    }
   ],
   "correcta": 0,
@@ -202,35 +202,34 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 75,
+  "tiempo": 60,
   "leccion": "impuestos",
   "tipo": "calculo",
-  "enunciado": "En un año la cafetería vendió $100 M, gastó $40 M en operar y tuvo $20 M de depreciación. El impuesto es 30 %. ¿Cuánto impuesto paga?",
+  "enunciado": "En un año la cafetería vendió $100 M y gastó $60 M. El impuesto es el 30 % de lo que ganó (ventas − gastos). ¿Cuánto paga de impuesto?",
   "opciones": [
    {
-    "t": "$18 M",
-    "porque": "No restaste la depreciación antes de calcular el impuesto."
+    "t": "$30 M",
+    "porque": "Calculaste el 30 % de las ventas; es sobre lo que ganó (40)."
    },
    {
     "t": "$12 M"
    },
    {
-    "t": "$6 M",
-    "porque": "Aplicaste el 30 % solo a la depreciación."
+    "t": "$28 M",
+    "porque": "Eso es lo que queda después de pagar el impuesto (40 − 12)."
    },
    {
-    "t": "$30 M",
-    "porque": "Calculaste el impuesto sobre los ingresos; va sobre la utilidad."
+    "t": "$18 M",
+    "porque": "Calculaste el 30 % de los gastos."
    }
   ],
   "correcta": 1,
-  "explicacion": "Utilidad gravable = 100 − 40 − 20 = 40. Impuesto = 40 × 30 % = $12 M.",
+  "explicacion": "Ganó 100 − 60 = 40. Impuesto = 30 % de 40 = $12 M.",
   "calc": {
    "formula": "impuesto",
    "datos": {
     "ingresos": 100,
-    "costos": 40,
-    "dep": 20,
+    "costos": 60,
     "t": 0.3
    }
   },
@@ -247,26 +246,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "insumos",
   "tipo": "concepto",
-  "enunciado": "¿Cuál de estos NO es un costo o gasto de operación del año?",
+  "enunciado": "¿Cuál de estas cosas se paga UNA sola vez, al montar el negocio, y no cada año?",
   "opciones": [
    {
-    "t": "La nómina de los baristas",
-    "porque": "Es un costo operativo: se paga cada año."
+    "t": "Los sueldos de los baristas",
+    "porque": "Se pagan cada mes."
    },
    {
-    "t": "La compra de la máquina empacadora"
+    "t": "Comprar la máquina empacadora"
    },
    {
     "t": "Los servicios públicos",
-    "porque": "Es un gasto operativo: se paga cada año."
+    "porque": "Llegan cada mes."
    },
    {
     "t": "El arriendo del local",
-    "porque": "Es un gasto operativo: se paga cada año."
+    "porque": "Se paga cada mes, todos los años."
    }
   ],
   "correcta": 1,
-  "explicacion": "Comprar la máquina es INVERSIÓN (año 0). Su costo llega a los años de operación solo a través de la depreciación."
+  "explicacion": "Lo que se compra al inicio para montar el negocio es la inversión. Lo que se paga cada año son los gastos de operación."
  },
  {
   "id": "B05",
@@ -277,26 +276,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "capital_trabajo",
   "tipo": "concepto",
-  "enunciado": "Una panadería necesita $10 M en harina, empaques y caja menor para operar desde el día 1. ¿Cómo se trata esa plata en la evaluación?",
+  "enunciado": "Una panadería necesita $10 M en harina, empaques y efectivo en caja para poder abrir. Cuando el negocio termina, esa plata se recupera. ¿Cuándo sale y cuándo vuelve?",
   "opciones": [
    {
-    "t": "Como gasto deducible del año 1",
-    "porque": "No es un gasto: la plata queda amarrada en la operación y se recupera."
+    "t": "Sale cada año y no vuelve",
+    "porque": "Se pone una vez, al inicio, y al final se recupera."
    },
    {
-    "t": "Se deprecia en línea recta",
-    "porque": "El capital de trabajo no es un activo fijo: no se deprecia."
+    "t": "Sale al final",
+    "porque": "Se necesita desde el primer día."
    },
    {
-    "t": "Como inversión en capital de trabajo en el año 0, que se recupera al final del horizonte"
+    "t": "Sale al inicio y vuelve al final"
    },
    {
-    "t": "No se incluye, porque al final se recupera",
-    "porque": "Mientras tanto la plata no está disponible: ese tiempo tiene costo."
+    "t": "No sale nunca",
+    "porque": "Sí sale: sin esa plata no se puede abrir."
    }
   ],
   "correcta": 2,
-  "explicacion": "Sale en el año 0 (−10) y vuelve en el último año (+10). Como vuelve más tarde, en valor presente sí le cuesta al proyecto."
+  "explicacion": "Esa plata para arrancar (capital de trabajo) sale al inicio y vuelve al final."
  },
  {
   "id": "B06",
@@ -307,26 +306,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "salvamento",
   "tipo": "concepto",
-  "enunciado": "Al final del horizonte de 5 años, la tostadora se puede vender en $8 M. ¿Dónde va ese valor?",
+  "enunciado": "Al terminar el proyecto, la tostadora usada se vende en $8 M. ¿Cómo cuenta esa plata?",
   "opciones": [
    {
-    "t": "Como gasto del año 5",
-    "porque": "Vender un activo trae plata, no la saca."
+    "t": "Como plata que entra el primer año",
+    "porque": "Se recibe al final, cuando se vende."
    },
    {
-    "t": "Restándolo de la inversión del año 0",
-    "porque": "Se recibe al final, no al inicio: no se puede descontar de la inversión inicial."
+    "t": "Como plata que sale",
+    "porque": "Vender algo trae plata, no la saca."
    },
    {
-    "t": "Como entrada de dinero en el año 5"
+    "t": "Como plata que entra en el último año"
    },
    {
-    "t": "No se incluye, porque la máquina ya está depreciada",
-    "porque": "Aunque esté depreciada, si se puede vender, esa plata entra al proyecto."
+    "t": "No cuenta, porque la máquina es vieja",
+    "porque": "Aunque sea vieja, si se vende, esa plata entra."
    }
   ],
   "correcta": 2,
-  "explicacion": "El salvamento es una entrada del último año. (Si se vende por encima de su valor en libros, la ganancia paga impuestos.)"
+  "explicacion": "Lo que se recibe al vender lo usado (valor de salvamento) entra en el último año."
  },
  {
   "id": "B07",
@@ -337,26 +336,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "depreciacion",
   "tipo": "concepto",
-  "enunciado": "¿Por qué la depreciación aparece en el flujo de caja si no es una salida de dinero?",
+  "enunciado": "La depreciación es el desgaste de la máquina, repartido por años. ¿Sale plata del bolsillo cada año por ese desgaste?",
   "opciones": [
    {
-    "t": "Porque es plata que sale cada año para reponer la máquina",
-    "porque": "No sale efectivo: la máquina se pagó en el año 0."
+    "t": "Sí: cada año se vuelve a pagar la máquina",
+    "porque": "La máquina se pagó una sola vez, al comprarla."
    },
    {
-    "t": "Porque reduce la utilidad gravable y con ella los impuestos (escudo fiscal)"
+    "t": "No: la máquina se pagó al comprarla; el desgaste es solo una cuenta"
    },
    {
-    "t": "Porque aumenta las ventas",
-    "porque": "La depreciación no tiene que ver con las ventas."
+    "t": "Sí: se le paga al banco",
+    "porque": "El desgaste no tiene que ver con el banco."
    },
    {
-    "t": "No debería aparecer en ninguna parte del flujo",
-    "porque": "Sí aparece: se resta para calcular impuestos y luego se vuelve a sumar."
+    "t": "Solo si la máquina se daña",
+    "porque": "Una reparación sí es un gasto, pero eso no es la depreciación."
    }
   ],
   "correcta": 1,
-  "explicacion": "Se resta antes de impuestos (paga menos impuesto) y se suma después (porque no salió plata)."
+  "explicacion": "La depreciación no saca plata. Solo sirve para pagar un poco menos de impuesto, porque la ley deja restarla."
  },
  {
   "id": "B08",
@@ -366,38 +365,41 @@ export const PREGUNTAS = [
    "duelo"
   ],
   "tiempo": 60,
-  "leccion": "depreciacion",
+  "leccion": "insumos",
   "tipo": "calculo",
-  "enunciado": "Depreciación anual $20 M, impuesto de renta 35 %. ¿Cuánto se ahorra en impuestos cada año gracias a la depreciación?",
+  "enunciado": "Para montar la cafetería hay que comprar máquinas por $60 M, arreglar el local por $25 M y tener $15 M para arrancar (mercancía y caja). ¿Cuánto hay que invertir al inicio?",
   "opciones": [
    {
-    "t": "$35 M",
-    "porque": "Usaste la tasa de impuesto como si fuera el monto."
+    "t": "$40 M",
+    "porque": "Te faltaron las máquinas."
    },
    {
-    "t": "$20 M",
-    "porque": "Ese es el valor de la depreciación, no el ahorro en impuestos."
+    "t": "$85 M",
+    "porque": "Olvidaste la plata para arrancar ($15 M)."
    },
    {
-    "t": "$7 M"
+    "t": "$100 M"
    },
    {
-    "t": "$13 M",
-    "porque": "Calculaste 20 × 65 %; el ahorro es 20 × 35 %."
+    "t": "$75 M",
+    "porque": "Olvidaste el arreglo del local."
    }
   ],
   "correcta": 2,
-  "explicacion": "Escudo fiscal = depreciación × tasa = 20 × 0,35 = $7 M por año.",
+  "explicacion": "60 + 25 + 15 = $100 M.",
   "calc": {
-   "formula": "escudo",
+   "formula": "suma",
    "datos": {
-    "dep": 20,
-    "t": 0.35
+    "valores": [
+     60,
+     25,
+     15
+    ]
    }
   },
   "unidad": "M",
   "dec": 1,
-  "valor": 7
+  "valor": 100
  },
  {
   "id": "B09",
@@ -406,28 +408,28 @@ export const PREGUNTAS = [
    "desafio"
   ],
   "tiempo": 45,
-  "leccion": "salvamento",
+  "leccion": "insumos",
   "tipo": "concepto",
-  "enunciado": "¿Qué es el horizonte de evaluación?",
+  "enunciado": "En evaluación de proyectos, el \"horizonte\" es…",
   "opciones": [
    {
-    "t": "El año en que el proyecto da su primera utilidad",
-    "porque": "Eso no define cuántos años se evalúan."
+    "t": "La vista que tiene el local",
+    "porque": "¡No! Aquí es cuántos años se proyectan las cuentas."
    },
    {
-    "t": "El número de periodos (por ejemplo, 5 años) para los que se proyectan los flujos"
+    "t": "El número de años que se van a mirar en las cuentas (por ejemplo, 5 años)"
    },
    {
-    "t": "El tiempo que tarda en recuperarse la inversión",
-    "porque": "Ese es el periodo de recuperación (bloque E)."
+    "t": "El tiempo que tarda en volver la plata",
+    "porque": "Eso es el periodo de recuperación."
    },
    {
-    "t": "La fecha en que se pide el préstamo",
-    "porque": "Eso es financiación, no el horizonte."
+    "t": "La fecha en que abre el negocio",
+    "porque": "Eso es el inicio, no cuántos años se miran."
    }
   ],
   "correcta": 1,
-  "explicacion": "El horizonte suele relacionarse con la vida útil de los activos, pero lo define quien evalúa según el proyecto."
+  "explicacion": "El horizonte es cuántos años se miran. Suele ser lo que duran las máquinas o el negocio."
  },
  {
   "id": "C01",
@@ -436,41 +438,42 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 90,
+  "tiempo": 60,
   "leccion": "flujo_estructura",
   "tipo": "calculo",
-  "enunciado": "En el año 2 la tienda vendió $200 M, gastó $80 M, tuvo $40 M de depreciación y paga 30 % de impuesto. ¿Cuánta plata le queda de verdad (flujo de caja operativo)?",
+  "enunciado": "En el año 2 la tienda vendió $200 M, gastó $80 M y pagó $30 M de impuestos. ¿Cuánta plata le quedó en el bolsillo ese año?",
   "opciones": [
    {
-    "t": "$96 M"
+    "t": "$90 M"
+   },
+   {
+    "t": "$170 M",
+    "porque": "No restaste los gastos."
    },
    {
     "t": "$120 M",
     "porque": "No restaste los impuestos."
    },
    {
-    "t": "$56 M",
-    "porque": "Olvidaste volver a sumar la depreciación (no es salida de dinero)."
-   },
-   {
-    "t": "$84 M",
-    "porque": "Calculaste el impuesto sin restar antes la depreciación: perdiste el escudo fiscal."
+    "t": "$310 M",
+    "porque": "Sumaste todo; los gastos y los impuestos se restan."
    }
   ],
   "correcta": 0,
-  "explicacion": "UAI = 200 − 80 − 40 = 80. Impuesto = 24. Utilidad neta = 56. + Depreciación 40 → FC = $96 M.",
+  "explicacion": "200 − 80 − 30 = $90 M. Esa es la plata que de verdad quedó (el flujo de caja del año).",
   "calc": {
-   "formula": "fcOperativo",
+   "formula": "suma",
    "datos": {
-    "ingresos": 200,
-    "costos": 80,
-    "dep": 40,
-    "t": 0.3
+    "valores": [
+     200,
+     -80,
+     -30
+    ]
    }
   },
   "unidad": "M",
   "dec": 1,
-  "valor": 96
+  "valor": 90
  },
  {
   "id": "C02",
@@ -482,38 +485,38 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "flujo_relevante",
   "tipo": "calculo",
-  "enunciado": "Para arrancar se necesitan maquinaria por $100 M y capital de trabajo por $20 M. El mes pasado se pagaron $10 M por un estudio de mercado. ¿Flujo del año 0?",
+  "enunciado": "Para arrancar hay que comprar máquinas por $100 M y tener $20 M para operar. El mes pasado ya pagaron $10 M por un estudio que no se devuelve. ¿Cuánta plata hay que poner AHORA si deciden hacer el proyecto?",
   "opciones": [
    {
-    "t": "$−100 M",
-    "porque": "Olvidaste el capital de trabajo."
+    "t": "$100 M",
+    "porque": "Olvidaste la plata para operar."
    },
    {
-    "t": "$−120 M"
+    "t": "$120 M"
    },
    {
-    "t": "$−130 M",
-    "porque": "Incluiste el estudio de mercado: es un costo hundido, ya se pagó pase lo que pase."
+    "t": "$130 M",
+    "porque": "Sumaste el estudio: ya se pagó, hagan o no el proyecto."
    },
    {
-    "t": "$−80 M",
-    "porque": "Sumaste el capital de trabajo como si fuera una entrada."
+    "t": "$110 M",
+    "porque": "Sumaste el estudio y olvidaste la plata para operar."
    }
   ],
   "correcta": 1,
-  "explicacion": "Año 0 = −100 (maquinaria) − 20 (capital de trabajo) = −$120 M. El estudio ya pagado no cambia con la decisión.",
+  "explicacion": "100 + 20 = $120 M. El estudio ya se pagó y no cambia con la decisión.",
   "calc": {
    "formula": "suma",
    "datos": {
     "valores": [
-     -100,
-     -20
+     100,
+     20
     ]
    }
   },
   "unidad": "M",
   "dec": 1,
-  "valor": -120
+  "valor": 120
  },
  {
   "id": "C03",
@@ -525,26 +528,26 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "flujo_estructura",
   "tipo": "calculo",
-  "enunciado": "Último año: la operación deja $50 M. Además se recupera el capital de trabajo ($20 M) y se vende la maquinaria en $10 M (sin impuesto sobre la venta). ¿Cuánta plata entra en total ese año?",
+  "enunciado": "Último año: la operación deja $50 M. Además recuperan los $20 M que tenían para operar y venden la maquinaria usada en $10 M. ¿Cuánta plata entra en total ese año?",
   "opciones": [
    {
     "t": "$70 M",
-    "porque": "Olvidaste el valor de salvamento."
+    "porque": "Olvidaste la venta de la maquinaria."
    },
    {
     "t": "$80 M"
    },
    {
     "t": "$50 M",
-    "porque": "Olvidaste la recuperación del capital de trabajo y el salvamento."
+    "porque": "Olvidaste lo que se recupera y lo que se vende al final."
    },
    {
     "t": "$60 M",
-    "porque": "Olvidaste recuperar el capital de trabajo."
+    "porque": "Olvidaste recuperar los $20 M para operar."
    }
   ],
   "correcta": 1,
-  "explicacion": "50 + 20 + 10 = $80 M. El último año \"devuelve\" el capital de trabajo y el salvamento.",
+  "explicacion": "50 + 20 + 10 = $80 M. El último año devuelve la plata para operar y lo que se vende.",
   "calc": {
    "formula": "suma",
    "datos": {
@@ -566,39 +569,48 @@ export const PREGUNTAS = [
    "desafio",
    "caza"
   ],
-  "tiempo": 75,
-  "leccion": "flujo_estructura",
+  "tiempo": 60,
+  "leccion": "impuestos",
   "tipo": "concepto",
-  "enunciado": "Caza el error. (1) Ingresos 100 · (2) − Costos 40 · (3) − Depreciación 20 → UAI 40 · (4) − Impuestos 30 % = 12 → Utilidad neta 28 · (5) − Depreciación 20 → Flujo de caja 8. ¿Qué línea está mal?",
+  "enunciado": "Caza el error. Ventas 100 − gastos 40 = 60 de ganancia. Impuesto: 30 % de las VENTAS = 30. Queda: 60 − 30 = 30. ¿Qué está mal?",
   "opciones": [
    {
-    "t": "La 3: la depreciación no se resta antes de impuestos",
-    "porque": "Sí se resta antes de impuestos: así se obtiene el escudo fiscal."
+    "t": "Los gastos no se restan",
+    "porque": "Sí se restan: es plata que sale."
    },
    {
-    "t": "La 4: el impuesto debía ser sobre 100",
-    "porque": "El impuesto va sobre la utilidad (40), no sobre los ingresos."
+    "t": "Nada, está bien",
+    "porque": "El impuesto se calculó sobre las ventas, y va sobre la ganancia."
    },
    {
-    "t": "La 2: los costos no se restan",
-    "porque": "Los costos sí se restan de los ingresos."
+    "t": "Faltó sumar el impuesto",
+    "porque": "El impuesto es plata que sale: se resta."
    },
    {
-    "t": "La 5: la depreciación se SUMA de nuevo; el flujo correcto es 48"
+    "t": "El impuesto va sobre la ganancia (30 % de 60 = 18): quedan 42"
    }
   ],
   "correcta": 3,
-  "explicacion": "Restar la depreciación dos veces es el error más común. Utilidad neta 28 + 20 = 48.",
+  "explicacion": "El impuesto se calcula sobre lo que se gana, no sobre lo que se vende: 60 − 18 = 42.",
   "chequeos": [
    {
-    "formula": "fcOperativo",
+    "formula": "impuesto",
     "datos": {
      "ingresos": 100,
      "costos": 40,
-     "dep": 20,
      "t": 0.3
     },
-    "esperado": 48
+    "esperado": 18
+   },
+   {
+    "formula": "suma",
+    "datos": {
+     "valores": [
+      60,
+      -18
+     ]
+    },
+    "esperado": 42
    }
   ]
  },
@@ -611,26 +623,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "flujo_relevante",
   "tipo": "concepto",
-  "enunciado": "Hace dos meses pagaron $5 M por un estudio de mercado, y ese pago no se devuelve se haga o no el proyecto. ¿Va en el flujo de caja?",
+  "enunciado": "Hace dos meses pagaron $5 M por un estudio de mercado. Esa plata no se recupera, hagan o no el proyecto. ¿Se cuenta al decidir?",
   "opciones": [
    {
-    "t": "No: es un costo hundido, ya se gastó pase lo que pase"
+    "t": "No: ya se gastó y no cambia con la decisión"
    },
    {
-    "t": "Sí, repartido en los años de operación",
-    "porque": "No es un costo futuro del proyecto."
+    "t": "Sí, repartida en los años",
+    "porque": "No es un gasto futuro del proyecto."
    },
    {
-    "t": "Solo si el proyecto da VPN positivo",
-    "porque": "Un costo hundido no entra en ningún caso."
+    "t": "Solo si el proyecto sale bien",
+    "porque": "Lo ya gastado no cuenta en ningún caso."
    },
    {
-    "t": "Sí, en el año 0",
-    "porque": "Esa plata ya se fue y no cambia con la decisión: no es relevante."
+    "t": "Sí, al inicio del proyecto",
+    "porque": "Esa plata ya se fue, decidan lo que decidan."
    }
   ],
   "correcta": 0,
-  "explicacion": "Pregunta clave para cada cifra: ¿esto cambia si decido invertir o no? Si no cambia, no entra."
+  "explicacion": "Lo que ya se gastó y no se recupera (costo hundido) no cuenta. Pregunta clave: ¿esto cambia si hago el proyecto?"
  },
  {
   "id": "C06",
@@ -641,26 +653,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "flujo_relevante",
   "tipo": "concepto",
-  "enunciado": "El proyecto usará un lote propio que hoy podrían arrendar en $10 M al año. ¿Cómo se trata?",
+  "enunciado": "El proyecto usará un lote de la familia que hoy podrían arrendar en $10 M al año. ¿Se cuenta algo?",
   "opciones": [
    {
-    "t": "Como un costo de $10 M al año (costo de oportunidad)"
+    "t": "Sí: los $10 M al año que dejan de recibir por el arriendo"
    },
    {
-    "t": "Como un ingreso de $10 M al año",
-    "porque": "El proyecto no recibe ese arriendo; lo deja de recibir."
+    "t": "Sí, como un ingreso de $10 M al año",
+    "porque": "El proyecto no recibe ese arriendo: lo deja de recibir."
    },
    {
-    "t": "No se incluye, porque el lote ya es nuestro",
-    "porque": "Usarlo implica dejar de recibir el arriendo: es un costo real de la decisión."
+    "t": "No, porque el lote ya es de la familia",
+    "porque": "Al usarlo, dejan de recibir el arriendo: eso es un costo real."
    },
    {
-    "t": "Como inversión de $10 M en el año 0",
-    "porque": "El arriendo perdido ocurre cada año, no una sola vez."
+    "t": "Sí, el precio total del lote",
+    "porque": "No lo van a comprar: lo que se pierde es el arriendo."
    }
   ],
   "correcta": 0,
-  "explicacion": "El costo de oportunidad es lo que se deja de ganar por usar un recurso propio en el proyecto."
+  "explicacion": "Lo que dejas de ganar por usar algo tuyo (costo de oportunidad) sí cuenta."
  },
  {
   "id": "C07",
@@ -669,28 +681,28 @@ export const PREGUNTAS = [
    "desafio"
   ],
   "tiempo": 45,
-  "leccion": "flujo_relevante",
+  "leccion": "flujo_estructura",
   "tipo": "concepto",
-  "enunciado": "Están armando el flujo de caja DEL PROYECTO (se evalúa el negocio, sin importar de dónde sale la plata). ¿Se restan los intereses de un préstamo?",
+  "enunciado": "El flujo de caja es la plata que de verdad entra y sale. ¿Cuál de estas NO es plata que entre o salga?",
   "opciones": [
    {
-    "t": "Solo los del primer año",
-    "porque": "En el flujo del proyecto no van intereses de ningún año."
+    "t": "Las ventas",
+    "porque": "Entra plata."
    },
    {
-    "t": "No: el flujo del proyecto no incluye cómo se financia"
+    "t": "El desgaste de la máquina (depreciación)"
    },
    {
-    "t": "Sí, siempre",
-    "porque": "Eso corresponde a otro flujo (el del inversionista con financiación), que no es el que se está armando."
+    "t": "El pago del arriendo",
+    "porque": "Sale plata cada mes."
    },
    {
-    "t": "Sí, pero sin descontarlos",
-    "porque": "En el flujo del proyecto no van intereses."
+    "t": "El pago de impuestos",
+    "porque": "Sale plata."
    }
   ],
   "correcta": 1,
-  "explicacion": "Primero se mira si el negocio vale la pena por sí mismo. Cómo se financia lo trata otra gestión."
+  "explicacion": "El desgaste es una cuenta, no un pago: la máquina se pagó al comprarla."
  },
  {
   "id": "C08",
@@ -701,26 +713,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "flujo_estructura",
   "tipo": "concepto",
-  "enunciado": "Partiendo de la utilidad neta, ¿cómo se llega al flujo de caja del proyecto?",
+  "enunciado": "¿Qué es el flujo de caja de un año?",
   "opciones": [
    {
-    "t": "Utilidad neta + depreciación − inversiones + salvamento y recuperación del capital de trabajo"
+    "t": "La plata que de verdad entra menos la que de verdad sale ese año"
    },
    {
-    "t": "Utilidad antes de impuestos + depreciación",
-    "porque": "Faltan los impuestos, que sí se pagan."
+    "t": "La lista de clientes del año",
+    "porque": "Los clientes generan ventas, pero el flujo es plata que entra y sale."
    },
    {
-    "t": "Utilidad neta − depreciación",
-    "porque": "La depreciación ya se restó una vez; ahora se suma."
+    "t": "Solo las ventas",
+    "porque": "Faltan las salidas: gastos, impuestos e inversiones."
    },
    {
-    "t": "Ingresos − costos, sin impuestos",
-    "porque": "Los impuestos sí son una salida de dinero."
+    "t": "Todo lo que se gastó en publicidad",
+    "porque": "Es solo una de las salidas."
    }
   ],
   "correcta": 0,
-  "explicacion": "La utilidad contable no es plata en la mano: hay que devolver lo que no fue salida (depreciación) y agregar lo que sí lo fue (inversiones)."
+  "explicacion": "Entradas menos salidas reales de plata: eso es lo que el negocio deja en el bolsillo."
  },
  {
   "id": "C09",
@@ -729,41 +741,41 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 90,
-  "leccion": "flujo_estructura",
+  "tiempo": 60,
+  "leccion": "impuestos",
   "tipo": "calculo",
-  "enunciado": "En el año 1 el negocio vendió $150 M, gastó $50 M, tuvo $20 M de depreciación y paga 25 % de impuesto. ¿Cuánta plata le queda de verdad (flujo de caja operativo)?",
+  "enunciado": "Año 1: ventas $150 M y gastos $50 M. El impuesto es el 25 % de lo que se gana (ventas − gastos). ¿Cuánta plata queda después de pagar el impuesto?",
   "opciones": [
    {
+    "t": "$25 M",
+    "porque": "Ese es el impuesto, no lo que queda."
+   },
+   {
+    "t": "$62,5 M",
+    "porque": "Calculaste el impuesto sobre las ventas (25 % de 150)."
+   },
+   {
+    "t": "$75 M"
+   },
+   {
     "t": "$100 M",
-    "porque": "No restaste los impuestos."
-   },
-   {
-    "t": "$75 M",
-    "porque": "Calculaste el impuesto sin restar la depreciación (25 % de 100)."
-   },
-   {
-    "t": "$80 M"
-   },
-   {
-    "t": "$60 M",
-    "porque": "Olvidaste volver a sumar la depreciación."
+    "porque": "No restaste el impuesto."
    }
   ],
   "correcta": 2,
-  "explicacion": "UAI = 150 − 50 − 20 = 80. Impuesto = 20. Utilidad neta = 60. + 20 → FC = $80 M.",
+  "explicacion": "Se gana 150 − 50 = 100. Impuesto = 25. Quedan $75 M.",
   "calc": {
    "formula": "fcOperativo",
    "datos": {
     "ingresos": 150,
     "costos": 50,
-    "dep": 20,
+    "dep": 0,
     "t": 0.25
    }
   },
   "unidad": "M",
   "dec": 1,
-  "valor": 80
+  "valor": 75
  },
  {
   "id": "C10",
@@ -771,29 +783,29 @@ export const PREGUNTAS = [
   "uso": [
    "caza"
   ],
-  "tiempo": 75,
-  "leccion": "flujo_estructura",
+  "tiempo": 60,
+  "leccion": "capital_trabajo",
   "tipo": "concepto",
-  "enunciado": "Caza el error. Año 0: máquina −100 y capital de trabajo −20 → −120. Años 1, 2 y 3: flujo operativo +50. Año 3: + salvamento 10 → total año 3 = +60. ¿Qué falta?",
+  "enunciado": "Caza el error. Al inicio: máquina −100 y plata para operar −20. Años 1, 2 y 3: la operación deja +50. Último año: + venta de la máquina 10 → total del año 3 = 60. ¿Qué falta?",
   "opciones": [
    {
-    "t": "Recuperar el capital de trabajo (+20) en el año 3: el total es +80"
+    "t": "Recuperar los 20 para operar en el año 3: el total es 80"
    },
    {
     "t": "No falta nada",
-    "porque": "El capital de trabajo invertido en el año 0 se recupera en el último año."
+    "porque": "La plata para operar que se puso al inicio vuelve al final."
    },
    {
-    "t": "Restar la depreciación en el año 3",
-    "porque": "La depreciación ya está dentro del flujo operativo."
+    "t": "Restar el desgaste de la máquina",
+    "porque": "El desgaste no es plata que sale."
    },
    {
-    "t": "Sumar los 20 de capital de trabajo en el año 1",
-    "porque": "Se recupera al final, no al inicio."
+    "t": "Sumar los 20 en el año 1",
+    "porque": "Se recuperan al final, no al inicio."
    }
   ],
   "correcta": 0,
-  "explicacion": "Olvidar la recuperación del capital de trabajo subvalora el proyecto.",
+  "explicacion": "Si se olvida recuperar la plata para operar, el proyecto parece peor de lo que es.",
   "chequeos": [
    {
     "formula": "suma",
@@ -814,39 +826,39 @@ export const PREGUNTAS = [
   "uso": [
    "caza"
   ],
-  "tiempo": 75,
-  "leccion": "impuestos",
+  "tiempo": 60,
+  "leccion": "flujo_relevante",
   "tipo": "concepto",
-  "enunciado": "Caza el error. Ingresos 100, costos 60, sin depreciación. Impuestos = 30 % × 100 = 30. Flujo = 100 − 60 − 30 = 10. ¿Qué está mal?",
+  "enunciado": "Caza el error. Para decidir si abren una heladería suman: máquinas 40 + plata para operar 10 + el estudio de mercado que pagaron el año pasado 5 = 55 de inversión. ¿Qué está mal?",
   "opciones": [
    {
-    "t": "Los costos no se restan",
-    "porque": "Los costos sí se restan."
-   },
-   {
-    "t": "Faltó sumar 30 de depreciación",
-    "porque": "El enunciado dice que no hay depreciación."
-   },
-   {
-    "t": "El impuesto va sobre la utilidad (40 × 30 % = 12): el flujo correcto es 28"
+    "t": "Faltó sumar el arriendo de todos los años",
+    "porque": "El arriendo se paga cada año; no es parte de la inversión inicial."
    },
    {
     "t": "Nada, está bien",
-    "porque": "El impuesto se calculó sobre los ingresos; va sobre la utilidad."
+    "porque": "Lo que ya se gastó y no se recupera no cambia con la decisión."
+   },
+   {
+    "t": "El estudio ya pagado no cuenta: la inversión es 50"
+   },
+   {
+    "t": "La plata para operar no cuenta",
+    "porque": "Sí cuenta: hay que ponerla para poder abrir."
    }
   ],
   "correcta": 2,
-  "explicacion": "(100 − 60) × (1 − 0,30) = 28.",
+  "explicacion": "Solo cuenta lo que cambia por hacer el proyecto: 40 + 10 = 50.",
   "chequeos": [
    {
-    "formula": "fcOperativo",
+    "formula": "suma",
     "datos": {
-     "ingresos": 100,
-     "costos": 60,
-     "dep": 0,
-     "t": 0.3
+     "valores": [
+      40,
+      10
+     ]
     },
-    "esperado": 28
+    "esperado": 50
    }
   ]
  },
@@ -857,40 +869,40 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 60,
+  "tiempo": 45,
   "leccion": "valor_tiempo",
   "tipo": "calculo",
-  "enunciado": "Inviertes $100 M y ganas 10 % al año, con interés compuesto. ¿Cuánto tienes en 2 años?",
+  "enunciado": "Pones $100 M en una inversión segura que paga 10 % al año. ¿Cuánto tendrás dentro de un año?",
   "opciones": [
    {
+    "t": "$10 M",
+    "porque": "Esa es solo la ganancia; hay que sumarla a los 100."
+   },
+   {
+    "t": "$90 M",
+    "porque": "Restaste el 10 %; hay que sumarlo."
+   },
+   {
+    "t": "$110 M"
+   },
+   {
     "t": "$100 M",
-    "porque": "La plata no se queda quieta: gana la TMAR cada año."
-   },
-   {
-    "t": "$82,64 M",
-    "porque": "Eso es descontar (traer al presente), no capitalizar."
-   },
-   {
-    "t": "$121 M"
-   },
-   {
-    "t": "$110 M",
-    "porque": "Solo calculaste un año."
+    "porque": "Te faltó sumar lo que ganas."
    }
   ],
   "correcta": 2,
-  "explicacion": "100 × 1,1 × 1,1 = $121 M. (Con interés simple darían 120: el compuesto gana interés sobre el interés.)",
+  "explicacion": "100 + 10 % = $110 M.",
   "calc": {
    "formula": "vf",
    "datos": {
     "monto": 100,
     "tasa": 0.1,
-    "n": 2
+    "n": 1
    }
   },
   "unidad": "M",
-  "dec": 2,
-  "valor": 121.00000000000001
+  "dec": 1,
+  "valor": 110.00000000000001
  },
  {
   "id": "D02",
@@ -902,36 +914,36 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "valor_tiempo",
   "tipo": "calculo",
-  "enunciado": "Te prometen $121 M dentro de 2 años. Si tu plata rinde 10 % al año, ¿cuánto valen hoy?",
+  "enunciado": "Te prometen $110 M dentro de un año. Tu plata podría ganar 10 % al año en otra parte. ¿Cuánto valen hoy esos $110 M? (Pista: 110 ÷ 1,1)",
   "opciones": [
    {
-    "t": "$146,41 M",
-    "porque": "Multiplicaste por 1,21 en vez de dividir."
+    "t": "$11 M",
+    "porque": "Ese es el 10 %; hay que dividir 110 entre 1,1."
    },
    {
     "t": "$100 M"
    },
    {
     "t": "$110 M",
-    "porque": "Descontaste solo un año."
+    "porque": "No los pasaste a pesos de hoy: la plata del futuro vale menos hoy."
    },
    {
     "t": "$121 M",
-    "porque": "No descontaste: la plata futura vale menos hoy."
+    "porque": "Multiplicaste por 1,1; hay que dividir."
    }
   ],
   "correcta": 1,
-  "explicacion": "121 ÷ 1,1² = 121 ÷ 1,21 = $100 M.",
+  "explicacion": "110 ÷ 1,1 = $100 M. Pasar plata del futuro a pesos de hoy se llama \"descontar\".",
   "calc": {
    "formula": "vp",
    "datos": {
-    "monto": 121,
+    "monto": 110,
     "tasa": 0.1,
-    "n": 2
+    "n": 1
    }
   },
   "unidad": "M",
-  "dec": 2,
+  "dec": 1,
   "valor": 99.99999999999999
  },
  {
@@ -947,22 +959,22 @@ export const PREGUNTAS = [
   "opciones": [
    {
     "t": "Porque el banco cobra cuota de manejo",
-    "porque": "Eso no explica el valor del dinero en el tiempo."
+    "porque": "Eso no explica por qué la plata de hoy vale más."
    },
    {
-    "t": "Porque hoy lo puedo invertir y ganar al menos la TMAR"
+    "t": "Porque si lo tengo hoy lo puedo poner a ganar"
    },
    {
     "t": "Porque los billetes se desgastan",
-    "porque": "No es un tema físico: es lo que el dinero puede rendir."
+    "porque": "No es algo físico: es lo que la plata puede ganar mientras tanto."
    },
    {
-    "t": "No es cierto: valen exactamente lo mismo",
-    "porque": "Al tener la plata antes, puedes ponerla a rendir."
+    "t": "No es cierto: valen lo mismo",
+    "porque": "Si la tienes antes, la puedes poner a ganar."
    }
   ],
   "correcta": 1,
-  "explicacion": "El costo de esperar es lo que dejas de ganar. Por eso los flujos futuros se descuentan."
+  "explicacion": "Esperar tiene un costo: lo que dejas de ganar. Por eso la plata del futuro vale menos hoy."
  },
  {
   "id": "D04",
@@ -973,26 +985,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "tmar",
   "tipo": "concepto",
-  "enunciado": "¿Qué es la TMAR?",
+  "enunciado": "Laura no le mete plata a ningún negocio que gane menos de 12 % al año, porque eso le paga un CDT seguro. ¿Qué es ese 12 %?",
   "opciones": [
    {
-    "t": "La tasa mínima que el inversionista le exige al proyecto para aceptarlo"
+    "t": "Lo mínimo que ella exige ganar (en evaluación se llama TMAR)"
    },
    {
-    "t": "El porcentaje de impuestos",
-    "porque": "Los impuestos son un insumo del flujo."
+    "t": "Un impuesto",
+    "porque": "No es un impuesto: es su exigencia mínima."
    },
    {
-    "t": "La rentabilidad que da el proyecto",
-    "porque": "Esa es la TIR (bloque E)."
+    "t": "Lo que gana el negocio",
+    "porque": "Eso se calcula después; el 12 % es lo que ella exige."
    },
    {
-    "t": "El porcentaje de ganancia sobre las ventas",
-    "porque": "Ese es el margen, un dato contable."
+    "t": "Lo que cobra el banco por un préstamo",
+    "porque": "Es lo que ella quiere ganar, no lo que paga."
    }
   ],
   "correcta": 0,
-  "explicacion": "La TMAR es la vara con la que se mide el proyecto. Se usa para descontar los flujos. (Cómo se calcula lo expone otro equipo.)"
+  "explicacion": "Ese mínimo exigido es la vara con la que se mide el negocio: si no lo alcanza, mejor el CDT."
  },
  {
   "id": "D05",
@@ -1004,22 +1016,22 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "valor_tiempo",
   "tipo": "calculo",
-  "enunciado": "Recibirás $200 M dentro de un año y exiges ganar 25 % al año. ¿Cuánto vale hoy esa plata?",
+  "enunciado": "Recibirás $200 M dentro de un año. Tu plata podría ganar 25 % al año en otra parte. ¿Cuánto valen hoy? (Pista: 200 ÷ 1,25)",
   "opciones": [
    {
     "t": "$150 M",
-    "porque": "Le restaste el 25 %; hay que DIVIDIR entre 1,25."
+    "porque": "Le restaste el 25 %; hay que dividir entre 1,25."
    },
    {
     "t": "$160 M"
    },
    {
     "t": "$200 M",
-    "porque": "No descontaste."
+    "porque": "No los pasaste a pesos de hoy."
    },
    {
     "t": "$250 M",
-    "porque": "Multiplicaste: eso es valor futuro."
+    "porque": "Multiplicaste; hay que dividir."
    }
   ],
   "correcta": 1,
@@ -1040,45 +1052,42 @@ export const PREGUNTAS = [
   "id": "D06",
   "bloque": "D",
   "uso": [
-   "desafio",
-   "duelo"
+   "desafio"
   ],
-  "tiempo": 90,
+  "tiempo": 45,
   "leccion": "valor_tiempo",
-  "tipo": "calculo",
-  "enunciado": "Recibirás $110 M en el año 1 y $121 M en el año 2. Exiges 10 % al año. ¿Cuánto valen hoy los dos pagos juntos?",
+  "tipo": "concepto",
+  "enunciado": "Opción 1: $100 M hoy. Opción 2: $105 M dentro de un año. Tu plata puede ganar 10 % al año. ¿Cuál conviene?",
   "opciones": [
    {
-    "t": "$181,8 M",
-    "porque": "Descontaste cada flujo un año de más."
+    "t": "No se puede saber",
+    "porque": "Sí se puede: compara lo que tendrías en un año con cada opción."
    },
    {
-    "t": "$231 M",
-    "porque": "Sumaste sin descontar."
+    "t": "La de un año: es más plata",
+    "porque": "Si recibes 100 hoy y los pones a ganar 10 %, en un año tienes 110, más que 105."
    },
    {
-    "t": "$210 M",
-    "porque": "Descontaste los dos flujos un solo año."
+    "t": "Da igual",
+    "porque": "Daría igual si te ofrecieran $110 M en un año."
    },
    {
-    "t": "$200 M"
+    "t": "La de hoy: puestos a ganar, en un año serían $110 M"
    }
   ],
   "correcta": 3,
-  "explicacion": "110 ÷ 1,1 = 100; 121 ÷ 1,21 = 100. VP = $200 M.",
-  "calc": {
-   "formula": "vpFlujos",
-   "datos": {
-    "flujos": [
-     110,
-     121
-    ],
-    "tasa": 0.1
+  "explicacion": "100 + 10 % = 110, que es más que 105. Mejor la plata hoy.",
+  "chequeos": [
+   {
+    "formula": "vf",
+    "datos": {
+     "monto": 100,
+     "tasa": 0.1,
+     "n": 1
+    },
+    "esperado": 110
    }
-  },
-  "unidad": "M",
-  "dec": 1,
-  "valor": 199.99999999999997
+  ]
  },
  {
   "id": "D07",
@@ -1086,39 +1095,38 @@ export const PREGUNTAS = [
   "uso": [
    "desafio"
   ],
-  "tiempo": 60,
+  "tiempo": 45,
   "leccion": "valor_tiempo",
   "tipo": "concepto",
-  "enunciado": "¿Qué prefieres: $100 M hoy o $115 M dentro de un año? Exiges ganar 20 % al año.",
+  "enunciado": "Opción 1: $100 M hoy. Opción 2: $125 M dentro de un año. Tu plata puede ganar 20 % al año. ¿Cuál conviene?",
   "opciones": [
    {
-    "t": "Los $115 M: es más plata",
-    "porque": "Es más plata en pesos de dentro de un año. Traída a hoy (÷ 1,2) vale menos que 100."
+    "t": "La de hoy: la plata de hoy siempre gana",
+    "porque": "La plata de hoy vale más, pero aquí 125 supera los 120 que tendrías."
    },
    {
     "t": "Da igual",
-    "porque": "Daría igual solo si los $115 M valieran hoy exactamente $100 M (con TMAR del 15 %)."
+    "porque": "Daría igual con $120 M en un año."
    },
    {
-    "t": "No se puede saber sin la inflación",
-    "porque": "La TMAR ya permite comparar las dos opciones."
+    "t": "No se puede saber",
+    "porque": "Sí se puede: 100 + 20 % = 120, y 125 es más."
    },
    {
-    "t": "Los $100 M hoy: los $115 M valen hoy unos $95,8 M"
+    "t": "La de un año: los $100 M de hoy solo llegarían a $120 M"
    }
   ],
   "correcta": 3,
-  "explicacion": "115 ÷ 1,2 ≈ 95,8 < 100. Mejor la plata hoy.",
+  "explicacion": "100 + 20 % = 120 < 125. Esta vez conviene esperar.",
   "chequeos": [
    {
-    "formula": "vp",
+    "formula": "vf",
     "datos": {
-     "monto": 115,
+     "monto": 100,
      "tasa": 0.2,
      "n": 1
     },
-    "esperado": 95.83,
-    "tol": 0.01
+    "esperado": 120
    }
   ]
  },
@@ -1132,14 +1140,14 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "valor_tiempo",
   "tipo": "calculo",
-  "enunciado": "Si exiges ganar 10 % al año, ¿cuánto deberías recibir dentro de un año para que te dé igual que tener $50 M hoy?",
+  "enunciado": "Tu plata puede ganar 10 % al año. ¿Cuánto deberían pagarte dentro de un año para que te dé lo mismo que recibir $50 M hoy?",
   "opciones": [
    {
     "t": "$55 M"
    },
    {
     "t": "$60 M",
-    "porque": "Sumaste 10 dos veces."
+    "porque": "Sumaste $10 M; el 10 % de 50 es 5."
    },
    {
     "t": "$50 M",
@@ -1147,11 +1155,11 @@ export const PREGUNTAS = [
    },
    {
     "t": "$45,45 M",
-    "porque": "Descontaste en vez de capitalizar."
+    "porque": "Dividiste; aquí hay que sumar el 10 %."
    }
   ],
   "correcta": 0,
-  "explicacion": "50 × 1,1 = $55 M. A eso se le llama valor equivalente.",
+  "explicacion": "50 + 10 % = $55 M.",
   "calc": {
    "formula": "vf",
    "datos": {
@@ -1171,43 +1179,42 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 90,
+  "tiempo": 60,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Montar el negocio cuesta $150 M. Devuelve $110 M el año 1 y $121 M el año 2. Exiges 10 % al año. ¿Cuál es el VPN?",
+  "enunciado": "Un negocio cuesta $100 M hoy y devuelve $132 M en un año. Como tu plata podría ganar 10 % en otra parte, esos $132 M valen hoy $120 M. ¿Cuánto gana el negocio en pesos de hoy, después de restar lo que cuesta?",
   "opciones": [
    {
-    "t": "$50 M"
+    "t": "$20 M"
    },
    {
-    "t": "$81 M",
-    "porque": "Sumaste los flujos sin descontarlos."
+    "t": "$32 M",
+    "porque": "Restaste sin pasar a pesos de hoy: usa los $120 M."
    },
    {
-    "t": "$200 M",
-    "porque": "Olvidaste restar la inversión."
+    "t": "$120 M",
+    "porque": "Te faltó restar lo que cuesta ($100 M)."
    },
    {
-    "t": "$60 M",
-    "porque": "Descontaste los dos flujos un solo año."
+    "t": "$−20 M",
+    "porque": "Restaste al revés: 120 − 100 es positivo."
    }
   ],
   "correcta": 0,
-  "explicacion": "VP = 100 + 100 = 200. VPN = 200 − 150 = $50 M > 0 → se acepta.",
+  "explicacion": "120 − 100 = $20 M. Positivo: conviene. Ese resultado se llama VPN.",
   "calc": {
    "formula": "vpn",
    "datos": {
     "flujos": [
-     -150,
-     110,
-     121
+     -100,
+     132
     ],
     "tasa": 0.1
    }
   },
   "unidad": "M",
   "dec": 1,
-  "valor": 49.99999999999997
+  "valor": 19.999999999999986
  },
  {
   "id": "E02",
@@ -1216,42 +1223,42 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 60,
+  "tiempo": 75,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Inviertes $100 M y recibes $132 M dentro de un año. Exiges 20 % al año. ¿Cuál es el VPN?",
+  "enunciado": "Inviertes $100 M y recibes $150 M dentro de un año. Tu plata podría ganar 25 % en otra parte. Pasa los $150 M a pesos de hoy (÷ 1,25) y resta lo invertido. ¿Cuánto da?",
   "opciones": [
    {
-    "t": "$10 M"
+    "t": "$20 M"
    },
    {
-    "t": "$5,6 M",
-    "porque": "Le restaste el 20 % a 132; hay que dividir entre 1,2."
+    "t": "$12,5 M",
+    "porque": "Le restaste el 25 % a 150; hay que dividir entre 1,25."
    },
    {
-    "t": "$110 M",
-    "porque": "Ese es el VP de los flujos: falta restar la inversión."
+    "t": "$120 M",
+    "porque": "Ese es el valor hoy de lo que recibes; falta restar los $100 M."
    },
    {
-    "t": "$32 M",
-    "porque": "No descontaste el flujo."
+    "t": "$50 M",
+    "porque": "No pasaste los $150 M a pesos de hoy."
    }
   ],
   "correcta": 0,
-  "explicacion": "132 ÷ 1,2 = 110. VPN = 110 − 100 = $10 M.",
+  "explicacion": "150 ÷ 1,25 = 120. 120 − 100 = $20 M: gana más que tu mínimo. Conviene.",
   "calc": {
    "formula": "vpn",
    "datos": {
     "flujos": [
      -100,
-     132
+     150
     ],
-    "tasa": 0.2
+    "tasa": 0.25
    }
   },
   "unidad": "M",
   "dec": 1,
-  "valor": 10
+  "valor": 20
  },
  {
   "id": "E03",
@@ -1260,73 +1267,29 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 75,
-  "leccion": "tir",
-  "tipo": "calculo",
-  "enunciado": "Inviertes $100 M y recibes $121 M al cabo de 2 años (nada en el año 1). ¿Qué rentabilidad anual rinde (TIR)?",
-  "opciones": [
-   {
-    "t": "21 %",
-    "porque": "Esa es la ganancia total de los 2 años, no la tasa anual."
-   },
-   {
-    "t": "10 %"
-   },
-   {
-    "t": "10,5 %",
-    "porque": "Promediaste 21 % entre 2; con interés compuesto no funciona así."
-   },
-   {
-    "t": "0 %",
-    "porque": "Que el año 1 sea cero no hace cero la TIR."
-   }
-  ],
-  "correcta": 1,
-  "explicacion": "100 × 1,1² = 121, así que la tasa que hace VPN = 0 es 10 %.",
-  "calc": {
-   "formula": "tir",
-   "datos": {
-    "flujos": [
-     -100,
-     0,
-     121
-    ]
-   }
-  },
-  "unidad": "%",
-  "dec": 1,
-  "valor": 9.999999999999998
- },
- {
-  "id": "E04",
-  "bloque": "E",
-  "uso": [
-   "desafio",
-   "duelo"
-  ],
   "tiempo": 60,
   "leccion": "tir",
   "tipo": "calculo",
-  "enunciado": "Inviertes $200 M y recibes $250 M dentro de un año. ¿Qué rentabilidad anual tiene (TIR)?",
+  "enunciado": "Inviertes $200 M y en un año recibes $250 M. ¿Qué porcentaje ganaste? (ganancia ÷ lo invertido)",
   "opciones": [
+   {
+    "t": "20 %",
+    "porque": "Dividiste entre 250; se divide entre lo invertido (200)."
+   },
    {
     "t": "25 %"
    },
    {
-    "t": "125 %",
-    "porque": "Dividiste 250 entre 200 sin restar 1."
-   },
-   {
-    "t": "20 %",
-    "porque": "Dividiste la ganancia entre 250; se divide entre lo invertido (200)."
-   },
-   {
     "t": "50 %",
-    "porque": "Esa es la ganancia en millones, no la tasa."
+    "porque": "Esa es la ganancia en millones, no el porcentaje."
+   },
+   {
+    "t": "125 %",
+    "porque": "Dividiste 250 entre 200 sin restar lo invertido."
    }
   ],
-  "correcta": 0,
-  "explicacion": "250 ÷ 200 = 1,25 → TIR = 25 %.",
+  "correcta": 1,
+  "explicacion": "Ganancia = 50. 50 ÷ 200 = 25 %. Ese % por año es la rentabilidad del negocio (TIR).",
   "calc": {
    "formula": "tir",
    "datos": {
@@ -1341,6 +1304,49 @@ export const PREGUNTAS = [
   "valor": 24.99999999999999
  },
  {
+  "id": "E04",
+  "bloque": "E",
+  "uso": [
+   "desafio",
+   "duelo"
+  ],
+  "tiempo": 60,
+  "leccion": "tir",
+  "tipo": "calculo",
+  "enunciado": "Inviertes $50 M y en un año recibes $60 M. ¿Qué porcentaje ganaste? (ganancia ÷ lo invertido)",
+  "opciones": [
+   {
+    "t": "20 %"
+   },
+   {
+    "t": "120 %",
+    "porque": "Dividiste 60 entre 50 sin restar lo invertido."
+   },
+   {
+    "t": "10 %",
+    "porque": "Esa es la ganancia en millones, no el porcentaje."
+   },
+   {
+    "t": "16,7 %",
+    "porque": "Dividiste la ganancia entre 60; se divide entre lo invertido (50)."
+   }
+  ],
+  "correcta": 0,
+  "explicacion": "Ganancia = 10. 10 ÷ 50 = 20 %.",
+  "calc": {
+   "formula": "tir",
+   "datos": {
+    "flujos": [
+     -50,
+     60
+    ]
+   }
+  },
+  "unidad": "%",
+  "dec": 1,
+  "valor": 19.999999999999986
+ },
+ {
   "id": "E05",
   "bloque": "E",
   "uso": [
@@ -1349,26 +1355,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "tir",
   "tipo": "concepto",
-  "enunciado": "Un negocio rinde 18 % al año (TIR) y tú exiges mínimo 15 % (TMAR). ¿Qué se decide?",
+  "enunciado": "Un negocio rinde 18 % al año. Tú exiges ganar mínimo 15 % al año. ¿Te conviene?",
   "opciones": [
    {
-    "t": "Se acepta: rinde más de lo mínimo exigido (y su VPN es positivo)"
+    "t": "Sí: rinde más que lo mínimo que exiges"
    },
    {
-    "t": "Es indiferente",
-    "porque": "Sería indiferente si la TIR fuera igual a la TMAR."
+    "t": "Da igual",
+    "porque": "Daría igual si rindiera exactamente 15 %."
    },
    {
-    "t": "Se acepta solo si la TIR supera el 20 %",
-    "porque": "La vara es la TMAR (15 %), no un número arbitrario."
+    "t": "Solo si rinde más de 20 %",
+    "porque": "Tu mínimo es 15 %, no 20 %."
    },
    {
-    "t": "Se rechaza: 18 % es poco",
-    "porque": "Lo que importa es comparar con la TMAR, y 18 % > 15 %."
+    "t": "No: 18 % es poco",
+    "porque": "Lo que importa es compararlo con tu mínimo, y 18 es más que 15."
    }
   ],
   "correcta": 0,
-  "explicacion": "TIR > TMAR ⇔ VPN > 0 (en proyectos convencionales)."
+  "explicacion": "Comparar lo que rinde el negocio (TIR) con lo mínimo que exiges (TMAR) es una forma de decidir."
  },
  {
   "id": "E06",
@@ -1380,26 +1386,26 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "bc",
   "tipo": "calculo",
-  "enunciado": "Los beneficios del proyecto valen hoy $300 M y sus costos (inversión incluida) valen hoy $250 M. ¿Cuál es la relación B/C?",
+  "enunciado": "En pesos de hoy, un negocio cuesta $250 M y devuelve $300 M. ¿Cuántos pesos devuelve por cada peso que cuesta? (devuelve ÷ cuesta)",
   "opciones": [
    {
     "t": "1,2"
    },
    {
     "t": "0,83",
-    "porque": "Invertiste la división: es beneficios ÷ costos."
+    "porque": "Dividiste al revés: es lo que devuelve ÷ lo que cuesta."
    },
    {
     "t": "50",
-    "porque": "Eso es el VPN (una resta), no la relación."
+    "porque": "Esa es la resta (300 − 250), no la división."
    },
    {
     "t": "0,2",
-    "porque": "Calculaste (300 − 250) ÷ 250: eso no es la B/C."
+    "porque": "Dividiste solo la ganancia (50 ÷ 250); falta el peso que se recupera."
    }
   ],
   "correcta": 0,
-  "explicacion": "300 ÷ 250 = 1,2 > 1 → se acepta.",
+  "explicacion": "300 ÷ 250 = 1,2: devuelve $1,20 por cada $1. Más de 1: conviene. Se llama relación beneficio/costo (B/C).",
   "calc": {
    "formula": "bcDirecto",
    "datos": {
@@ -1420,26 +1426,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "bc",
   "tipo": "concepto",
-  "enunciado": "Un proyecto tiene B/C = 0,9. ¿Qué se puede decir de su VPN?",
+  "enunciado": "En pesos de hoy, un negocio devuelve $0,90 por cada $1 que cuesta. ¿Conviene?",
   "opciones": [
    {
-    "t": "Es positivo pero pequeño",
-    "porque": "B/C < 1 significa beneficios < costos, es decir, VPN < 0."
+    "t": "Sí, porque devuelve algo",
+    "porque": "Devolver 90 centavos por cada peso es perder 10 centavos."
    },
    {
-    "t": "Es igual a 0,9",
-    "porque": "La B/C es una razón; el VPN está en pesos."
+    "t": "Sí, porque está cerca de 1",
+    "porque": "Cerca no basta: sigue perdiendo plata."
    },
    {
     "t": "No se puede saber",
-    "porque": "Con B/C < 1 se sabe que el VPN es negativo."
+    "porque": "Sí se puede: si devuelve menos de $1 por cada $1, pierde."
    },
    {
-    "t": "Es negativo: los beneficios no alcanzan a cubrir los costos"
+    "t": "No: devuelve menos de lo que cuesta"
    }
   ],
   "correcta": 3,
-  "explicacion": "B/C > 1 ⇔ VPN > 0; B/C < 1 ⇔ VPN < 0."
+  "explicacion": "Más de 1: gana. Menos de 1: pierde."
  },
  {
   "id": "E08",
@@ -1448,88 +1454,73 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 75,
+  "tiempo": 45,
   "leccion": "pr",
   "tipo": "calculo",
-  "enunciado": "Se invierten $90 M y el negocio deja $40 M cada año durante 3 años. ¿En cuántos años se recupera la inversión (sin descontar)?",
+  "enunciado": "Inviertes $90 M y el negocio deja $30 M cada año. ¿En cuántos años recuperas lo invertido?",
   "opciones": [
    {
-    "t": "2,25 años"
+    "t": "3 años"
    },
    {
-    "t": "2,5 años",
-    "porque": "Faltan 10 de 40: eso es 0,25 de año, no 0,5."
+    "t": "9 años",
+    "porque": "Dividiste 90 entre 10; cada año deja 30."
+   },
+   {
+    "t": "4 años",
+    "porque": "Al terminar el año 3 ya juntaste los $90 M."
    },
    {
     "t": "2 años",
-    "porque": "Al final del año 2 llevas 80: faltan 10."
-   },
-   {
-    "t": "3 años",
-    "porque": "Se recupera durante el año 3, no al final."
+    "porque": "En 2 años solo llevas $60 M; faltan 30."
    }
   ],
   "correcta": 0,
-  "explicacion": "Al final del año 2 se recuperan 80. Faltan 10 de los 40 del año 3: 10 ÷ 40 = 0,25 → 2,25 años.",
+  "explicacion": "30 + 30 + 30 = 90: en 3 años vuelve la plata. Eso es el periodo de recuperación.",
   "calc": {
    "formula": "pr",
    "datos": {
     "flujos": [
      -90,
-     40,
-     40,
-     40
+     30,
+     30,
+     30
     ]
    }
   },
   "unidad": "años",
-  "dec": 2,
-  "valor": 2.25
+  "dec": 0,
+  "valor": 3
  },
  {
   "id": "E09",
   "bloque": "E",
   "uso": [
-   "desafio",
-   "duelo"
+   "desafio"
   ],
-  "tiempo": 90,
+  "tiempo": 45,
   "leccion": "pr",
-  "tipo": "calculo",
-  "enunciado": "Se invierten $150 M y el negocio deja $110 M el año 1 y $121 M el año 2. Exiges 10 % al año. ¿En cuántos años se recupera la inversión DESCONTADA a hoy?",
+  "tipo": "concepto",
+  "enunciado": "¿Qué dice el \"tiempo de recuperación\" de un negocio?",
   "opciones": [
    {
-    "t": "1,33 años",
-    "porque": "Ese es el periodo simple: no descontaste los flujos."
+    "t": "Cuánto gana el negocio en total",
+    "porque": "Un negocio puede recuperar rápido y ganar poco."
    },
    {
-    "t": "1,5 años"
+    "t": "Qué tan rápido vuelve la plata invertida"
    },
    {
-    "t": "1,41 años",
-    "porque": "Usaste el faltante descontado (50) pero el flujo sin descontar (121)."
+    "t": "Cuántos clientes tendrá",
+    "porque": "Eso viene del estudio de mercado."
    },
    {
-    "t": "2 años",
-    "porque": "Se recupera antes de terminar el año 2."
+    "t": "El porcentaje que rinde por año",
+    "porque": "Eso es la rentabilidad, no el tiempo."
    }
   ],
   "correcta": 1,
-  "explicacion": "VP año 1 = 100, VP año 2 = 100. Tras el año 1 faltan 50: 50 ÷ 100 = 0,5 → 1,5 años.",
-  "calc": {
-   "formula": "prd",
-   "datos": {
-    "flujos": [
-     -150,
-     110,
-     121
-    ],
-    "tasa": 0.1
-   }
-  },
-  "unidad": "años",
-  "dec": 2,
-  "valor": 1.5000000000000002
+  "explicacion": "Sirve para saber qué tan rápido vuelve la plata, no si el negocio es bueno."
  },
  {
   "id": "E10",
@@ -1541,26 +1532,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "vpn",
   "tipo": "concepto",
-  "enunciado": "Si el VPN de un proyecto es exactamente 0, significa que…",
+  "enunciado": "Pasando todo a pesos de hoy, un negocio queda exactamente en $0 después de restar lo que cuesta. ¿Qué significa?",
   "opciones": [
    {
-    "t": "No gana nada: mejor no invertir",
-    "porque": "Ganar la TMAR sí es ganar: es justo lo mínimo que exigías."
+    "t": "Pierde toda la plata",
+    "porque": "No pierde: recupera lo invertido y gana tu mínimo."
    },
    {
-    "t": "Su TIR es 0 %",
-    "porque": "TIR = 0 % sería no ganar nada; VPN = 0 implica TIR = TMAR."
+    "t": "Es el mejor negocio posible",
+    "porque": "Es apenas suficiente, no el mejor."
    },
    {
-    "t": "Rinde exactamente la TMAR (su TIR es igual a la TMAR)"
+    "t": "Gana justo lo mínimo que exigías: da lo mismo hacerlo o no"
    },
    {
-    "t": "Pierde toda la inversión",
-    "porque": "VPN = 0 significa que recupera la inversión más la TMAR."
+    "t": "No gana nada, ni siquiera el mínimo",
+    "porque": "Sí gana: justo lo mínimo que exigías."
    }
   ],
   "correcta": 2,
-  "explicacion": "VPN = 0 → indiferente: el proyecto paga la inversión y exactamente la TMAR."
+  "explicacion": "En $0 (VPN = 0), el negocio devuelve lo invertido más justo tu mínimo exigido."
  },
  {
   "id": "E11",
@@ -1571,26 +1562,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "tir",
   "tipo": "concepto",
-  "enunciado": "¿Qué es la TIR?",
+  "enunciado": "Un negocio rinde 8 % al año y tú exiges mínimo 10 %. ¿Qué haces?",
   "opciones": [
    {
-    "t": "La utilidad dividida entre las ventas",
-    "porque": "Ese es el margen, un dato contable."
+    "t": "Invierto, porque 8 % es positivo",
+    "porque": "Hay que compararlo con tu mínimo (10 %), no con cero."
    },
    {
-    "t": "La TMAR que exige el inversionista",
-    "porque": "La TMAR se exige; la TIR la da el proyecto."
+    "t": "Invierto: algo gana",
+    "porque": "Gana, pero menos que tu mínimo: otra opción te daría más."
    },
    {
-    "t": "El tiempo que tarda en recuperar la inversión",
-    "porque": "Ese es el periodo de recuperación."
+    "t": "Da igual",
+    "porque": "Daría igual si rindiera 10 %."
    },
    {
-    "t": "La rentabilidad propia del negocio: la tasa con la que el VPN queda en cero"
+    "t": "No invierto: rinde menos de lo que exijo"
    }
   ],
   "correcta": 3,
-  "explicacion": "La TIR es la rentabilidad propia del proyecto. Se compara con la TMAR."
+  "explicacion": "Si el negocio rinde menos que tu mínimo, la inversión segura es mejor."
  },
  {
   "id": "F01",
@@ -1602,26 +1593,26 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "criterios",
   "tipo": "concepto",
-  "enunciado": "Solo puedes hacer UNO de dos proyectos (excluyentes) y hay plata para cualquiera. Exiges 12 %. A: VPN $50 M, TIR 20 %. B: VPN $30 M, TIR 35 %. ¿Cuál eliges?",
+  "enunciado": "Solo puedes hacer UNO de dos negocios. A deja $50 M de ganancia en pesos de hoy y rinde 20 % al año. B deja $30 M y rinde 35 % al año. ¿Cuál escoges?",
   "opciones": [
    {
     "t": "Los dos",
-    "porque": "Son excluyentes: solo se puede uno."
+    "porque": "Solo se puede uno."
    },
    {
-    "t": "B, porque tiene mayor TIR",
-    "porque": "La TIR es un %: no dice cuánto valor crea. B es más pequeño."
+    "t": "B: tiene el porcentaje más alto",
+    "porque": "Un % alto sobre poca plata puede dejar menos. A deja 50; B, solo 30."
    },
    {
-    "t": "Ninguno, se contradicen",
-    "porque": "Que se contradigan no impide decidir: manda el VPN."
+    "t": "Ninguno",
+    "porque": "Los dos ganan: escoge el que deja más plata."
    },
    {
-    "t": "A, porque crea más valor (mayor VPN)"
+    "t": "A: deja más plata, aunque su porcentaje sea menor"
    }
   ],
   "correcta": 3,
-  "explicacion": "Ante un conflicto entre proyectos excluyentes, el VPN es el criterio que manda."
+  "explicacion": "Cuando solo se puede uno, gana el que deja más plata en pesos de hoy (mayor VPN)."
  },
  {
   "id": "F02",
@@ -1632,26 +1623,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "criterios",
   "tipo": "concepto",
-  "enunciado": "En un proyecto normal (se invierte al inicio y luego entra plata cada año), si el VPN es mayor que 0, ¿qué pasa también?",
+  "enunciado": "Solo puedes escoger una opción: ganar 50 % sobre $100 o ganar 20 % sobre $1.000. ¿Cuál deja más plata?",
   "opciones": [
    {
-    "t": "B/C < 1",
-    "porque": "B/C < 1 equivale a VPN < 0."
+    "t": "Dejan lo mismo",
+    "porque": "Una deja 50 y la otra 200."
    },
    {
-    "t": "TIR < TMAR",
-    "porque": "Si la TIR fuera menor que la TMAR, el VPN sería negativo."
+    "t": "El 50 %: es un porcentaje más alto",
+    "porque": "El 50 % de 100 son solo $50."
    },
    {
-    "t": "TIR > TMAR y B/C > 1"
+    "t": "El 20 % sobre $1.000: son $200, contra $50"
    },
    {
-    "t": "PR menor a un año",
-    "porque": "El PR no está atado al signo del VPN."
+    "t": "No se puede saber",
+    "porque": "Sí se puede: calcula cuánta plata deja cada una."
    }
   ],
   "correcta": 2,
-  "explicacion": "En proyectos convencionales, VPN, TIR y B/C siempre coinciden en aceptar o rechazar un proyecto solo."
+  "explicacion": "Por eso, para escoger entre negocios, se mira la plata que dejan y no solo el porcentaje."
  },
  {
   "id": "F03",
@@ -1662,26 +1653,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "pr",
   "tipo": "concepto",
-  "enunciado": "Un proyecto recupera la inversión en 1 año (PR simple), pero su VPN es −$5 M. ¿Qué haces?",
+  "enunciado": "Un negocio recupera la inversión en solo 1 año, pero en pesos de hoy termina perdiendo $5 M. ¿Qué haces?",
   "opciones": [
    {
-    "t": "Lo acepto: recupera rapidísimo",
-    "porque": "El PR mide liquidez, no rentabilidad. VPN < 0 destruye valor."
+    "t": "Lo hago: recupera rapidísimo",
+    "porque": "Recupera rápido, pero al final deja pérdida."
    },
    {
-    "t": "Me es indiferente",
-    "porque": "Sería indiferente con VPN = 0, no con VPN negativo."
+    "t": "Me da igual",
+    "porque": "Daría igual si quedara en 0, no con pérdida."
    },
    {
-    "t": "Lo rechazo: recuperar rápido no significa crear valor"
+    "t": "No lo hago: recuperar rápido no es lo mismo que ganar"
    },
    {
-    "t": "Lo acepto si la TIR es positiva",
-    "porque": "Una TIR positiva pero menor que la TMAR da VPN < 0."
+    "t": "Lo hago si me gusta el negocio",
+    "porque": "La decisión se toma con los números."
    }
   ],
   "correcta": 2,
-  "explicacion": "El PR responde \"¿en cuánto tiempo vuelve la plata?\", no \"¿conviene?\"."
+  "explicacion": "El tiempo de recuperación responde \"¿qué tan rápido vuelve la plata?\", no \"¿conviene?\"."
  },
  {
   "id": "F04",
@@ -1690,29 +1681,29 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 75,
+  "tiempo": 60,
   "leccion": "restriccion",
   "tipo": "concepto",
-  "enunciado": "Presupuesto $100 M. Proyectos INDEPENDIENTES: A (inversión $100 M, VPN $30 M), B (inversión $50 M, VPN $20 M), C (inversión $50 M, VPN $18 M). ¿Qué haces?",
+  "enunciado": "Tienes $100 M. Tres negocios que se pueden combinar: A cuesta $100 M y gana $30 M. B cuesta $50 M y gana $20 M. C cuesta $50 M y gana $18 M. ¿Qué haces?",
   "opciones": [
    {
-    "t": "B y C: VPN total $38 M"
+    "t": "B y C: caben juntos y ganan $38 M"
    },
    {
-    "t": "Solo A, el de mayor VPN",
-    "porque": "A usa todo el presupuesto y suma 30; B + C cabe y suma 38."
+    "t": "Solo A, el que más gana",
+    "porque": "A gana 30; B + C caben en los $100 M y ganan 38."
    },
    {
     "t": "A y B",
-    "porque": "Cuestan 150: no alcanza el presupuesto."
+    "porque": "Cuestan $150 M: no alcanza."
    },
    {
-    "t": "Solo B, el de mejor VPN por peso invertido",
-    "porque": "Sobran 50 que pueden ir a C y sumar 18 más."
+    "t": "Solo B",
+    "porque": "Sobran $50 M que pueden ir a C y ganar 18 más."
    }
   ],
   "correcta": 0,
-  "explicacion": "Con restricción de capital se maximiza el VPN TOTAL de la combinación que cabe en el presupuesto.",
+  "explicacion": "Con presupuesto limitado se busca la combinación que quepa y sume más.",
   "chequeos": [
    {
     "formula": "suma",
@@ -1742,55 +1733,29 @@ export const PREGUNTAS = [
   "uso": [
    "desafio"
   ],
-  "tiempo": 60,
+  "tiempo": 45,
   "leccion": "criterios",
   "tipo": "concepto",
-  "enunciado": "Un negocio invierte 100, recibe 230 y luego tiene que volver a poner 132. Por eso sale con dos TIR distintas (10 % y 20 %). ¿Con qué indicador decides?",
+  "enunciado": "Dos socios discuten. Uno dice: \"Escojamos el negocio con el porcentaje más alto\". El otro: \"Escojamos el que deje más plata en pesos de hoy\". Si solo pueden hacer uno, ¿quién tiene razón?",
   "opciones": [
    {
-    "t": "El periodo de recuperación",
-    "porque": "El PR no mide rentabilidad."
+    "t": "Ninguno: hay que escoger el que recupere más rápido",
+    "porque": "Recuperar rápido no dice cuánto gana."
    },
    {
-    "t": "La TIR mayor (20 %)",
-    "porque": "Ninguna de las dos TIR es \"la\" rentabilidad del proyecto."
+    "t": "El primero",
+    "porque": "Un % alto sobre poca plata puede dejar menos ganancia."
    },
    {
-    "t": "El promedio de las dos TIR",
-    "porque": "Promediar TIR no tiene sentido financiero."
+    "t": "Ninguno: hay que escoger el más barato",
+    "porque": "El más barato no siempre gana más."
    },
    {
-    "t": "El VPN: da una sola respuesta clara cuando la TIR confunde"
+    "t": "El segundo: lo que importa es cuánta plata deja"
    }
   ],
   "correcta": 3,
-  "explicacion": "Con flujos no convencionales pueden aparecer varias TIR. El VPN siempre da una sola respuesta.",
-  "chequeos": [
-   {
-    "formula": "vpn",
-    "datos": {
-     "flujos": [
-      -100,
-      230,
-      -132
-     ],
-     "tasa": 0.1
-    },
-    "esperado": 0
-   },
-   {
-    "formula": "vpn",
-    "datos": {
-     "flujos": [
-      -100,
-      230,
-      -132
-     ],
-     "tasa": 0.2
-    },
-    "esperado": 0
-   }
-  ]
+  "explicacion": "Entre negocios de los que solo se puede uno, manda la plata en pesos de hoy (el VPN)."
  },
  {
   "id": "F06",
@@ -1801,26 +1766,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "criterios",
   "tipo": "concepto",
-  "enunciado": "Solo puedes hacer uno de dos proyectos. A tiene mayor VPN y B mayor TIR, y los cálculos están bien. ¿Por qué puede pasar?",
+  "enunciado": "El negocio A deja más plata en pesos de hoy, pero el negocio B tiene un porcentaje de ganancia más alto. ¿Cómo puede pasar?",
   "opciones": [
    {
-    "t": "Porque alguno está mal calculado",
-    "porque": "Puede pasar con cálculos correctos."
+    "t": "Alguno está mal calculado",
+    "porque": "Pasa seguido con cálculos correctos."
    },
    {
-    "t": "Porque la TMAR es negativa",
-    "porque": "No tiene que ver con el signo de la TMAR."
+    "t": "Es imposible",
+    "porque": "Es muy común con negocios de distinto tamaño."
    },
    {
-    "t": "Por diferencias de tamaño de la inversión o de cuándo llegan los flujos"
+    "t": "B es más pequeño: gana un % alto, pero sobre menos plata"
    },
    {
-    "t": "Nunca pasa",
-    "porque": "Pasa seguido con proyectos de distinta escala."
+    "t": "Porque A tiene más empleados",
+    "porque": "El número de empleados no explica la diferencia."
    }
   ],
   "correcta": 2,
-  "explicacion": "Un proyecto pequeño puede tener una TIR altísima y crear poco valor en pesos. Por eso manda el VPN."
+  "explicacion": "Un negocio pequeño puede tener un % altísimo y dejar poca plata."
  },
  {
   "id": "F07",
@@ -1828,29 +1793,29 @@ export const PREGUNTAS = [
   "uso": [
    "desafio"
   ],
-  "tiempo": 45,
+  "tiempo": 60,
   "leccion": "criterios",
   "tipo": "concepto",
-  "enunciado": "TMAR 12 %. Proyecto: VPN −$5 M, TIR 10 %, B/C 0,95. ¿Decisión?",
+  "enunciado": "Exiges ganar mínimo 12 % al año. Un negocio: en pesos de hoy pierde $5 M, rinde 10 % al año y devuelve $0,95 por cada $1. ¿Qué decides?",
   "opciones": [
    {
-    "t": "Indiferente",
-    "porque": "Sería indiferente con VPN = 0."
+    "t": "Me da igual",
+    "porque": "Daría igual si quedara en 0."
    },
    {
-    "t": "Aceptar: la B/C es casi 1",
-    "porque": "\"Casi 1\" sigue siendo menor que 1: destruye valor."
+    "t": "Hacerlo: $0,95 es casi $1",
+    "porque": "Casi no basta: pierde 5 centavos por cada peso."
    },
    {
-    "t": "Aceptar: la TIR es positiva",
-    "porque": "La TIR se compara con la TMAR (12 %), no con cero."
+    "t": "Hacerlo: rinde 10 %, que es positivo",
+    "porque": "Hay que compararlo con tu mínimo (12 %), no con cero."
    },
    {
-    "t": "Rechazar: los tres indicadores coinciden"
+    "t": "No hacerlo: las tres cifras dicen que no alcanza"
    }
   ],
   "correcta": 3,
-  "explicacion": "VPN < 0, TIR < TMAR y B/C < 1 dicen lo mismo: rechazar."
+  "explicacion": "Pérdida en pesos de hoy, rinde menos que el mínimo y devuelve menos de $1: las tres dicen que no."
  },
  {
   "id": "F08",
@@ -1862,11 +1827,11 @@ export const PREGUNTAS = [
   "tiempo": 75,
   "leccion": "restriccion",
   "tipo": "calculo",
-  "enunciado": "Presupuesto $150 M, proyectos INDEPENDIENTES. A: inversión $100 M, VPN $40 M. B: inversión $50 M, VPN $25 M. C: inversión $100 M, VPN $45 M. ¿Cuál es el MAYOR VPN total que cabe en el presupuesto?",
+  "enunciado": "Tienes $150 M. Negocios que se pueden combinar: A cuesta $100 M y gana $40 M. B cuesta $50 M y gana $25 M. C cuesta $100 M y gana $45 M. ¿Cuál es la MAYOR ganancia total que cabe en tu plata?",
   "opciones": [
    {
     "t": "$45 M",
-    "porque": "Escogiste solo el de mayor VPN individual (C) y dejaste $50 M sin usar."
+    "porque": "Escogiste solo C y te sobraron $50 M para B."
    },
    {
     "t": "$70 M"
@@ -1877,11 +1842,11 @@ export const PREGUNTAS = [
    },
    {
     "t": "$65 M",
-    "porque": "A + B cabe, pero C + B cabe y suma más."
+    "porque": "A + B cabe, pero C + B también cabe y gana más."
    }
   ],
   "correcta": 1,
-  "explicacion": "Combinaciones que caben en $150 M: A + B = 65; C + B = 70. Lo mejor es C + B = $70 M.",
+  "explicacion": "Caben A + B (gana 65) o C + B (gana 70). Lo mejor: C + B = $70 M.",
   "calc": {
    "formula": "suma",
    "datos": {
@@ -1902,75 +1867,41 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 90,
+  "tiempo": 60,
   "leccion": "criterios",
   "tipo": "calculo",
-  "enunciado": "Solo puedes hacer uno de dos proyectos y exiges 10 %. A: inviertes $100 M y recibes $132 M en un año (TIR 32 %). B: inviertes $200 M y recibes $253 M en un año (TIR 26,5 %). ¿Cuál es el VPN del que conviene escoger?",
+  "enunciado": "Solo puedes hacer uno. En pesos de hoy: A recibe $120 M y cuesta $100 M. B recibe $230 M y cuesta $200 M. ¿Cuánto gana el que conviene escoger?",
   "opciones": [
    {
     "t": "$30 M"
    },
    {
-    "t": "$53 M",
-    "porque": "No descontaste el flujo de B."
+    "t": "$50 M",
+    "porque": "Sumaste las dos ganancias; solo se puede uno."
    },
    {
     "t": "$230 M",
-    "porque": "Olvidaste restar la inversión."
+    "porque": "Olvidaste restar lo que cuesta."
    },
    {
     "t": "$20 M",
-    "porque": "Ese es el VPN de A: lo escogiste por la TIR, pero entre excluyentes manda el VPN."
+    "porque": "Esa es la ganancia de A; B gana más."
    }
   ],
   "correcta": 0,
-  "explicacion": "VPN A = 132 ÷ 1,1 − 100 = 20. VPN B = 253 ÷ 1,1 − 200 = 30. Se escoge B: $30 M, aunque su TIR sea menor.",
+  "explicacion": "A gana 120 − 100 = 20. B gana 230 − 200 = 30. Se escoge B: $30 M.",
   "calc": {
-   "formula": "vpn",
+   "formula": "suma",
    "datos": {
-    "flujos": [
-     -200,
-     253
-    ],
-    "tasa": 0.1
+    "valores": [
+     230,
+     -200
+    ]
    }
   },
   "unidad": "M",
   "dec": 1,
-  "valor": 29.99999999999997,
-  "chequeos": [
-   {
-    "formula": "tir",
-    "datos": {
-     "flujos": [
-      -100,
-      132
-     ]
-    },
-    "esperado": 32
-   },
-   {
-    "formula": "tir",
-    "datos": {
-     "flujos": [
-      -200,
-      253
-     ]
-    },
-    "esperado": 26.5
-   },
-   {
-    "formula": "vpn",
-    "datos": {
-     "flujos": [
-      -100,
-      132
-     ],
-     "tasa": 0.1
-    },
-    "esperado": 20
-   }
-  ]
+  "valor": 30
  },
  {
   "id": "G01",
@@ -1979,40 +1910,40 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 75,
+  "tiempo": 60,
   "leccion": "equilibrio",
   "tipo": "calculo",
-  "enunciado": "Costos fijos: $20.000.000 al año. Cada caja de café se vende a $50.000 y cuesta $30.000 producirla. ¿Cuántas cajas hay que vender para el punto de equilibrio?",
+  "enunciado": "Los gastos fijos de la tienda son $2.000.000 al mes. Cada caja de café se vende a $50.000 y cuesta $30.000 hacerla, así que cada caja deja $20.000. ¿Cuántas cajas hay que vender al mes para no ganar ni perder?",
   "opciones": [
    {
-    "t": "667 unidades",
-    "porque": "Dividiste entre el costo variable; se divide entre el margen."
+    "t": "67 unidades",
+    "porque": "Dividiste entre lo que cuesta hacerla; se divide entre lo que deja cada caja."
    },
    {
-    "t": "1.000 unidades"
+    "t": "100 unidades"
    },
    {
-    "t": "250 unidades",
-    "porque": "Sumaste precio y costo variable; hay que restarlos."
+    "t": "25 unidades",
+    "porque": "Sumaste precio y costo; hay que restarlos."
    },
    {
-    "t": "400 unidades",
-    "porque": "Dividiste entre el precio; se divide entre el margen (50.000 − 30.000)."
+    "t": "40 unidades",
+    "porque": "Dividiste entre el precio; se divide entre lo que deja cada caja ($20.000)."
    }
   ],
   "correcta": 1,
-  "explicacion": "Margen por caja = 20.000. 20.000.000 ÷ 20.000 = 1.000 cajas.",
+  "explicacion": "2.000.000 ÷ 20.000 = 100 cajas. Ese es el punto de equilibrio.",
   "calc": {
    "formula": "peUnidades",
    "datos": {
-    "cf": 20000000,
+    "cf": 2000000,
     "precio": 50000,
     "cv": 30000
    }
   },
   "unidad": "u",
   "dec": 0,
-  "valor": 1000
+  "valor": 100
  },
  {
   "id": "G02",
@@ -2024,19 +1955,19 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "equilibrio",
   "tipo": "calculo",
-  "enunciado": "Costos fijos $30 M. De cada $100 que se venden, $40 quedan para cubrir esos costos (margen de contribución 40 %). ¿Cuánto hay que vender para no perder?",
+  "enunciado": "Gastos fijos: $30 M. De cada $100 que vendes, te quedan $40 para pagar esos gastos. ¿Cuánto hay que vender para no perder? (Pista: 30 ÷ 0,40)",
   "opciones": [
    {
     "t": "$12 M",
-    "porque": "Multiplicaste 30 × 40 %; hay que dividir."
+    "porque": "Multiplicaste 30 × 0,40; hay que dividir."
    },
    {
     "t": "$42 M",
-    "porque": "Le sumaste el 40 % a los costos fijos."
+    "porque": "Le sumaste 40 % a los gastos fijos."
    },
    {
     "t": "$50 M",
-    "porque": "Dividiste entre 60 % (el costo variable), no entre el margen."
+    "porque": "Dividiste entre 0,60; se divide entre lo que te queda (0,40)."
    },
    {
     "t": "$75 M"
@@ -2064,26 +1995,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "sensibilidad",
   "tipo": "concepto",
-  "enunciado": "¿Qué es el análisis de sensibilidad?",
+  "enunciado": "¿Qué es analizar la \"sensibilidad\" de un proyecto?",
   "opciones": [
    {
-    "t": "Pedir otra cotización de la maquinaria",
-    "porque": "Eso mejora un insumo, pero no es el análisis."
+    "t": "Preguntarles a los clientes si les gusta el producto",
+    "porque": "Eso es estudio de mercado."
    },
    {
-    "t": "Cambiar todas las variables al tiempo",
-    "porque": "Eso es análisis de escenarios."
+    "t": "Cambiar todas las cifras al tiempo",
+    "porque": "Eso es armar escenarios."
    },
    {
-    "t": "Cambiar UNA variable a la vez (precio, ventas, costos) y ver cuánto cambia el VPN"
+    "t": "Cambiar UNA cifra a la vez (precio, ventas o costos) y ver cuánto cambia la ganancia"
    },
    {
-    "t": "Calcular la TIR dos veces para confirmarla",
-    "porque": "Eso es verificar un cálculo, no analizar riesgo."
+    "t": "Repetir las cuentas para ver si están bien",
+    "porque": "Eso es revisar, no medir el riesgo."
    }
   ],
   "correcta": 2,
-  "explicacion": "La sensibilidad muestra de qué variable depende más el resultado."
+  "explicacion": "Así se descubre de qué cifra depende más el resultado."
  },
  {
   "id": "G04",
@@ -2095,7 +2026,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "sensibilidad",
   "tipo": "calculo",
-  "enunciado": "El VPN es $60 M. Cada 1 % que baja el precio, el VPN baja $5 M. ¿Cuánto puede bajar el precio antes de que el VPN llegue a 0?",
+  "enunciado": "En pesos de hoy, el negocio gana $60 M. Cada 1 % que baja el precio, esa ganancia baja $5 M. ¿Cuánto puede bajar el precio antes de que la ganancia llegue a 0?",
   "opciones": [
    {
     "t": "300 %",
@@ -2103,18 +2034,18 @@ export const PREGUNTAS = [
    },
    {
     "t": "60 %",
-    "porque": "Ese es el VPN, no la caída en %."
+    "porque": "Esa es la ganancia, no la caída en %."
    },
    {
     "t": "5 %",
-    "porque": "Ese es el impacto de cada punto, no la caída máxima."
+    "porque": "Eso es lo que baja la ganancia por cada 1 %, no la caída máxima."
    },
    {
     "t": "12 %"
    }
   ],
   "correcta": 3,
-  "explicacion": "60 ÷ 5 = 12 %. Con una caída mayor del 12 %, el VPN se vuelve negativo.",
+  "explicacion": "60 ÷ 5 = 12 %. Si el precio baja más de 12 %, el negocio pierde.",
   "calc": {
    "formula": "caidaCritica",
    "datos": {
@@ -2133,47 +2064,47 @@ export const PREGUNTAS = [
    "desafio",
    "duelo"
   ],
-  "tiempo": 90,
+  "tiempo": 75,
   "leccion": "escenarios",
   "tipo": "calculo",
-  "enunciado": "Tres futuros posibles: malo (VPN −$20 M, 20 % de probabilidad), normal ($30 M, 50 %) y bueno ($70 M, 30 %). ¿Cuál es el VPN esperado?",
+  "enunciado": "Tres futuros: malo, pierdes $20 M (25 % de probabilidad); normal, ganas $20 M (50 %); bueno, ganas $40 M (25 %). Multiplica cada resultado por su probabilidad y suma. ¿Cuánto se espera ganar?",
   "opciones": [
    {
-    "t": "$80 M",
-    "porque": "Sumaste los tres VPN."
+    "t": "$13,3 M",
+    "porque": "Promediaste los tres sin tener en cuenta las probabilidades."
    },
    {
-    "t": "$32 M"
+    "t": "$15 M"
    },
    {
-    "t": "$26,7 M",
-    "porque": "Promediaste sin ponderar por la probabilidad."
+    "t": "$40 M",
+    "porque": "Sumaste los tres resultados sin multiplicar por la probabilidad."
    },
    {
-    "t": "$21 M",
-    "porque": "Solo ponderaste el escenario optimista."
+    "t": "$10 M",
+    "porque": "Solo tomaste el futuro normal (20 × 50 %)."
    }
   ],
   "correcta": 1,
-  "explicacion": "−20 × 0,2 + 30 × 0,5 + 70 × 0,3 = −4 + 15 + 21 = $32 M.",
+  "explicacion": "−20 × 0,25 + 20 × 0,5 + 40 × 0,25 = −5 + 10 + 10 = $15 M.",
   "calc": {
    "formula": "esperado",
    "datos": {
     "valores": [
      -20,
-     30,
-     70
+     20,
+     40
     ],
     "probs": [
-     0.2,
+     0.25,
      0.5,
-     0.3
+     0.25
     ]
    }
   },
   "unidad": "M",
   "dec": 1,
-  "valor": 32
+  "valor": 15
  },
  {
   "id": "G06",
@@ -2184,7 +2115,7 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "sensibilidad",
   "tipo": "concepto",
-  "enunciado": "Si cada variable sube 10 % (una a la vez), el VPN cambia así: precio +$50 M, costo de materia prima −$20 M, inversión −$10 M. ¿Cuál es la variable más sensible?",
+  "enunciado": "Si cada cifra sube 10 % (una a la vez), la ganancia cambia así: precio, +$50 M; materia prima, −$20 M; inversión, −$10 M. ¿Qué cifra hay que estimar con más cuidado?",
   "opciones": [
    {
     "t": "La materia prima",
@@ -2192,18 +2123,18 @@ export const PREGUNTAS = [
    },
    {
     "t": "La inversión",
-    "porque": "Es la que MENOS mueve el VPN (10)."
+    "porque": "Es la que MENOS mueve la ganancia (10)."
    },
    {
     "t": "Todas por igual",
-    "porque": "Con el mismo 10 % de cambio, el impacto es distinto en cada una."
+    "porque": "Con el mismo 10 % de cambio, cada una mueve la ganancia distinto."
    },
    {
-    "t": "El precio"
+    "t": "El precio: es la que más mueve la ganancia"
    }
   ],
   "correcta": 3,
-  "explicacion": "El precio mueve 50, el mayor cambio: hay que estimarlo con mucho cuidado."
+  "explicacion": "La cifra que más mueve el resultado es la más delicada: hay que estimarla con mucho cuidado."
  },
  {
   "id": "G07",
@@ -2214,26 +2145,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "sensibilidad",
   "tipo": "concepto",
-  "enunciado": "El VPN dio $40 M. ¿Para qué hacer análisis de riesgo?",
+  "enunciado": "Las cuentas dicen que el negocio gana $40 M. ¿Para qué probar qué pasa si algo sale mal?",
   "opciones": [
    {
-    "t": "Para subir el VPN",
-    "porque": "El análisis de riesgo no cambia el VPN; muestra qué tan frágil es."
+    "t": "Para que dé más ganancia",
+    "porque": "Probar no cambia la ganancia: muestra qué tan frágil es."
    },
    {
-    "t": "Porque se basa en supuestos: si cambian el precio, las ventas o los costos, el VPN podría volverse negativo"
+    "t": "Porque son estimaciones: si cambian el precio, las ventas o los costos, la ganancia podría volverse pérdida"
    },
    {
-    "t": "No hace falta: un VPN positivo es una garantía",
-    "porque": "El VPN es una estimación: depende de supuestos que pueden fallar."
+    "t": "No hace falta: si dio ganancia, está garantizada",
+    "porque": "Las cifras son estimaciones que pueden fallar."
    },
    {
-    "t": "Solo porque lo exige el banco",
-    "porque": "Lo necesita cualquiera que tome la decisión."
+    "t": "Solo porque lo pide el banco",
+    "porque": "Lo necesita cualquiera que vaya a decidir."
    }
   ],
   "correcta": 1,
-  "explicacion": "Un VPN positivo con supuestos frágiles puede ser una mala apuesta."
+  "explicacion": "Una ganancia que depende de cifras frágiles puede ser una mala apuesta."
  },
  {
   "id": "G08",
@@ -2244,26 +2175,26 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "escenarios",
   "tipo": "concepto",
-  "enunciado": "¿Cuál es la diferencia entre análisis de sensibilidad y análisis de escenarios?",
+  "enunciado": "¿En qué se diferencian el análisis de sensibilidad y el de escenarios?",
   "opciones": [
    {
-    "t": "La sensibilidad mueve una variable a la vez; los escenarios mueven varias juntas"
+    "t": "Sensibilidad mueve una cifra a la vez; escenarios mueve varias juntas (futuro malo, normal, bueno)"
    },
    {
-    "t": "La sensibilidad mueve varias y los escenarios una",
+    "t": "Sensibilidad mueve varias y escenarios una",
     "porque": "Es al revés."
    },
    {
     "t": "Son lo mismo",
-    "porque": "Uno aísla una variable y el otro combina varias."
+    "porque": "Uno mueve una sola cifra y el otro combina varias."
    },
    {
-    "t": "Los escenarios solo se usan para calcular la TIR",
-    "porque": "Los escenarios sirven para cualquier indicador."
+    "t": "Los escenarios solo sirven para el precio",
+    "porque": "Pueden combinar cualquier cifra."
    }
   ],
   "correcta": 0,
-  "explicacion": "Pesimista, probable y optimista son combinaciones de varias variables a la vez."
+  "explicacion": "Malo, normal y bueno son combinaciones de varias cifras a la vez."
  }
 ];
 export const ESTRELLA = [
@@ -2276,16 +2207,16 @@ export const ESTRELLA = [
   "tiempo": 30,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Sello VPN+ · Inviertes $100 M y recibes $120 M en el año 1. TMAR 10 %. ¿Cómo es el VPN?",
+  "enunciado": "Pones $100 M en un negocio y en un año te devuelve $120 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más?",
   "opciones": [
    {
-    "t": "VPN > 0: ¡crea valor!"
+    "t": "El negocio gana más: ¡conviene!"
    },
    {
-    "t": "VPN = 0: rinde justo la TMAR"
+    "t": "Dan lo mismo: da igual"
    },
    {
-    "t": "VPN < 0: destruye valor"
+    "t": "La opción segura gana más: no conviene"
    }
   ],
   "correcta": 0,
@@ -2295,7 +2226,7 @@ export const ESTRELLA = [
   ],
   "tasa": 0.1,
   "valor": 9.09090909090908,
-  "explicacion": "VP de lo que recibes = 109,09; VPN = 9,09."
+  "explicacion": "La opción segura te daría $110 M; el negocio, $120 M: el negocio gana más."
  },
  {
   "id": "S02",
@@ -2306,16 +2237,16 @@ export const ESTRELLA = [
   "tiempo": 30,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Sello VPN+ · Inviertes $100 M y recibes $115 M en el año 1. TMAR 20 %. ¿Cómo es el VPN?",
+  "enunciado": "Pones $100 M en un negocio y en un año te devuelve $115 M. Si en cambio dejas esa plata en una opción segura que paga 20 % al año, ¿qué gana más?",
   "opciones": [
    {
-    "t": "VPN > 0: ¡crea valor!"
+    "t": "El negocio gana más: ¡conviene!"
    },
    {
-    "t": "VPN = 0: rinde justo la TMAR"
+    "t": "Dan lo mismo: da igual"
    },
    {
-    "t": "VPN < 0: destruye valor"
+    "t": "La opción segura gana más: no conviene"
    }
   ],
   "correcta": 2,
@@ -2325,7 +2256,7 @@ export const ESTRELLA = [
   ],
   "tasa": 0.2,
   "valor": -4.166666666666657,
-  "explicacion": "VP de lo que recibes = 95,83; VPN = −4,17."
+  "explicacion": "La opción segura te daría $120 M; el negocio, $115 M: la opción segura gana más."
  },
  {
   "id": "S03",
@@ -2336,27 +2267,26 @@ export const ESTRELLA = [
   "tiempo": 30,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Sello VPN+ · Inviertes $100 M y recibes $121 M en el año 2. TMAR 10 %. ¿Cómo es el VPN?",
+  "enunciado": "Pones $100 M en un negocio y en un año te devuelve $110 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más?",
   "opciones": [
    {
-    "t": "VPN > 0: ¡crea valor!"
+    "t": "El negocio gana más: ¡conviene!"
    },
    {
-    "t": "VPN = 0: rinde justo la TMAR"
+    "t": "Dan lo mismo: da igual"
    },
    {
-    "t": "VPN < 0: destruye valor"
+    "t": "La opción segura gana más: no conviene"
    }
   ],
   "correcta": 1,
   "flujos": [
    -100,
-   0,
-   121
+   110
   ],
   "tasa": 0.1,
   "valor": -1.4210854715202004e-14,
-  "explicacion": "VP de lo que recibes = 100; VPN = 0."
+  "explicacion": "La opción segura te daría $110 M; el negocio, $110 M: dan lo mismo."
  },
  {
   "id": "S04",
@@ -2367,27 +2297,26 @@ export const ESTRELLA = [
   "tiempo": 30,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Sello VPN+ · Inviertes $50 M y recibes $30 M en el año 1 y $30 M en el año 2. TMAR 10 %. ¿Cómo es el VPN?",
+  "enunciado": "Pones $200 M en un negocio y en un año te devuelve $230 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más?",
   "opciones": [
    {
-    "t": "VPN > 0: ¡crea valor!"
+    "t": "El negocio gana más: ¡conviene!"
    },
    {
-    "t": "VPN = 0: rinde justo la TMAR"
+    "t": "Dan lo mismo: da igual"
    },
    {
-    "t": "VPN < 0: destruye valor"
+    "t": "La opción segura gana más: no conviene"
    }
   ],
   "correcta": 0,
   "flujos": [
-   -50,
-   30,
-   30
+   -200,
+   230
   ],
   "tasa": 0.1,
-  "valor": 2.0661157024793333,
-  "explicacion": "VP de lo que recibes = 52,07; VPN = 2,07."
+  "valor": 9.090909090909065,
+  "explicacion": "La opción segura te daría $220 M; el negocio, $230 M: el negocio gana más."
  },
  {
   "id": "S05",
@@ -2398,27 +2327,26 @@ export const ESTRELLA = [
   "tiempo": 30,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Sello VPN+ · Inviertes $200 M y recibes $110 M en el año 1 y $110 M en el año 2. TMAR 10 %. ¿Cómo es el VPN?",
+  "enunciado": "Pones $50 M en un negocio y en un año te devuelve $60 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más?",
   "opciones": [
    {
-    "t": "VPN > 0: ¡crea valor!"
+    "t": "El negocio gana más: ¡conviene!"
    },
    {
-    "t": "VPN = 0: rinde justo la TMAR"
+    "t": "Dan lo mismo: da igual"
    },
    {
-    "t": "VPN < 0: destruye valor"
+    "t": "La opción segura gana más: no conviene"
    }
   ],
-  "correcta": 2,
+  "correcta": 0,
   "flujos": [
-   -200,
-   110,
-   110
+   -50,
+   60
   ],
   "tasa": 0.1,
-  "valor": -9.090909090909122,
-  "explicacion": "VP de lo que recibes = 190,91; VPN = −9,09."
+  "valor": 4.54545454545454,
+  "explicacion": "La opción segura te daría $55 M; el negocio, $60 M: el negocio gana más."
  },
  {
   "id": "S06",
@@ -2429,101 +2357,101 @@ export const ESTRELLA = [
   "tiempo": 30,
   "leccion": "vpn",
   "tipo": "calculo",
-  "enunciado": "Sello VPN+ · Inviertes $100 M y recibes $125 M en el año 1. TMAR 25 %. ¿Cómo es el VPN?",
+  "enunciado": "Pones $200 M en un negocio y en un año te devuelve $210 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más?",
   "opciones": [
    {
-    "t": "VPN > 0: ¡crea valor!"
+    "t": "El negocio gana más: ¡conviene!"
    },
    {
-    "t": "VPN = 0: rinde justo la TMAR"
+    "t": "Dan lo mismo: da igual"
    },
    {
-    "t": "VPN < 0: destruye valor"
+    "t": "La opción segura gana más: no conviene"
    }
   ],
-  "correcta": 1,
+  "correcta": 2,
   "flujos": [
-   -100,
-   125
+   -200,
+   210
   ],
-  "tasa": 0.25,
-  "valor": 0,
-  "explicacion": "VP de lo que recibes = 100; VPN = 0."
+  "tasa": 0.1,
+  "valor": -9.090909090909093,
+  "explicacion": "La opción segura te daría $220 M; el negocio, $210 M: la opción segura gana más."
  }
 ];
 export const MG_ENTRA = [
  {
-  "t": "Compra de la maquinaria",
+  "t": "Comprar la maquinaria",
   "entra": true,
-  "porque": "Inversión del año 0."
+  "porque": "Es plata que sale al inicio."
  },
  {
-  "t": "La depreciación como salida de dinero",
+  "t": "El desgaste de la máquina, como si fuera plata que sale",
   "entra": false,
-  "porque": "No sale plata: solo reduce impuestos."
+  "porque": "No sale plata: la máquina ya se pagó."
  },
  {
-  "t": "Estudio de mercado que ya se pagó",
+  "t": "Un estudio que ya se pagó y no se devuelve",
   "entra": false,
-  "porque": "Costo hundido."
+  "porque": "Ya se gastó, hagan o no el proyecto."
  },
  {
-  "t": "Capital de trabajo",
+  "t": "La plata para arrancar (mercancía y caja)",
   "entra": true,
-  "porque": "Inversión que se recupera al final."
+  "porque": "Sale al inicio y vuelve al final."
  },
  {
-  "t": "Valor de salvamento al final",
+  "t": "Lo que reciben al vender la máquina usada al final",
   "entra": true,
-  "porque": "Entrada del último año."
+  "porque": "Es plata que entra el último año."
  },
  {
-  "t": "Impuesto de renta",
+  "t": "Los impuestos",
   "entra": true,
-  "porque": "Es una salida real de dinero."
+  "porque": "Es plata que sale de verdad."
  },
  {
-  "t": "Arriendo que dejas de recibir por usar tu lote",
+  "t": "El arriendo que dejan de recibir por usar su propio lote",
   "entra": true,
-  "porque": "Costo de oportunidad."
+  "porque": "Es plata que dejan de ganar."
  },
  {
-  "t": "Intereses del préstamo (en el flujo del proyecto)",
+  "t": "Lo que la competencia gastó en publicidad",
   "entra": false,
-  "porque": "El flujo del proyecto no incluye la financiación."
+  "porque": "No es plata de su proyecto."
  },
  {
-  "t": "Ventas del año",
+  "t": "Las ventas del año",
   "entra": true,
-  "porque": "Ingreso operativo."
+  "porque": "Es plata que entra."
  },
  {
-  "t": "Sueldo del administrador",
+  "t": "El sueldo del administrador",
   "entra": true,
-  "porque": "Gasto operativo."
+  "porque": "Es plata que sale cada mes."
  }
 ];
 export const MG_CARRERA = [
  {
-  "t": "VPN = +$20 M",
-  "a": "Aceptar",
-  "b": "Rechazar",
+  "t": "El negocio gana más que tu mínimo exigido",
+  "a": "Conviene",
+  "b": "No conviene",
   "ok": 0
  },
  {
-  "t": "TIR 12 %, TMAR 15 %",
-  "a": "Aceptar",
-  "b": "Rechazar",
+  "t": "Rinde 12 % al año y tú exiges 15 %",
+  "a": "Conviene",
+  "b": "No conviene",
   "ok": 1
  },
  {
-  "t": "B/C = 1,3",
-  "a": "Aceptar",
-  "b": "Rechazar",
+  "t": "Devuelve $1,30 por cada $1 que cuesta",
+  "a": "Conviene",
+  "b": "No conviene",
   "ok": 0
  },
  {
-  "t": "$110 M que te dan en 1 año, exigiendo 10 %: ¿cuánto valen hoy?",
+  "t": "$110 M dentro de un año, si tu plata gana 10 %: ¿cuánto valen hoy?",
   "a": "$100 M",
   "b": "$110 M",
   "ok": 0,
@@ -2538,33 +2466,33 @@ export const MG_CARRERA = [
   }
  },
  {
-  "t": "Recuperar la inversión con plata traída a hoy, ¿tarda igual o más que sin traerla?",
-  "a": "Sí",
-  "b": "No",
+  "t": "¿Qué vale más: un peso hoy o un peso dentro de un año?",
+  "a": "Hoy",
+  "b": "En un año",
   "ok": 0
  },
  {
-  "t": "VPN = 0 implica…",
-  "a": "TIR = TMAR",
-  "b": "TIR = 0 %",
+  "t": "En pesos de hoy el negocio queda en $0",
+  "a": "Gana justo tu mínimo",
+  "b": "Pierde todo",
   "ok": 0
  },
  {
-  "t": "Dos proyectos de los que solo puedes escoger uno y los indicadores se contradicen: manda…",
-  "a": "La TIR",
-  "b": "El VPN",
+  "t": "Solo puedes hacer uno: ¿el de % más alto o el que deja más plata?",
+  "a": "Más %",
+  "b": "Más plata",
   "ok": 1
  },
  {
-  "t": "B/C = 0,8",
-  "a": "VPN > 0",
-  "b": "VPN < 0",
+  "t": "Devuelve $0,80 por cada $1 que cuesta",
+  "a": "Gana",
+  "b": "Pierde",
   "ok": 1
  },
  {
-  "t": "Tus $100 M ganan 20 % en 1 año: ¿cuánto tienes?",
+  "t": "$100 M que ganan 20 % en un año: ¿cuánto tienes?",
   "a": "$120 M",
-  "b": "$83 M",
+  "b": "$80 M",
   "ok": 0,
   "chequeo": {
    "formula": "vf",
@@ -2577,16 +2505,16 @@ export const MG_CARRERA = [
   }
  },
  {
-  "t": "El PR mide…",
-  "a": "Rentabilidad",
-  "b": "Liquidez",
+  "t": "El tiempo de recuperación dice…",
+  "a": "Cuánto gana",
+  "b": "Qué tan rápido vuelve la plata",
   "ok": 1
  }
 ];
 export const MG_TERMOMETRO = [
  {
   "id": "T1",
-  "enunciado": "Con un precio de $10.000 el VPN es $120 M. Por cada $1.000 que baja el precio, el VPN baja $40 M. ¿Con qué precio el VPN llega a 0?",
+  "enunciado": "Con un precio de $10.000 el negocio gana $120 M. Por cada $1.000 que baja el precio, la ganancia baja $40 M. ¿Con qué precio la ganancia llega a 0?",
   "base": 10000,
   "vpnBase": 120,
   "porPaso": 40,
@@ -2595,12 +2523,12 @@ export const MG_TERMOMETRO = [
   "max": 10000,
   "salto": 250,
   "unidad": "$",
-  "explicacion": "120 ÷ 40 = 3 bajadas de $1.000 → precio crítico $7.000.",
+  "explicacion": "120 ÷ 40 = 3 bajadas de $1.000. Precio límite: $7.000. Por debajo de eso, el negocio pierde.",
   "respuesta": 7000
  },
  {
   "id": "T2",
-  "enunciado": "Vendiendo 1.000 unidades el VPN es $90 M. Por cada 100 unidades menos, el VPN baja $15 M. ¿Con cuántas unidades el VPN llega a 0?",
+  "enunciado": "Vendiendo 1.000 unidades el negocio gana $90 M. Por cada 100 unidades menos, la ganancia baja $15 M. ¿Con cuántas unidades la ganancia llega a 0?",
   "base": 1000,
   "vpnBase": 90,
   "porPaso": 15,
@@ -2609,48 +2537,45 @@ export const MG_TERMOMETRO = [
   "max": 1000,
   "salto": 50,
   "unidad": "u",
-  "explicacion": "90 ÷ 15 = 6 bajadas de 100 → 400 unidades.",
+  "explicacion": "90 ÷ 15 = 6 bajadas de 100. Límite: 400 unidades.",
   "respuesta": 400
  },
  {
   "id": "T3",
-  "enunciado": "Con una TMAR del 10 % el VPN es $50 M. Por cada punto que sube la TMAR, el VPN baja unos $10 M. ¿Con qué TMAR el VPN llega a 0 (≈ la TIR)?",
-  "base": 10,
+  "enunciado": "Si hacer cada unidad cuesta $4.000, el negocio gana $50 M. Por cada $500 que sube ese costo, la ganancia baja $10 M. ¿Con qué costo la ganancia llega a 0?",
+  "base": 4000,
   "vpnBase": 50,
   "porPaso": 10,
-  "paso": 1,
-  "min": 10,
-  "max": 30,
-  "salto": 1,
-  "unidad": "%",
-  "explicacion": "50 ÷ 10 = 5 puntos → 15 %, que es aproximadamente la TIR (aproximación lineal).",
-  "respuesta": 15
+  "paso": 500,
+  "min": 4000,
+  "max": 9000,
+  "salto": 250,
+  "unidad": "$",
+  "explicacion": "50 ÷ 10 = 5 subidas de $500. Costo límite: $6.500. Por encima de eso, el negocio pierde.",
+  "respuesta": 6500
  }
 ];
 export const MG_ORDENA = [
  {
   "id": "O1",
-  "titulo": "Ordena el flujo de caja operativo",
+  "titulo": "Ordena las cuentas de un año",
   "pasos": [
-   "Ingresos",
-   "− Costos y gastos",
-   "− Depreciación",
-   "= Utilidad antes de impuestos",
+   "Ventas",
+   "− Gastos",
+   "= Ganancia antes de impuestos",
    "− Impuestos",
-   "= Utilidad neta",
-   "+ Depreciación",
-   "= Flujo de caja operativo"
+   "= Plata que queda en el bolsillo"
   ]
  },
  {
   "id": "O2",
-  "titulo": "Ordena los pasos de la evaluación financiera",
+  "titulo": "Ordena los pasos para decidir si un negocio conviene",
   "pasos": [
-   "Definir horizonte e insumos",
-   "Armar el flujo de caja",
-   "Descontar a la TMAR",
-   "Calcular VPN, TIR, B/C y PR",
-   "Analizar el riesgo",
+   "Reunir las cifras (costos, ventas, años)",
+   "Calcular la plata que entra y sale cada año",
+   "Pasar todo a pesos de hoy",
+   "Ver si gana más que el mínimo exigido",
+   "Probar qué pasa si algo sale mal",
    "Decidir"
   ]
  }
@@ -2702,40 +2627,40 @@ export const JEFE = {
   }
  ],
  "fase1": {
-  "pregunta": "La empresa tiene $400 M disponibles y solo puede hacer UNO. ¿Cuál aprueba la Junta?",
+  "pregunta": "Hay $400 M y solo se puede aprobar UNO. ¿Cuál aprueba la Junta?",
   "correcto": "P1",
   "justificaciones": [
    {
-    "t": "Tiene el mayor VPN: es el que más valor crea en pesos de hoy",
+    "t": "Es el que deja más plata en pesos de hoy",
     "ok": true
    },
    {
-    "t": "Tiene la mayor TIR",
-    "porque": "La mayor TIR es de P2, y la TIR no ve el tamaño del proyecto."
+    "t": "Es el que rinde el porcentaje más alto",
+    "porque": "Ese es P2, pero es pequeño: deja menos plata ($38,8 M contra $97,4 M)."
    },
    {
-    "t": "Recupera la inversión más rápido",
-    "porque": "El más rápido es P3, y tiene VPN negativo."
+    "t": "Es el que recupera la plata más rápido",
+    "porque": "Ese es P3, y en pesos de hoy pierde plata."
    }
   ]
  },
  "fase2": {
-  "pregunta": "¡Giro! El presupuesto se recorta a $100 M. ¿Cuál aprueba ahora la Junta?",
+  "pregunta": "¡Giro! El banco recortó el presupuesto: solo hay $100 M. ¿Cuál aprueba ahora la Junta?",
   "correcto": "P2",
   "justificaciones": [
    {
-    "t": "Es el único que cabe en el presupuesto con VPN > 0",
+    "t": "Es el único que cabe y además gana plata en pesos de hoy",
     "ok": true
    },
    {
-    "t": "P3, porque cabe y recupera en menos de un año",
-    "porque": "P3 cabe, pero su VPN es negativo: destruye valor."
+    "t": "Cabe y recupera la plata en menos de un año",
+    "porque": "Ese es P3: cabe, pero en pesos de hoy pierde plata."
    },
    {
-    "t": "Ninguno, porque P1 ya no cabe",
-    "porque": "P2 cabe y crea valor."
+    "t": "Ninguno sirve, porque P1 ya no cabe",
+    "porque": "P2 cabe y gana plata."
    }
   ]
  },
- "giroAlterno": "Plan B del presentador: \"¡La TMAR sube al 25 %!\" → P1 (TIR ≈ 23 %) queda con VPN negativo y P2 (TIR ≈ 38 %) sigue siendo positivo → P2."
+ "giroAlterno": "Plan B del presentador: \"¡Ahora la Junta exige ganar mínimo 25 % al año!\" P1 rinde 23 % (no alcanza) y P2 rinde 38 % (sí alcanza) → P2."
 };

@@ -39,26 +39,26 @@ function construirItem(it) {
   };
 }
 
-function textoFlujos(flujos) {
-  const inv = -flujos[0];
-  const partes = flujos.slice(1).map((f, i) => (f === 0 ? null : `$${fmtNum(f)} M en el año ${i + 1}`)).filter(Boolean);
-  return `Inviertes $${fmtNum(inv)} M y recibes ${partes.join(' y ')}`;
-}
-
+// La estrella compara el negocio contra una opción segura, a un año, sin jerga:
+// "le gana" = VPN > 0, "empata" = VPN = 0, "pierde" = VPN < 0.
 function construirEstrella(s) {
+  if (s.flujos.length !== 2) throw new Error(`${s.id}: la estrella debe ser de un solo año`);
   const v = vpn(s.tasa, s.flujos);
   const signo = Math.abs(v) < 0.005 ? 0 : Math.sign(v);
+  const inv = -s.flujos[0], recibe = s.flujos[1];
+  const seguro = inv * (1 + s.tasa);
   const opciones = [
-    { t: 'VPN > 0: ¡crea valor!' },
-    { t: 'VPN = 0: rinde justo la TMAR' },
-    { t: 'VPN < 0: destruye valor' },
+    { t: 'El negocio gana más: ¡conviene!' },
+    { t: 'Dan lo mismo: da igual' },
+    { t: 'La opción segura gana más: no conviene' },
   ];
   const correcta = signo > 0 ? 0 : signo === 0 ? 1 : 2;
+  const veredicto = signo > 0 ? 'el negocio gana más' : signo === 0 ? 'dan lo mismo' : 'la opción segura gana más';
   return {
     id: s.id, bloque: 'E', uso: ['estrella'], tiempo: 30, leccion: 'vpn', tipo: 'calculo',
-    enunciado: `Sello VPN+ · ${textoFlujos(s.flujos)}. TMAR ${fmtNum(s.tasa * 100)} %. ¿Cómo es el VPN?`,
+    enunciado: `Pones $${fmtNum(inv)} M en un negocio y en un año te devuelve $${fmtNum(recibe)} M. Si en cambio dejas esa plata en una opción segura que paga ${fmtNum(s.tasa * 100)} % al año, ¿qué gana más?`,
     opciones, correcta, flujos: s.flujos, tasa: s.tasa, valor: v,
-    explicacion: `VP de lo que recibes = ${fmtNum(v - s.flujos[0])}; VPN = ${fmtNum(v)}.`,
+    explicacion: `La opción segura te daría $${fmtNum(seguro)} M; el negocio, $${fmtNum(recibe)} M: ${veredicto}.`,
   };
 }
 
@@ -85,7 +85,7 @@ writeFileSync(join(RAIZ, 'data', 'preguntas.js'),
 
 // ───────── Documento legible para el equipo ─────────
 const L = 'ABCD';
-const NOMBRES = { A: 'A · ¿Para qué se evalúa?', B: 'B · Insumos', C: 'C · Flujo de caja', D: 'D · Valor del dinero en el tiempo', E: 'E · Indicadores', F: 'F · Criterios de decisión', G: 'G · Riesgo' };
+const NOMBRES = { A: 'A · ¿Para qué se evalúa?', B: 'B · Las cifras del negocio (insumos)', C: 'C · La plata que entra y sale (flujo de caja)', D: 'D · El valor del tiempo', E: 'E · ¿Conviene? (indicadores)', F: 'F · Escoger entre negocios (criterios)', G: 'G · ¿Y si algo sale mal? (riesgo)' };
 const md = [];
 md.push('# Banco de preguntas — Expedición VPN', '');
 md.push('> Archivo generado por `node tools/generar-banco.mjs`. Las respuestas numéricas las calcula el código y las verifica `node tools/verificar.mjs`. Cifras en millones de pesos ($ M) salvo que se indique otra cosa.', '');
@@ -104,18 +104,18 @@ for (const b of 'ABCDEFG') {
     md.push('', `**Explicación:** ${p.explicacion}`, '');
   }
 }
-md.push('## Chequeo de estrella "Sello VPN+" (30 s)', '');
+md.push('## Chequeo de estrella "Sello Buen Negocio" (30 s)', '');
 for (const s of estrella) md.push(`- **${s.id}.** ${s.enunciado} → **${s.opciones[s.correcta].t}** (${s.explicacion})`);
-md.push('', '## Mini-juego global 1 · ¿Entra o no entra?', '');
-for (const m of MG_ENTRA) md.push(`- ${m.t} → **${m.entra ? 'ENTRA' : 'NO ENTRA'}** (${m.porque})`);
-md.push('', '## Mini-juego global 2 · Carrera del descuento', '');
+md.push('', '## Mini-juego global 1 · ¿Cuenta o no cuenta?', '');
+for (const m of MG_ENTRA) md.push(`- ${m.t} → **${m.entra ? 'CUENTA' : 'NO CUENTA'}** (${m.porque})`);
+md.push('', '## Mini-juego global 2 · Carrera relámpago', '');
 for (const m of MG_CARRERA) md.push(`- ${m.t} → **${m.ok === 0 ? m.a : m.b}** (la otra opción: ${m.ok === 0 ? m.b : m.a})`);
 md.push('', '## Mini-juego global 3 · Termómetro del riesgo', '');
 for (const t of termometro) md.push(`- **${t.id}.** ${t.enunciado} → **${fmtNum(t.respuesta)}${t.unidad === '%' ? ' %' : t.unidad === 'u' ? ' unidades' : ''}** (${t.explicacion})`);
 md.push('', '## Mini-juego individual · Ordena', '');
 for (const o of MG_ORDENA) md.push(`- **${o.titulo}:** ${o.pasos.join(' → ')}`);
 md.push('', '## Mini-juego individual · Caza el error', '', 'Usa las preguntas con uso `caza` (C04, C10, C11).', '');
-md.push('## Jefe final · Junta Directiva del Nevado (TMAR 10 %)', '');
+md.push('## Jefe final · Junta Directiva del Nevado (mínimo exigido o TMAR: 10 %)', '');
 md.push('| Proyecto | Flujos | VPN | TIR | B/C | PR simple | PR descontado |', '|---|---|---|---|---|---|---|');
 for (const p of jefe.proyectos) md.push(`| ${p.id} ${p.nombre} | ${p.flujos.join(' / ')} | ${fmtNum(p.vpn, 1)} | ${fmtNum(p.tir, 1)} % | ${fmtNum(p.bc, 2)} | ${fmtNum(p.pr, 2)} años | ${p.prd == null ? 'no recupera' : fmtNum(p.prd, 2) + ' años'} |`);
 md.push('');

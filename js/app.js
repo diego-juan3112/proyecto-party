@@ -27,7 +27,7 @@ function portada() {
     h('div.portada',
       h('div.portada-caja',
         h('h1', 'Expedición VPN'),
-        h('p.sub', 'Del flujo de caja al VPN, rumbo al Nevado. Un juego por equipos para aprender a decidir si un proyecto conviene.'),
+        h('p.sub', 'Un juego por equipos para aprender a decidir si vale la pena meterle plata a un negocio. No hace falta saber finanzas: todo se explica en el camino.'),
         h('div.portada-opciones',
           h('button.portada-opcion', { on: { click: () => { location.search = '?modo=pantalla' + conRed(red); } } },
             h('strong', 'Proyectar la partida'), h('span', 'Para el presentador: abre el tablero y el código QR.')),
