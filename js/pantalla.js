@@ -18,11 +18,11 @@ const NOMBRES_FASE = {
   bonus: 'Estrellas sorpresa', podio: 'Podio', cierre: 'Cierre', salida: 'Preguntas de salida', fin: 'Fin',
 };
 const PASO_TURNO = { tirar: 1, mover: 1, casillas: 2, resultado_turno: 3 };
-const MG_NOMBRE = { entra: '¿Entra o no entra al flujo?', carrera: 'Carrera del descuento', termometro: 'Termómetro del riesgo' };
+const MG_NOMBRE = { entra: '¿Cuenta o no cuenta?', carrera: 'Carrera relámpago', termometro: 'Termómetro del riesgo' };
 const MG_INSTR = {
-  entra: 'En el celular aparecen 10 conceptos. Toquen ENTRA si va en el flujo de caja del proyecto, o NO ENTRA si no. Gana quien acierte más y más rápido.',
-  carrera: '10 preguntas relámpago de dos botones sobre descuento y criterios. Gana quien acierte más y más rápido.',
-  termometro: 'Muevan el deslizador hasta el valor crítico. Gana quien más se acerque.',
+  entra: 'En el celular aparecen 10 cosas. Toquen CUENTA si es plata que entra o sale por hacer el proyecto, o NO CUENTA si no. Gana quien acierte más y más rápido.',
+  carrera: '10 preguntas rápidas de dos botones: ¿conviene o no conviene? Gana quien acierte más y más rápido.',
+  termometro: 'Muevan el deslizador hasta el punto donde el negocio deja de ganar. Gana quien más se acerque.',
 };
 
 function nuevoCodigo() { let c = ''; for (let i = 0; i < 4; i++) c += ALFABETO[Math.floor(Math.random() * ALFABETO.length)]; return c; }
@@ -309,7 +309,7 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
     const listos = E.filter(e => !e.tarea && !e.cola.length).length;
     switch (S.fase) {
       case 'zona_intro': return h('div',
-        h('div.icono-zona', z.icono), h('h2', z.nombre),
+        h('div.icono-zona', z.icono), h('h2', z.nombre), h('p', h('b', z.pregunta)),
         h('p.lectura', BANCO.LECCIONES[z.leccion]),
         S.evento ? h('div.evento-tarjeta', h('b', `🌎 ${S.evento.nombre}`), S.evento.texto, h('small', S.evento.vpn)) : null,
         (S.semillaPara || []).length ? h('p', `🌱 Capital semilla: ${S.semillaPara.map(s => `${motor.eq(s.id).nombre} +${s.monto}`).join(', ')}`) : null,
@@ -351,7 +351,8 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
     if (S.zona > 0) notas.push(h('div.nota-zona', '🚌 La Chiva los reparte: el último sale a 2 casillas de la estrella.'));
     return h('div.placa.llegada-zona', { style: { '--c': z.color } },
       h('div',
-        h('div.cabeza-zona', h('span.icono-zona', z.icono), h('div', h('h2', z.nombre), h('small', `Zona ${S.zona + 1} de ${CONFIG.zonas.length} · bloque ${z.bloque} del temario`))),
+        h('div.cabeza-zona', h('span.icono-zona', z.icono), h('div', h('h2', z.nombre), h('small', `Zona ${S.zona + 1} de ${CONFIG.zonas.length}`))),
+        h('p.pregunta-zona', z.pregunta),
         h('p.leccion-grande', BANCO.LECCIONES[z.leccion])),
       h('div.lado',
         S.evento ? h('div.evento-tarjeta', h('b', `🌎 ${S.evento.nombre}`), S.evento.texto, h('small', S.evento.vpn)) : null,
@@ -393,7 +394,7 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
         h('div',
           h('p', h('b', 'Lección A · ¿Para qué evaluamos?')),
           h('p', BANCO.LECCIONES.para_que),
-          h('p.nota', 'Ruta: Insumos → Flujo de caja → Valor del dinero → Indicadores → Criterios → Riesgo → Junta Directiva.'))));
+          h('p.nota', 'Ruta: las cifras del negocio → la plata que entra y sale → el valor del tiempo → ¿conviene? → escoger entre negocios → ¿y si algo sale mal? → Junta Directiva. No necesitan saber finanzas: todo se explica en el camino.'))));
   }
 
   function progreso() {
@@ -421,7 +422,7 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
     let repaso = null;
     if (mg.tipo === 'entra') repaso = h('div', h('p', h('b', 'Repaso')), h('p.nota', BANCO.MG_ENTRA.map(x => `${x.t}: ${x.entra ? 'entra' : 'no entra'}`).join(' · ')));
     if (mg.tipo === 'carrera') repaso = h('div', h('p', h('b', 'Repaso')), h('p.nota', BANCO.MG_CARRERA.map(x => `${x.t} → ${x.ok === 0 ? x.a : x.b}`).join(' · ')));
-    if (mg.tipo === 'termometro') { const T = BANCO.MG_TERMOMETRO.find(x => x.id === mg.datos.termometro); repaso = h('p', h('b', `Valor crítico: ${T.unidad === '$' ? '$' + num(T.respuesta) : T.unidad === '%' ? num(T.respuesta) + ' %' : num(T.respuesta) + ' unidades'}. `), T.explicacion); }
+    if (mg.tipo === 'termometro') { const T = BANCO.MG_TERMOMETRO.find(x => x.id === mg.datos.termometro); repaso = h('p', h('b', `Punto límite: ${T.unidad === '$' ? '$' + num(T.respuesta) : T.unidad === '%' ? num(T.respuesta) + ' %' : num(T.respuesta) + ' unidades'}. `), T.explicacion); }
     return h('div.placa',
       h('h2', `🎮 ${MG_NOMBRE[mg.tipo]}: resultados`),
       h('div.columnas', res.slice(0, 10).map(r => {
@@ -432,28 +433,30 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
       repaso);
   }
 
+  // Tabla del jefe en palabras de todos los días; la sigla va pequeña debajo, como etiqueta.
   function tablaJefe() {
     const P = BANCO.JEFE.proyectos;
     const max = k => Math.max(...P.map(p => p[k]));
     const minPR = Math.min(...P.map(p => p.pr));
-    const celda = (p, k, txt) => h('td.num' + (p[k] === max(k) ? '.mejor' : ''), txt);
-    return h('table.tabla',
-      h('thead', h('tr', h('th', 'Proyecto'), h('th.num', 'Inversión'), h('th.num', 'VPN'), h('th.num', 'TIR'), h('th.num', 'B/C'), h('th.num', 'PR simple'), h('th.num', 'PR descontado'))),
-      h('tbody', P.map(p => h('tr',
-        h('td', h('b', p.id), ' ', p.nombre),
-        h('td.num', dinero(-p.flujos[0], 0)),
-        h('td.num' + (p.vpn === max('vpn') ? '.mejor' : p.vpn < 0 ? '.malo' : ''), dinero(p.vpn)),
-        celda(p, 'tir', `${num(p.tir, 1)} %`),
-        h('td.num' + (p.bc === max('bc') ? '.mejor' : p.bc < 1 ? '.malo' : ''), num(p.bc, 2)),
-        h('td.num' + (p.pr === minPR ? '.mejor' : ''), `${num(p.pr, 2)} años`),
-        h('td.num', p.prd == null ? 'no recupera' : `${num(p.prd, 2)} años`)))));
+    const th = (txt, sigla) => h('th.num', txt, sigla ? h('small.sigla', sigla) : null);
+    const anios = x => `${num(x, 2)} ${Math.abs(x - 1) < 1e-9 ? 'año' : 'años'}`;
+    return h('div',
+      h('table.tabla',
+        h('thead', h('tr', h('th', 'Proyecto'), th('Cuesta'), th('Ganancia en pesos de hoy', 'VPN'), th('Rinde por año', 'TIR'), th('Recupera la plata en', 'PR'))),
+        h('tbody', P.map(p => h('tr',
+          h('td', h('b', p.id), ' ', p.nombre),
+          h('td.num', dinero(-p.flujos[0], 0)),
+          h('td.num' + (p.vpn === max('vpn') ? '.mejor' : p.vpn < 0 ? '.malo' : ''), dinero(p.vpn)),
+          h('td.num' + (p.tir === max('tir') ? '.mejor' : ''), `${num(p.tir, 1)} %`),
+          h('td.num' + (p.pr === minPR ? '.mejor' : ''), anios(p.pr)))))),
+      h('p.nota', 'Ganancia en pesos de hoy: lo que deja el proyecto después de devolver lo invertido y lo mínimo exigido. Si es negativa, pierde plata.'));
   }
   function escenaJefe() {
     const S = motor.S;
     const F = S.fase === 'jefe2' ? BANCO.JEFE.fase2 : BANCO.JEFE.fase1;
     return h('div.placa',
       h('h2', '🏔️ La Junta Directiva del Nevado'),
-      h('p', `TMAR ${num(BANCO.JEFE.tmar * 100)} %. Los tres proyectos son excluyentes: solo se aprueba uno.`),
+      h('p', `La Junta exige ganar mínimo ${num(BANCO.JEFE.tmar * 100)} % al año. Solo puede aprobar UNO de los tres proyectos.`),
       tablaJefe(),
       h('p', { style: { fontSize: '1.3em', marginTop: '.8em' } }, h('b', S.fase === 'jefe_intro' ? 'Lean la tabla: ¿cuál aprobarían y por qué?' : F.pregunta)),
       S.fase !== 'jefe_intro' ? progreso() : h('p.nota', 'En un minuto les llega la decisión al celular: proyecto y justificación.'));
@@ -468,7 +471,7 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
       h('p', { style: { fontSize: '1.2em' } }, h('b', `${F.correcto}: `), F.justificaciones.find(j => j.ok).t, '.'),
       h('div.columnas', BANCO.JEFE.proyectos.map(p => h('div', h('p', h('b', `${p.id} · ${votos[p.id].length} equipo(s)`)),
         h('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '.3em' } }, votos[p.id].map(r => { const e = motor.eq(r.id); return h('span', { title: e.nombre }, fichaDe(e, '.7em'), r.estrella ? '⭐' : ''); }))))),
-      fase === 1 ? h('p.nota', { style: { marginTop: '.8em' } }, 'Voceros: 20 segundos para defender su decisión. ¿Y la TIR de P2? ¿Y el PR de P3?') : h('p.nota', BANCO.JEFE.giroAlterno));
+      fase === 1 ? h('p.nota', { style: { marginTop: '.8em' } }, 'Voceros: 20 segundos para defender su decisión. ¿Y P2, que rinde el porcentaje más alto? ¿Y P3, que recupera la plata más rápido?') : h('p.nota', BANCO.JEFE.giroAlterno));
   }
 
   function escenaBonus() {
@@ -484,14 +487,14 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
   function escenaPodio() {
     const S = motor.S; const P = S.podio || [];
     const top = [P[1], P[0], P[2]].filter(Boolean);
-    const alturas = { 1: '7em', 2: '5em', 3: '3.6em' };
+    const alturas = { 1: '7.4em', 2: '5.8em', 3: '4.8em' };
     const maxAbs = Math.max(1, ...P.flatMap(p => p.flujos.slice(1).map(Math.abs)));
     return h('div',
       h('div.podio', top.map(p => { const e = motor.eq(p.id); return h('div.escalon', fichaDe(e), h('div.base', { style: { height: alturas[p.puesto] } }, `${p.puesto}.º`, h('b', e.nombre), h('small', `⭐ ${p.estrellas} · 🪙 ${p.monedas}`))); })),
       h('div.placa',
-        h('h2', { style: { fontSize: '1.7em' } }, 'El VPN de su partida'),
-        h('p.nota', `Sus monedas ganadas en cada zona, descontadas a la TMAR del ${num(CONFIG.tmar * 100)} % (inversión inicial: las ${CONFIG.monedasIniciales} monedas con que empezaron). Ganar temprano vale más que ganar tarde.`),
-        h('table.tabla', h('thead', h('tr', h('th', '#'), h('th', 'Equipo'), h('th.num', '⭐'), h('th.num', '🪙'), h('th', 'Flujo por zona (B → G)'), h('th.num', 'VPN'))),
+        h('h2', { style: { fontSize: '1.7em' } }, '¿Cuánto vale hoy su partida?'),
+        h('p.nota', `Sumamos las monedas que ganó cada equipo en cada zona, pasadas a "monedas de hoy" (con un mínimo exigido de ${num(CONFIG.tmar * 100)} % por zona), y restamos las ${CONFIG.monedasIniciales} con que empezaron. Las monedas ganadas temprano valen más que las ganadas tarde: eso es el VPN.`),
+        h('table.tabla', h('thead', h('tr', h('th', '#'), h('th', 'Equipo'), h('th.num', '⭐'), h('th.num', '🪙'), h('th', 'Monedas ganadas por zona'), h('th.num', 'Valor hoy (VPN)'))),
           h('tbody', P.map(p => { const e = motor.eq(p.id); return h('tr', h('td', p.puesto), h('td', e.nombre), h('td.num', p.estrellas), h('td.num', p.monedas),
             h('td', h('div.barra-flujos', p.flujos.slice(1).map(f => h('i' + (f < 0 ? '.neg' : ''), { title: signo(f), style: { height: `${Math.max(6, (100 * Math.abs(f)) / maxAbs)}%` } })))),
             h('td.num', num(p.vpn, 1))); })))));
@@ -499,17 +502,17 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
 
   function escenaCierre() {
     const filas = [
-      ['VPN', 'Cuánto valor crea, en pesos de hoy', 'Mayor que 0: se acepta', 'Si hay contradicción, manda'],
-      ['TIR', 'Lo que rinde por año', 'Mayor que lo exigido (TMAR): se acepta', 'No ve el tamaño del proyecto'],
-      ['B/C', 'Lo que trae ÷ lo que cuesta', 'Mayor que 1: se acepta', 'Dice lo mismo que el VPN'],
-      ['PR', 'Cuánto tarda en devolver la inversión', 'Menos tiempo: vuelve más rápido', 'No mide si es buen negocio'],
-      ['Riesgo', 'Qué pasa si cambian precio, ventas o costos', 'Buscar cuánto aguanta el negocio', 'Un VPN positivo no es garantía'],
-      ['Flujo', 'La plata que de verdad entra y sale', 'Solo lo que cambia por decidir', 'Lo ya gastado no cuenta'],
+      ['Ganancia en pesos de hoy', 'VPN', 'Lo que deja el negocio después de devolver lo invertido y lo mínimo exigido', 'Mayor que 0: conviene', 'Si las cifras no se ponen de acuerdo, manda esta'],
+      ['Rentabilidad', 'TIR', 'Cuánto gana el negocio en % por año', 'Más que tu mínimo exigido (TMAR): conviene', 'Un % alto sobre poca plata puede dejar poco'],
+      ['Beneficio/costo', 'B/C', 'Cuántos pesos devuelve por cada peso que cuesta', 'Más de 1: conviene', 'Dice lo mismo que la ganancia en pesos de hoy'],
+      ['Recuperación', 'PR', 'Cuánto tarda en volver la plata invertida', 'Menos tiempo: vuelve más rápido', 'No dice si el negocio gana'],
+      ['Riesgo', '', '¿Qué pasa si cambian el precio, las ventas o los costos?', 'Buscar hasta dónde aguanta', 'Que dé ganancia no es garantía'],
+      ['Flujo de caja', '', 'La plata que de verdad entra y sale', 'Solo cuenta lo que cambia por hacer el proyecto', 'Lo ya gastado no cuenta'],
     ];
     return h('div.placa',
       h('h2', '¿Conviene invertir? Así se decide'),
-      h('table.tabla', h('thead', h('tr', h('th', 'Indicador'), h('th', 'Qué es'), h('th', 'Regla'), h('th', 'Ojo con…'))),
-        h('tbody', filas.map(f => h('tr', h('td', h('b', f[0])), h('td', f[1]), h('td', f[2]), h('td', f[3])))))) ;
+      h('table.tabla', h('thead', h('tr', h('th', 'Idea'), h('th', 'Qué es'), h('th', 'Cuándo conviene'), h('th', 'Ojo con…'))),
+        h('tbody', filas.map(f => h('tr', h('td', h('b', f[0]), f[1] ? h('small.sigla', f[1]) : null), h('td', f[2]), h('td', f[3]), h('td', f[4]))))));
   }
   function escenaSalida() { return h('div.placa', h('h2', '✅ Tres preguntas de salida'), h('p', 'Respondan en el celular. No dan puntos: nos sirven para saber cuánto aprendieron.'), progreso()); }
   function escenaFin() {

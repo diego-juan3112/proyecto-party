@@ -6,740 +6,740 @@
 
 ## Mini-lecciones (máx. 30 s cada una)
 
-- **para_que** (39 palabras): Antes de meter plata a un negocio hay que decidir si conviene. Evaluar es comparar lo que el negocio va a devolver con lo que cuesta montarlo, recordando que la plata de hoy vale más que la de mañana.
-- **insumos** (38 palabras): Los insumos son las cifras con las que se arma el cálculo: cuánto cuesta montar el negocio, cuánto vende, cuánto gasta, los impuestos y cuántos años se mira. Si una cifra sale mal, todo el resultado sale mal.
-- **depreciacion** (37 palabras): Una máquina se desgasta con los años. La depreciación reparte su costo entre esos años: (costo − lo que valdrá al final) ÷ años de vida. No es plata que sale, pero sirve para pagar menos impuestos.
-- **impuestos** (31 palabras): El impuesto no se paga sobre lo que vendes sino sobre lo que te queda de ganancia: ventas − costos − depreciación. Ese resultado se multiplica por la tasa de impuesto.
-- **capital_trabajo** (30 palabras): Es la plata que el negocio deja "guardada" para poder operar: inventario, materia prima y caja. Sale al inicio y se recupera al final. No se desgasta como una máquina.
-- **salvamento** (26 palabras): Es lo que se puede vender un activo al terminar el proyecto, por ejemplo la máquina usada. Cuenta como plata que entra en el último año.
-- **flujo_estructura** (50 palabras): El flujo de caja es la plata que de verdad entra y sale. Se parte de ventas − costos − depreciación, se restan los impuestos y se vuelve a sumar la depreciación (esa plata no salió). En el último año también entran el salvamento y el capital de trabajo recuperado.
-- **flujo_relevante** (39 palabras): Solo cuenta lo que cambia por decidir el proyecto. Lo que ya se pagó (costo hundido) no cuenta. Lo que dejas de ganar por usar algo tuyo (costo de oportunidad) sí cuenta. Los intereses del préstamo no se restan.
-- **valor_tiempo** (34 palabras): Un peso hoy vale más que uno mañana, porque hoy lo puedes invertir. Para llevar plata futura al presente se divide entre (1 + tasa) por cada año. A eso se le llama descontar.
-- **tmar** (29 palabras): La TMAR es la ganancia mínima que le exigimos a un negocio para invertir en él. Aquí te la damos como dato y con ella se descuentan los flujos.
-- **vpn** (32 palabras): El VPN dice cuánto valor crea el proyecto, en pesos de hoy: los flujos descontados menos la inversión. Si es mayor que 0 se acepta; si es menor que 0 se rechaza.
-- **tir** (25 palabras): La TIR es la rentabilidad propia del proyecto, en % por año. Si es mayor que la TMAR se acepta; si es menor se rechaza.
-- **bc** (31 palabras): La B/C compara lo que el proyecto trae contra lo que cuesta, ambos en pesos de hoy. Si es mayor que 1 se acepta; si es menor que 1 se rechaza.
-- **pr** (34 palabras): El periodo de recuperación es cuánto tarda el proyecto en devolver la inversión. Sirve para ver liquidez y riesgo, no la rentabilidad. El descontado usa flujos traídos a hoy y tarda igual o más.
-- **criterios** (29 palabras): En un proyecto normal, VPN, TIR y B/C llegan a la misma decisión. Si no coinciden al escoger entre proyectos excluyentes, manda el VPN, porque mide valor en pesos.
-- **restriccion** (27 palabras): Con poco presupuesto y varios proyectos independientes, escoge la combinación que quepa y sume el mayor VPN total, no el proyecto que sea mejor por sí solo.
-- **sensibilidad** (25 palabras): Sensibilidad: cambias una sola cosa (precio, ventas o costos) y ves cuánto se mueve el VPN. La que más lo mueve es la más delicada.
-- **escenarios** (22 palabras): Escenarios: cambias varias cosas a la vez (pesimista, probable, optimista). Con probabilidades, el VPN esperado es cada VPN por su probabilidad, sumados.
-- **equilibrio** (22 palabras): Punto de equilibrio: cuánto hay que vender para no ganar ni perder. En unidades: costos fijos ÷ (precio − costo por unidad).
+- **para_que** (48 palabras): Evaluar un proyecto es responder una sola pregunta: ¿vale la pena meterle plata? Para saberlo se compara lo que cuesta montarlo con lo que va a devolver. Y como un peso hoy vale más que un peso dentro de un año, todo se compara en pesos de hoy.
+- **insumos** (41 palabras): Para evaluar un negocio se necesitan unas cifras básicas: cuánto cuesta montarlo, cuánto va a vender, cuánto gasta cada año, cuánto paga de impuestos y cuántos años se van a mirar. Si una de esas cifras está mal, la decisión también.
+- **depreciacion** (44 palabras): Las máquinas se desgastan. Ese desgaste (depreciación) reparte el costo de la máquina entre los años que dura: costo ÷ años. No es plata que sale del bolsillo, porque la máquina se pagó al comprarla. Solo sirve para pagar un poco menos de impuesto.
+- **impuestos** (34 palabras): El impuesto no se cobra sobre todo lo que vendes, sino sobre lo que ganas: ventas menos gastos. Si vendes 100 y gastas 60, ganas 40, y el impuesto se calcula sobre esos 40.
+- **capital_trabajo** (37 palabras): Para abrir el primer día hay que tener mercancía, materia prima y algo de efectivo en caja. Esa plata para arrancar (capital de trabajo) se pone al inicio y se recupera al final, cuando el negocio termina.
+- **salvamento** (21 palabras): Cuando el proyecto termina, las máquinas usadas todavía se pueden vender. Esa plata (valor de salvamento) entra en el último año.
+- **flujo_estructura** (42 palabras): El flujo de caja es la plata que de verdad entra y sale del negocio cada año. Entran las ventas. Salen los gastos, los impuestos y lo que se invierte. Lo que queda es lo que el negocio deja en el bolsillo.
+- **flujo_relevante** (39 palabras): Pregunta clave para cada cifra: ¿esto cambia si hago el proyecto? Lo que ya se gastó y no se recupera no cuenta. Lo que dejas de ganar por usar algo tuyo, como un local que podrías arrendar, sí cuenta.
+- **valor_tiempo** (49 palabras): Un peso hoy vale más que un peso dentro de un año, porque hoy lo puedes poner a ganar. Si una inversión segura paga 10 % al año, $100 de hoy serán $110 en un año. Al revés: $110 dentro de un año valen $100 hoy (110 ÷ 1,1).
+- **tmar** (37 palabras): Antes de invertir, cada quien decide lo mínimo que quiere ganar al año, por ejemplo lo que le pagaría una inversión segura. Ese mínimo se llama TMAR. Si un negocio no lo alcanza, no vale la pena.
+- **vpn** (42 palabras): Para saber si un negocio conviene: pasa a pesos de hoy lo que va a devolver y réstale lo que cuesta. Si queda positivo, gana más que lo mínimo que pedías: conviene. Si queda negativo, no conviene. Ese resultado se llama VPN.
+- **tir** (31 palabras): La rentabilidad de un negocio (TIR) es cuánto gana en % por año. Se compara con lo mínimo que quieres ganar: si el negocio rinde más, conviene; si rinde menos, no.
+- **bc** (33 palabras): La relación beneficio/costo (B/C) dice cuántos pesos devuelve el negocio por cada peso que cuesta, todo en pesos de hoy. Más de 1: devuelve más de lo que cuesta. Menos de 1: pierde.
+- **pr** (30 palabras): El periodo de recuperación es cuánto tarda el negocio en devolver la plata invertida. Dice qué tan rápido vuelve la plata, pero no si el negocio gana mucho o poco.
+- **criterios** (32 palabras): Si solo puedes escoger un negocio, escoge el que deja más plata en pesos de hoy. Un porcentaje alto sobre poca plata puede dejar menos que un porcentaje menor sobre mucha plata.
+- **restriccion** (32 palabras): Si tienes poco presupuesto y varios negocios que se pueden combinar, busca la combinación que quepa y sume más ganancia en total. A veces dos negocios pequeños dejan más que uno grande.
+- **sensibilidad** (41 palabras): Las cifras de un proyecto son estimaciones. Por eso se prueba qué pasa si algo sale distinto: si el precio baja, si se vende menos, si los costos suben. Mover una sola cifra a la vez se llama análisis de sensibilidad.
+- **escenarios** (29 palabras): Otra forma de medir el riesgo es imaginar tres futuros: uno malo, uno normal y uno bueno, cambiando varias cifras a la vez. Eso es el análisis de escenarios.
+- **equilibrio** (35 palabras): El punto de equilibrio es cuánto hay que vender para no ganar ni perder. Cada unidad vendida deja algo (precio menos lo que cuesta hacerla). Hay que vender las suficientes para pagar los gastos fijos.
 
 ## A · ¿Para qué se evalúa?
 
 ### A01 · Concepto · 45 s · uso: desafio, salida
 
-Tu equipo tiene el plan de negocio de una tienda de café especial. Antes de invertir, ¿qué decisión se toma con la evaluación financiera?
+Un amigo quiere abrir una tienda de café y te pide ayuda con la "evaluación financiera". ¿Qué pregunta responde esa evaluación?
 
-- A) A qué precio vender cada tinto — _El precio es un insumo que viene del estudio de mercado, no la decisión final._
-- B) De qué banco sacar el préstamo — _Eso es financiación, otra gestión (la expone otro equipo)._
-- C) Cuánta utilidad contable reportar el año 1 — _La evaluación mira todos los flujos del horizonte, no un solo año contable._
-- **D) Si conviene invertir o no: aceptar, rechazar o escoger entre alternativas** ✅
+- A) Qué nombre ponerle a la tienda — _Eso es mercadeo, no evaluación financiera._
+- B) De qué banco sacar el préstamo — _Eso es cómo conseguir la plata. Primero hay que saber si el negocio vale la pena._
+- C) Cuántos empleados contratar — _Ese es un dato de la operación; la evaluación lo usa para decidir si conviene invertir._
+- **D) Si vale la pena meterle plata al negocio** ✅
 
-**Explicación:** La evaluación financiera existe para decidir si se invierte. Todo lo demás (flujo, indicadores, riesgo) sirve para tomar esa decisión con fundamento.
+**Explicación:** La evaluación financiera existe para decidir si se invierte. Todo lo demás del juego sirve para tomar esa decisión con buenos argumentos.
 
 ### A02 · Concepto · 45 s · uso: desafio
 
-¿Desde el punto de vista de quién se evalúa financieramente un proyecto?
+La evaluación financiera mira el proyecto con los ojos de una persona. ¿De quién?
 
-- A) Del cliente: si el precio es justo — _El cliente no pone la inversión ni recibe los flujos._
-- **B) Del inversionista: ¿mi plata rinde al menos lo que exijo?** ✅
-- C) Del gobierno: cuánto va a recaudar — _Los impuestos son un insumo del flujo, no el punto de vista._
-- D) De la sociedad: empleos e impacto ambiental — _Eso corresponde a la evaluación económica o social._
+- A) Del gobierno — _El gobierno cobra impuestos, pero no invierte en el proyecto._
+- **B) De quien pone la plata y quiere saber si le conviene** ✅
+- C) De la competencia — _A la competencia no le interesa si tu negocio conviene._
+- D) Del cliente que compra el producto — _El cliente no pone la plata del proyecto._
 
-**Explicación:** La evaluación financiera mira el proyecto con los ojos de quien pone la plata y espera recuperarla con un rendimiento mínimo (TMAR).
+**Explicación:** Se evalúa desde quien invierte: ¿mi plata va a ganar al menos lo que espero?
 
 ### A03 · Concepto · 45 s · uso: desafio
 
-En una frase, la evaluación financiera compara…
+Para decidir si un negocio conviene, ¿qué se compara?
 
-- **A) Lo que el proyecto devuelve en el futuro contra lo que cuesta montarlo, contando el valor del tiempo** ✅
-- B) Las ventas totales contra las de la competencia — _Eso es análisis de mercado._
-- C) Los ingresos del año 1 contra los costos del año 1 — _Un solo año no muestra todo el horizonte ni el valor del dinero en el tiempo._
-- D) La utilidad contable acumulada, sin importar cuándo llega — _Sí importa cuándo llega la plata: un peso hoy vale más que uno mañana._
+- **A) Lo que cuesta montarlo contra lo que va a devolver, todo en pesos de hoy** ✅
+- B) Lo que venden los competidores — _Eso ayuda a estimar las ventas, pero no decide si conviene invertir._
+- C) Solo las ventas del primer mes — _Un mes no muestra toda la vida del negocio._
+- D) Cuánto cuesta la decoración — _Es solo uno de los costos._
 
-**Explicación:** Flujos que entran vs. inversión que sale, puestos en la misma fecha (descontados a la TMAR).
+**Explicación:** Lo que entra contra lo que sale, y todo llevado a la misma fecha: hoy.
 
-## B · Insumos
+## B · Las cifras del negocio (insumos)
 
 ### B01 · Cálculo · 60 s · uso: desafio, duelo
 
-Una tostadora cuesta $50 M y dura 5 años; al final ya no vale nada. Si el desgaste se reparte parejo, ¿cuánto se deprecia por año?
+Una tostadora cuesta $50 M y dura 5 años. Su desgaste se reparte igual cada año: costo ÷ años. ¿Cuánto se desgasta por año?
 
-- A) $250 M — _Multiplicaste por la vida útil en vez de dividir._
+- A) $250 M — _Multiplicaste por los años; hay que dividir._
 - **B) $10 M** ✅
-- C) $50 M — _Ese es el costo total, no el valor anual._
-- D) $12,5 M — _Dividiste entre 4 años; la vida útil es 5._
+- C) $50 M — _Ese es el costo total, no lo de un año._
+- D) $12,5 M — _Dividiste entre 4; la tostadora dura 5 años._
 
-**Explicación:** (50 − 0) ÷ 5 = $10 M por año.
+**Explicación:** 50 ÷ 5 = $10 M por año.
 
-### B02 · Cálculo · 75 s · uso: desafio, duelo
+### B02 · Cálculo · 60 s · uso: desafio, duelo
 
-Un camión cuesta $90 M, dura 4 años y al final se puede vender en $10 M. Si el desgaste se reparte parejo, ¿cuánto se deprecia por año?
+Un camión cuesta $90 M, dura 4 años y al final se vende usado en $10 M. El desgaste por año es (costo − lo que se vende al final) ÷ años. ¿Cuánto da?
 
 - **A) $20 M** ✅
-- B) $80 M — _Ese es el total a depreciar; falta dividir entre 4 años._
-- C) $22,5 M — _No le restaste el valor de salvamento al costo._
-- D) $25 M — _Sumaste el salvamento en vez de restarlo._
+- B) $80 M — _Ese es el total; falta dividir entre los 4 años._
+- C) $22,5 M — _No le restaste los $10 M de la venta final._
+- D) $25 M — _Sumaste los $10 M en vez de restarlos._
 
 **Explicación:** (90 − 10) ÷ 4 = $20 M por año.
 
-### B03 · Cálculo · 75 s · uso: desafio, duelo
+### B03 · Cálculo · 60 s · uso: desafio, duelo
 
-En un año la cafetería vendió $100 M, gastó $40 M en operar y tuvo $20 M de depreciación. El impuesto es 30 %. ¿Cuánto impuesto paga?
+En un año la cafetería vendió $100 M y gastó $60 M. El impuesto es el 30 % de lo que ganó (ventas − gastos). ¿Cuánto paga de impuesto?
 
-- A) $18 M — _No restaste la depreciación antes de calcular el impuesto._
+- A) $30 M — _Calculaste el 30 % de las ventas; es sobre lo que ganó (40)._
 - **B) $12 M** ✅
-- C) $6 M — _Aplicaste el 30 % solo a la depreciación._
-- D) $30 M — _Calculaste el impuesto sobre los ingresos; va sobre la utilidad._
+- C) $28 M — _Eso es lo que queda después de pagar el impuesto (40 − 12)._
+- D) $18 M — _Calculaste el 30 % de los gastos._
 
-**Explicación:** Utilidad gravable = 100 − 40 − 20 = 40. Impuesto = 40 × 30 % = $12 M.
+**Explicación:** Ganó 100 − 60 = 40. Impuesto = 30 % de 40 = $12 M.
 
 ### B04 · Concepto · 45 s · uso: desafio
 
-¿Cuál de estos NO es un costo o gasto de operación del año?
+¿Cuál de estas cosas se paga UNA sola vez, al montar el negocio, y no cada año?
 
-- A) La nómina de los baristas — _Es un costo operativo: se paga cada año._
-- **B) La compra de la máquina empacadora** ✅
-- C) Los servicios públicos — _Es un gasto operativo: se paga cada año._
-- D) El arriendo del local — _Es un gasto operativo: se paga cada año._
+- A) Los sueldos de los baristas — _Se pagan cada mes._
+- **B) Comprar la máquina empacadora** ✅
+- C) Los servicios públicos — _Llegan cada mes._
+- D) El arriendo del local — _Se paga cada mes, todos los años._
 
-**Explicación:** Comprar la máquina es INVERSIÓN (año 0). Su costo llega a los años de operación solo a través de la depreciación.
+**Explicación:** Lo que se compra al inicio para montar el negocio es la inversión. Lo que se paga cada año son los gastos de operación.
 
 ### B05 · Concepto · 45 s · uso: desafio
 
-Una panadería necesita $10 M en harina, empaques y caja menor para operar desde el día 1. ¿Cómo se trata esa plata en la evaluación?
+Una panadería necesita $10 M en harina, empaques y efectivo en caja para poder abrir. Cuando el negocio termina, esa plata se recupera. ¿Cuándo sale y cuándo vuelve?
 
-- A) Como gasto deducible del año 1 — _No es un gasto: la plata queda amarrada en la operación y se recupera._
-- B) Se deprecia en línea recta — _El capital de trabajo no es un activo fijo: no se deprecia._
-- **C) Como inversión en capital de trabajo en el año 0, que se recupera al final del horizonte** ✅
-- D) No se incluye, porque al final se recupera — _Mientras tanto la plata no está disponible: ese tiempo tiene costo._
+- A) Sale cada año y no vuelve — _Se pone una vez, al inicio, y al final se recupera._
+- B) Sale al final — _Se necesita desde el primer día._
+- **C) Sale al inicio y vuelve al final** ✅
+- D) No sale nunca — _Sí sale: sin esa plata no se puede abrir._
 
-**Explicación:** Sale en el año 0 (−10) y vuelve en el último año (+10). Como vuelve más tarde, en valor presente sí le cuesta al proyecto.
+**Explicación:** Esa plata para arrancar (capital de trabajo) sale al inicio y vuelve al final.
 
 ### B06 · Concepto · 45 s · uso: desafio
 
-Al final del horizonte de 5 años, la tostadora se puede vender en $8 M. ¿Dónde va ese valor?
+Al terminar el proyecto, la tostadora usada se vende en $8 M. ¿Cómo cuenta esa plata?
 
-- A) Como gasto del año 5 — _Vender un activo trae plata, no la saca._
-- B) Restándolo de la inversión del año 0 — _Se recibe al final, no al inicio: no se puede descontar de la inversión inicial._
-- **C) Como entrada de dinero en el año 5** ✅
-- D) No se incluye, porque la máquina ya está depreciada — _Aunque esté depreciada, si se puede vender, esa plata entra al proyecto._
+- A) Como plata que entra el primer año — _Se recibe al final, cuando se vende._
+- B) Como plata que sale — _Vender algo trae plata, no la saca._
+- **C) Como plata que entra en el último año** ✅
+- D) No cuenta, porque la máquina es vieja — _Aunque sea vieja, si se vende, esa plata entra._
 
-**Explicación:** El salvamento es una entrada del último año. (Si se vende por encima de su valor en libros, la ganancia paga impuestos.)
+**Explicación:** Lo que se recibe al vender lo usado (valor de salvamento) entra en el último año.
 
 ### B07 · Concepto · 45 s · uso: desafio
 
-¿Por qué la depreciación aparece en el flujo de caja si no es una salida de dinero?
+La depreciación es el desgaste de la máquina, repartido por años. ¿Sale plata del bolsillo cada año por ese desgaste?
 
-- A) Porque es plata que sale cada año para reponer la máquina — _No sale efectivo: la máquina se pagó en el año 0._
-- **B) Porque reduce la utilidad gravable y con ella los impuestos (escudo fiscal)** ✅
-- C) Porque aumenta las ventas — _La depreciación no tiene que ver con las ventas._
-- D) No debería aparecer en ninguna parte del flujo — _Sí aparece: se resta para calcular impuestos y luego se vuelve a sumar._
+- A) Sí: cada año se vuelve a pagar la máquina — _La máquina se pagó una sola vez, al comprarla._
+- **B) No: la máquina se pagó al comprarla; el desgaste es solo una cuenta** ✅
+- C) Sí: se le paga al banco — _El desgaste no tiene que ver con el banco._
+- D) Solo si la máquina se daña — _Una reparación sí es un gasto, pero eso no es la depreciación._
 
-**Explicación:** Se resta antes de impuestos (paga menos impuesto) y se suma después (porque no salió plata).
+**Explicación:** La depreciación no saca plata. Solo sirve para pagar un poco menos de impuesto, porque la ley deja restarla.
 
 ### B08 · Cálculo · 60 s · uso: desafio, duelo
 
-Depreciación anual $20 M, impuesto de renta 35 %. ¿Cuánto se ahorra en impuestos cada año gracias a la depreciación?
+Para montar la cafetería hay que comprar máquinas por $60 M, arreglar el local por $25 M y tener $15 M para arrancar (mercancía y caja). ¿Cuánto hay que invertir al inicio?
 
-- A) $35 M — _Usaste la tasa de impuesto como si fuera el monto._
-- B) $20 M — _Ese es el valor de la depreciación, no el ahorro en impuestos._
-- **C) $7 M** ✅
-- D) $13 M — _Calculaste 20 × 65 %; el ahorro es 20 × 35 %._
+- A) $40 M — _Te faltaron las máquinas._
+- B) $85 M — _Olvidaste la plata para arrancar ($15 M)._
+- **C) $100 M** ✅
+- D) $75 M — _Olvidaste el arreglo del local._
 
-**Explicación:** Escudo fiscal = depreciación × tasa = 20 × 0,35 = $7 M por año.
+**Explicación:** 60 + 25 + 15 = $100 M.
 
 ### B09 · Concepto · 45 s · uso: desafio
 
-¿Qué es el horizonte de evaluación?
+En evaluación de proyectos, el "horizonte" es…
 
-- A) El año en que el proyecto da su primera utilidad — _Eso no define cuántos años se evalúan._
-- **B) El número de periodos (por ejemplo, 5 años) para los que se proyectan los flujos** ✅
-- C) El tiempo que tarda en recuperarse la inversión — _Ese es el periodo de recuperación (bloque E)._
-- D) La fecha en que se pide el préstamo — _Eso es financiación, no el horizonte._
+- A) La vista que tiene el local — _¡No! Aquí es cuántos años se proyectan las cuentas._
+- **B) El número de años que se van a mirar en las cuentas (por ejemplo, 5 años)** ✅
+- C) El tiempo que tarda en volver la plata — _Eso es el periodo de recuperación._
+- D) La fecha en que abre el negocio — _Eso es el inicio, no cuántos años se miran._
 
-**Explicación:** El horizonte suele relacionarse con la vida útil de los activos, pero lo define quien evalúa según el proyecto.
+**Explicación:** El horizonte es cuántos años se miran. Suele ser lo que duran las máquinas o el negocio.
 
-## C · Flujo de caja
+## C · La plata que entra y sale (flujo de caja)
 
-### C01 · Cálculo · 90 s · uso: desafio, duelo
+### C01 · Cálculo · 60 s · uso: desafio, duelo
 
-En el año 2 la tienda vendió $200 M, gastó $80 M, tuvo $40 M de depreciación y paga 30 % de impuesto. ¿Cuánta plata le queda de verdad (flujo de caja operativo)?
+En el año 2 la tienda vendió $200 M, gastó $80 M y pagó $30 M de impuestos. ¿Cuánta plata le quedó en el bolsillo ese año?
 
-- **A) $96 M** ✅
-- B) $120 M — _No restaste los impuestos._
-- C) $56 M — _Olvidaste volver a sumar la depreciación (no es salida de dinero)._
-- D) $84 M — _Calculaste el impuesto sin restar antes la depreciación: perdiste el escudo fiscal._
+- **A) $90 M** ✅
+- B) $170 M — _No restaste los gastos._
+- C) $120 M — _No restaste los impuestos._
+- D) $310 M — _Sumaste todo; los gastos y los impuestos se restan._
 
-**Explicación:** UAI = 200 − 80 − 40 = 80. Impuesto = 24. Utilidad neta = 56. + Depreciación 40 → FC = $96 M.
+**Explicación:** 200 − 80 − 30 = $90 M. Esa es la plata que de verdad quedó (el flujo de caja del año).
 
 ### C02 · Cálculo · 60 s · uso: desafio, duelo
 
-Para arrancar se necesitan maquinaria por $100 M y capital de trabajo por $20 M. El mes pasado se pagaron $10 M por un estudio de mercado. ¿Flujo del año 0?
+Para arrancar hay que comprar máquinas por $100 M y tener $20 M para operar. El mes pasado ya pagaron $10 M por un estudio que no se devuelve. ¿Cuánta plata hay que poner AHORA si deciden hacer el proyecto?
 
-- A) $−100 M — _Olvidaste el capital de trabajo._
-- **B) $−120 M** ✅
-- C) $−130 M — _Incluiste el estudio de mercado: es un costo hundido, ya se pagó pase lo que pase._
-- D) $−80 M — _Sumaste el capital de trabajo como si fuera una entrada._
+- A) $100 M — _Olvidaste la plata para operar._
+- **B) $120 M** ✅
+- C) $130 M — _Sumaste el estudio: ya se pagó, hagan o no el proyecto._
+- D) $110 M — _Sumaste el estudio y olvidaste la plata para operar._
 
-**Explicación:** Año 0 = −100 (maquinaria) − 20 (capital de trabajo) = −$120 M. El estudio ya pagado no cambia con la decisión.
+**Explicación:** 100 + 20 = $120 M. El estudio ya se pagó y no cambia con la decisión.
 
 ### C03 · Cálculo · 60 s · uso: desafio, duelo
 
-Último año: la operación deja $50 M. Además se recupera el capital de trabajo ($20 M) y se vende la maquinaria en $10 M (sin impuesto sobre la venta). ¿Cuánta plata entra en total ese año?
+Último año: la operación deja $50 M. Además recuperan los $20 M que tenían para operar y venden la maquinaria usada en $10 M. ¿Cuánta plata entra en total ese año?
 
-- A) $70 M — _Olvidaste el valor de salvamento._
+- A) $70 M — _Olvidaste la venta de la maquinaria._
 - **B) $80 M** ✅
-- C) $50 M — _Olvidaste la recuperación del capital de trabajo y el salvamento._
-- D) $60 M — _Olvidaste recuperar el capital de trabajo._
+- C) $50 M — _Olvidaste lo que se recupera y lo que se vende al final._
+- D) $60 M — _Olvidaste recuperar los $20 M para operar._
 
-**Explicación:** 50 + 20 + 10 = $80 M. El último año "devuelve" el capital de trabajo y el salvamento.
+**Explicación:** 50 + 20 + 10 = $80 M. El último año devuelve la plata para operar y lo que se vende.
 
-### C04 · Concepto · 75 s · uso: desafio, caza
+### C04 · Concepto · 60 s · uso: desafio, caza
 
-Caza el error. (1) Ingresos 100 · (2) − Costos 40 · (3) − Depreciación 20 → UAI 40 · (4) − Impuestos 30 % = 12 → Utilidad neta 28 · (5) − Depreciación 20 → Flujo de caja 8. ¿Qué línea está mal?
+Caza el error. Ventas 100 − gastos 40 = 60 de ganancia. Impuesto: 30 % de las VENTAS = 30. Queda: 60 − 30 = 30. ¿Qué está mal?
 
-- A) La 3: la depreciación no se resta antes de impuestos — _Sí se resta antes de impuestos: así se obtiene el escudo fiscal._
-- B) La 4: el impuesto debía ser sobre 100 — _El impuesto va sobre la utilidad (40), no sobre los ingresos._
-- C) La 2: los costos no se restan — _Los costos sí se restan de los ingresos._
-- **D) La 5: la depreciación se SUMA de nuevo; el flujo correcto es 48** ✅
+- A) Los gastos no se restan — _Sí se restan: es plata que sale._
+- B) Nada, está bien — _El impuesto se calculó sobre las ventas, y va sobre la ganancia._
+- C) Faltó sumar el impuesto — _El impuesto es plata que sale: se resta._
+- **D) El impuesto va sobre la ganancia (30 % de 60 = 18): quedan 42** ✅
 
-**Explicación:** Restar la depreciación dos veces es el error más común. Utilidad neta 28 + 20 = 48.
+**Explicación:** El impuesto se calcula sobre lo que se gana, no sobre lo que se vende: 60 − 18 = 42.
 
 ### C05 · Concepto · 45 s · uso: desafio
 
-Hace dos meses pagaron $5 M por un estudio de mercado, y ese pago no se devuelve se haga o no el proyecto. ¿Va en el flujo de caja?
+Hace dos meses pagaron $5 M por un estudio de mercado. Esa plata no se recupera, hagan o no el proyecto. ¿Se cuenta al decidir?
 
-- **A) No: es un costo hundido, ya se gastó pase lo que pase** ✅
-- B) Sí, repartido en los años de operación — _No es un costo futuro del proyecto._
-- C) Solo si el proyecto da VPN positivo — _Un costo hundido no entra en ningún caso._
-- D) Sí, en el año 0 — _Esa plata ya se fue y no cambia con la decisión: no es relevante._
+- **A) No: ya se gastó y no cambia con la decisión** ✅
+- B) Sí, repartida en los años — _No es un gasto futuro del proyecto._
+- C) Solo si el proyecto sale bien — _Lo ya gastado no cuenta en ningún caso._
+- D) Sí, al inicio del proyecto — _Esa plata ya se fue, decidan lo que decidan._
 
-**Explicación:** Pregunta clave para cada cifra: ¿esto cambia si decido invertir o no? Si no cambia, no entra.
+**Explicación:** Lo que ya se gastó y no se recupera (costo hundido) no cuenta. Pregunta clave: ¿esto cambia si hago el proyecto?
 
 ### C06 · Concepto · 45 s · uso: desafio
 
-El proyecto usará un lote propio que hoy podrían arrendar en $10 M al año. ¿Cómo se trata?
+El proyecto usará un lote de la familia que hoy podrían arrendar en $10 M al año. ¿Se cuenta algo?
 
-- **A) Como un costo de $10 M al año (costo de oportunidad)** ✅
-- B) Como un ingreso de $10 M al año — _El proyecto no recibe ese arriendo; lo deja de recibir._
-- C) No se incluye, porque el lote ya es nuestro — _Usarlo implica dejar de recibir el arriendo: es un costo real de la decisión._
-- D) Como inversión de $10 M en el año 0 — _El arriendo perdido ocurre cada año, no una sola vez._
+- **A) Sí: los $10 M al año que dejan de recibir por el arriendo** ✅
+- B) Sí, como un ingreso de $10 M al año — _El proyecto no recibe ese arriendo: lo deja de recibir._
+- C) No, porque el lote ya es de la familia — _Al usarlo, dejan de recibir el arriendo: eso es un costo real._
+- D) Sí, el precio total del lote — _No lo van a comprar: lo que se pierde es el arriendo._
 
-**Explicación:** El costo de oportunidad es lo que se deja de ganar por usar un recurso propio en el proyecto.
+**Explicación:** Lo que dejas de ganar por usar algo tuyo (costo de oportunidad) sí cuenta.
 
 ### C07 · Concepto · 45 s · uso: desafio
 
-Están armando el flujo de caja DEL PROYECTO (se evalúa el negocio, sin importar de dónde sale la plata). ¿Se restan los intereses de un préstamo?
+El flujo de caja es la plata que de verdad entra y sale. ¿Cuál de estas NO es plata que entre o salga?
 
-- A) Solo los del primer año — _En el flujo del proyecto no van intereses de ningún año._
-- **B) No: el flujo del proyecto no incluye cómo se financia** ✅
-- C) Sí, siempre — _Eso corresponde a otro flujo (el del inversionista con financiación), que no es el que se está armando._
-- D) Sí, pero sin descontarlos — _En el flujo del proyecto no van intereses._
+- A) Las ventas — _Entra plata._
+- **B) El desgaste de la máquina (depreciación)** ✅
+- C) El pago del arriendo — _Sale plata cada mes._
+- D) El pago de impuestos — _Sale plata._
 
-**Explicación:** Primero se mira si el negocio vale la pena por sí mismo. Cómo se financia lo trata otra gestión.
+**Explicación:** El desgaste es una cuenta, no un pago: la máquina se pagó al comprarla.
 
 ### C08 · Concepto · 45 s · uso: desafio
 
-Partiendo de la utilidad neta, ¿cómo se llega al flujo de caja del proyecto?
+¿Qué es el flujo de caja de un año?
 
-- **A) Utilidad neta + depreciación − inversiones + salvamento y recuperación del capital de trabajo** ✅
-- B) Utilidad antes de impuestos + depreciación — _Faltan los impuestos, que sí se pagan._
-- C) Utilidad neta − depreciación — _La depreciación ya se restó una vez; ahora se suma._
-- D) Ingresos − costos, sin impuestos — _Los impuestos sí son una salida de dinero._
+- **A) La plata que de verdad entra menos la que de verdad sale ese año** ✅
+- B) La lista de clientes del año — _Los clientes generan ventas, pero el flujo es plata que entra y sale._
+- C) Solo las ventas — _Faltan las salidas: gastos, impuestos e inversiones._
+- D) Todo lo que se gastó en publicidad — _Es solo una de las salidas._
 
-**Explicación:** La utilidad contable no es plata en la mano: hay que devolver lo que no fue salida (depreciación) y agregar lo que sí lo fue (inversiones).
+**Explicación:** Entradas menos salidas reales de plata: eso es lo que el negocio deja en el bolsillo.
 
-### C09 · Cálculo · 90 s · uso: desafio, duelo
+### C09 · Cálculo · 60 s · uso: desafio, duelo
 
-En el año 1 el negocio vendió $150 M, gastó $50 M, tuvo $20 M de depreciación y paga 25 % de impuesto. ¿Cuánta plata le queda de verdad (flujo de caja operativo)?
+Año 1: ventas $150 M y gastos $50 M. El impuesto es el 25 % de lo que se gana (ventas − gastos). ¿Cuánta plata queda después de pagar el impuesto?
 
-- A) $100 M — _No restaste los impuestos._
-- B) $75 M — _Calculaste el impuesto sin restar la depreciación (25 % de 100)._
-- **C) $80 M** ✅
-- D) $60 M — _Olvidaste volver a sumar la depreciación._
+- A) $25 M — _Ese es el impuesto, no lo que queda._
+- B) $62,5 M — _Calculaste el impuesto sobre las ventas (25 % de 150)._
+- **C) $75 M** ✅
+- D) $100 M — _No restaste el impuesto._
 
-**Explicación:** UAI = 150 − 50 − 20 = 80. Impuesto = 20. Utilidad neta = 60. + 20 → FC = $80 M.
+**Explicación:** Se gana 150 − 50 = 100. Impuesto = 25. Quedan $75 M.
 
-### C10 · Concepto · 75 s · uso: caza
+### C10 · Concepto · 60 s · uso: caza
 
-Caza el error. Año 0: máquina −100 y capital de trabajo −20 → −120. Años 1, 2 y 3: flujo operativo +50. Año 3: + salvamento 10 → total año 3 = +60. ¿Qué falta?
+Caza el error. Al inicio: máquina −100 y plata para operar −20. Años 1, 2 y 3: la operación deja +50. Último año: + venta de la máquina 10 → total del año 3 = 60. ¿Qué falta?
 
-- **A) Recuperar el capital de trabajo (+20) en el año 3: el total es +80** ✅
-- B) No falta nada — _El capital de trabajo invertido en el año 0 se recupera en el último año._
-- C) Restar la depreciación en el año 3 — _La depreciación ya está dentro del flujo operativo._
-- D) Sumar los 20 de capital de trabajo en el año 1 — _Se recupera al final, no al inicio._
+- **A) Recuperar los 20 para operar en el año 3: el total es 80** ✅
+- B) No falta nada — _La plata para operar que se puso al inicio vuelve al final._
+- C) Restar el desgaste de la máquina — _El desgaste no es plata que sale._
+- D) Sumar los 20 en el año 1 — _Se recuperan al final, no al inicio._
 
-**Explicación:** Olvidar la recuperación del capital de trabajo subvalora el proyecto.
+**Explicación:** Si se olvida recuperar la plata para operar, el proyecto parece peor de lo que es.
 
-### C11 · Concepto · 75 s · uso: caza
+### C11 · Concepto · 60 s · uso: caza
 
-Caza el error. Ingresos 100, costos 60, sin depreciación. Impuestos = 30 % × 100 = 30. Flujo = 100 − 60 − 30 = 10. ¿Qué está mal?
+Caza el error. Para decidir si abren una heladería suman: máquinas 40 + plata para operar 10 + el estudio de mercado que pagaron el año pasado 5 = 55 de inversión. ¿Qué está mal?
 
-- A) Los costos no se restan — _Los costos sí se restan._
-- B) Faltó sumar 30 de depreciación — _El enunciado dice que no hay depreciación._
-- **C) El impuesto va sobre la utilidad (40 × 30 % = 12): el flujo correcto es 28** ✅
-- D) Nada, está bien — _El impuesto se calculó sobre los ingresos; va sobre la utilidad._
+- A) Faltó sumar el arriendo de todos los años — _El arriendo se paga cada año; no es parte de la inversión inicial._
+- B) Nada, está bien — _Lo que ya se gastó y no se recupera no cambia con la decisión._
+- **C) El estudio ya pagado no cuenta: la inversión es 50** ✅
+- D) La plata para operar no cuenta — _Sí cuenta: hay que ponerla para poder abrir._
 
-**Explicación:** (100 − 60) × (1 − 0,30) = 28.
+**Explicación:** Solo cuenta lo que cambia por hacer el proyecto: 40 + 10 = 50.
 
-## D · Valor del dinero en el tiempo
+## D · El valor del tiempo
 
-### D01 · Cálculo · 60 s · uso: desafio, duelo
+### D01 · Cálculo · 45 s · uso: desafio, duelo
 
-Inviertes $100 M y ganas 10 % al año, con interés compuesto. ¿Cuánto tienes en 2 años?
+Pones $100 M en una inversión segura que paga 10 % al año. ¿Cuánto tendrás dentro de un año?
 
-- A) $100 M — _La plata no se queda quieta: gana la TMAR cada año._
-- B) $82,64 M — _Eso es descontar (traer al presente), no capitalizar._
-- **C) $121 M** ✅
-- D) $110 M — _Solo calculaste un año._
+- A) $10 M — _Esa es solo la ganancia; hay que sumarla a los 100._
+- B) $90 M — _Restaste el 10 %; hay que sumarlo._
+- **C) $110 M** ✅
+- D) $100 M — _Te faltó sumar lo que ganas._
 
-**Explicación:** 100 × 1,1 × 1,1 = $121 M. (Con interés simple darían 120: el compuesto gana interés sobre el interés.)
+**Explicación:** 100 + 10 % = $110 M.
 
 ### D02 · Cálculo · 60 s · uso: desafio, duelo
 
-Te prometen $121 M dentro de 2 años. Si tu plata rinde 10 % al año, ¿cuánto valen hoy?
+Te prometen $110 M dentro de un año. Tu plata podría ganar 10 % al año en otra parte. ¿Cuánto valen hoy esos $110 M? (Pista: 110 ÷ 1,1)
 
-- A) $146,41 M — _Multiplicaste por 1,21 en vez de dividir._
+- A) $11 M — _Ese es el 10 %; hay que dividir 110 entre 1,1._
 - **B) $100 M** ✅
-- C) $110 M — _Descontaste solo un año._
-- D) $121 M — _No descontaste: la plata futura vale menos hoy._
+- C) $110 M — _No los pasaste a pesos de hoy: la plata del futuro vale menos hoy._
+- D) $121 M — _Multiplicaste por 1,1; hay que dividir._
 
-**Explicación:** 121 ÷ 1,1² = 121 ÷ 1,21 = $100 M.
+**Explicación:** 110 ÷ 1,1 = $100 M. Pasar plata del futuro a pesos de hoy se llama "descontar".
 
 ### D03 · Concepto · 45 s · uso: desafio
 
 ¿Por qué $1 M hoy vale más que $1 M dentro de un año?
 
-- A) Porque el banco cobra cuota de manejo — _Eso no explica el valor del dinero en el tiempo._
-- **B) Porque hoy lo puedo invertir y ganar al menos la TMAR** ✅
-- C) Porque los billetes se desgastan — _No es un tema físico: es lo que el dinero puede rendir._
-- D) No es cierto: valen exactamente lo mismo — _Al tener la plata antes, puedes ponerla a rendir._
+- A) Porque el banco cobra cuota de manejo — _Eso no explica por qué la plata de hoy vale más._
+- **B) Porque si lo tengo hoy lo puedo poner a ganar** ✅
+- C) Porque los billetes se desgastan — _No es algo físico: es lo que la plata puede ganar mientras tanto._
+- D) No es cierto: valen lo mismo — _Si la tienes antes, la puedes poner a ganar._
 
-**Explicación:** El costo de esperar es lo que dejas de ganar. Por eso los flujos futuros se descuentan.
+**Explicación:** Esperar tiene un costo: lo que dejas de ganar. Por eso la plata del futuro vale menos hoy.
 
 ### D04 · Concepto · 45 s · uso: desafio
 
-¿Qué es la TMAR?
+Laura no le mete plata a ningún negocio que gane menos de 12 % al año, porque eso le paga un CDT seguro. ¿Qué es ese 12 %?
 
-- **A) La tasa mínima que el inversionista le exige al proyecto para aceptarlo** ✅
-- B) El porcentaje de impuestos — _Los impuestos son un insumo del flujo._
-- C) La rentabilidad que da el proyecto — _Esa es la TIR (bloque E)._
-- D) El porcentaje de ganancia sobre las ventas — _Ese es el margen, un dato contable._
+- **A) Lo mínimo que ella exige ganar (en evaluación se llama TMAR)** ✅
+- B) Un impuesto — _No es un impuesto: es su exigencia mínima._
+- C) Lo que gana el negocio — _Eso se calcula después; el 12 % es lo que ella exige._
+- D) Lo que cobra el banco por un préstamo — _Es lo que ella quiere ganar, no lo que paga._
 
-**Explicación:** La TMAR es la vara con la que se mide el proyecto. Se usa para descontar los flujos. (Cómo se calcula lo expone otro equipo.)
+**Explicación:** Ese mínimo exigido es la vara con la que se mide el negocio: si no lo alcanza, mejor el CDT.
 
 ### D05 · Cálculo · 60 s · uso: desafio, duelo
 
-Recibirás $200 M dentro de un año y exiges ganar 25 % al año. ¿Cuánto vale hoy esa plata?
+Recibirás $200 M dentro de un año. Tu plata podría ganar 25 % al año en otra parte. ¿Cuánto valen hoy? (Pista: 200 ÷ 1,25)
 
-- A) $150 M — _Le restaste el 25 %; hay que DIVIDIR entre 1,25._
+- A) $150 M — _Le restaste el 25 %; hay que dividir entre 1,25._
 - **B) $160 M** ✅
-- C) $200 M — _No descontaste._
-- D) $250 M — _Multiplicaste: eso es valor futuro._
+- C) $200 M — _No los pasaste a pesos de hoy._
+- D) $250 M — _Multiplicaste; hay que dividir._
 
 **Explicación:** 200 ÷ 1,25 = $160 M.
 
-### D06 · Cálculo · 90 s · uso: desafio, duelo
+### D06 · Concepto · 45 s · uso: desafio
 
-Recibirás $110 M en el año 1 y $121 M en el año 2. Exiges 10 % al año. ¿Cuánto valen hoy los dos pagos juntos?
+Opción 1: $100 M hoy. Opción 2: $105 M dentro de un año. Tu plata puede ganar 10 % al año. ¿Cuál conviene?
 
-- A) $181,8 M — _Descontaste cada flujo un año de más._
-- B) $231 M — _Sumaste sin descontar._
-- C) $210 M — _Descontaste los dos flujos un solo año._
-- **D) $200 M** ✅
+- A) No se puede saber — _Sí se puede: compara lo que tendrías en un año con cada opción._
+- B) La de un año: es más plata — _Si recibes 100 hoy y los pones a ganar 10 %, en un año tienes 110, más que 105._
+- C) Da igual — _Daría igual si te ofrecieran $110 M en un año._
+- **D) La de hoy: puestos a ganar, en un año serían $110 M** ✅
 
-**Explicación:** 110 ÷ 1,1 = 100; 121 ÷ 1,21 = 100. VP = $200 M.
+**Explicación:** 100 + 10 % = 110, que es más que 105. Mejor la plata hoy.
 
-### D07 · Concepto · 60 s · uso: desafio
+### D07 · Concepto · 45 s · uso: desafio
 
-¿Qué prefieres: $100 M hoy o $115 M dentro de un año? Exiges ganar 20 % al año.
+Opción 1: $100 M hoy. Opción 2: $125 M dentro de un año. Tu plata puede ganar 20 % al año. ¿Cuál conviene?
 
-- A) Los $115 M: es más plata — _Es más plata en pesos de dentro de un año. Traída a hoy (÷ 1,2) vale menos que 100._
-- B) Da igual — _Daría igual solo si los $115 M valieran hoy exactamente $100 M (con TMAR del 15 %)._
-- C) No se puede saber sin la inflación — _La TMAR ya permite comparar las dos opciones._
-- **D) Los $100 M hoy: los $115 M valen hoy unos $95,8 M** ✅
+- A) La de hoy: la plata de hoy siempre gana — _La plata de hoy vale más, pero aquí 125 supera los 120 que tendrías._
+- B) Da igual — _Daría igual con $120 M en un año._
+- C) No se puede saber — _Sí se puede: 100 + 20 % = 120, y 125 es más._
+- **D) La de un año: los $100 M de hoy solo llegarían a $120 M** ✅
 
-**Explicación:** 115 ÷ 1,2 ≈ 95,8 < 100. Mejor la plata hoy.
+**Explicación:** 100 + 20 % = 120 < 125. Esta vez conviene esperar.
 
 ### D08 · Cálculo · 60 s · uso: desafio, duelo
 
-Si exiges ganar 10 % al año, ¿cuánto deberías recibir dentro de un año para que te dé igual que tener $50 M hoy?
+Tu plata puede ganar 10 % al año. ¿Cuánto deberían pagarte dentro de un año para que te dé lo mismo que recibir $50 M hoy?
 
 - **A) $55 M** ✅
-- B) $60 M — _Sumaste 10 dos veces._
+- B) $60 M — _Sumaste $10 M; el 10 % de 50 es 5._
 - C) $50 M — _Recibir lo mismo más tarde es perder lo que podías ganar._
-- D) $45,45 M — _Descontaste en vez de capitalizar._
+- D) $45,45 M — _Dividiste; aquí hay que sumar el 10 %._
 
-**Explicación:** 50 × 1,1 = $55 M. A eso se le llama valor equivalente.
+**Explicación:** 50 + 10 % = $55 M.
 
-## E · Indicadores
+## E · ¿Conviene? (indicadores)
 
-### E01 · Cálculo · 90 s · uso: desafio, duelo
+### E01 · Cálculo · 60 s · uso: desafio, duelo
 
-Montar el negocio cuesta $150 M. Devuelve $110 M el año 1 y $121 M el año 2. Exiges 10 % al año. ¿Cuál es el VPN?
+Un negocio cuesta $100 M hoy y devuelve $132 M en un año. Como tu plata podría ganar 10 % en otra parte, esos $132 M valen hoy $120 M. ¿Cuánto gana el negocio en pesos de hoy, después de restar lo que cuesta?
 
-- **A) $50 M** ✅
-- B) $81 M — _Sumaste los flujos sin descontarlos._
-- C) $200 M — _Olvidaste restar la inversión._
-- D) $60 M — _Descontaste los dos flujos un solo año._
+- **A) $20 M** ✅
+- B) $32 M — _Restaste sin pasar a pesos de hoy: usa los $120 M._
+- C) $120 M — _Te faltó restar lo que cuesta ($100 M)._
+- D) $−20 M — _Restaste al revés: 120 − 100 es positivo._
 
-**Explicación:** VP = 100 + 100 = 200. VPN = 200 − 150 = $50 M > 0 → se acepta.
+**Explicación:** 120 − 100 = $20 M. Positivo: conviene. Ese resultado se llama VPN.
 
-### E02 · Cálculo · 60 s · uso: desafio, duelo
+### E02 · Cálculo · 75 s · uso: desafio, duelo
 
-Inviertes $100 M y recibes $132 M dentro de un año. Exiges 20 % al año. ¿Cuál es el VPN?
+Inviertes $100 M y recibes $150 M dentro de un año. Tu plata podría ganar 25 % en otra parte. Pasa los $150 M a pesos de hoy (÷ 1,25) y resta lo invertido. ¿Cuánto da?
 
-- **A) $10 M** ✅
-- B) $5,6 M — _Le restaste el 20 % a 132; hay que dividir entre 1,2._
-- C) $110 M — _Ese es el VP de los flujos: falta restar la inversión._
-- D) $32 M — _No descontaste el flujo._
+- **A) $20 M** ✅
+- B) $12,5 M — _Le restaste el 25 % a 150; hay que dividir entre 1,25._
+- C) $120 M — _Ese es el valor hoy de lo que recibes; falta restar los $100 M._
+- D) $50 M — _No pasaste los $150 M a pesos de hoy._
 
-**Explicación:** 132 ÷ 1,2 = 110. VPN = 110 − 100 = $10 M.
+**Explicación:** 150 ÷ 1,25 = 120. 120 − 100 = $20 M: gana más que tu mínimo. Conviene.
 
-### E03 · Cálculo · 75 s · uso: desafio, duelo
+### E03 · Cálculo · 60 s · uso: desafio, duelo
 
-Inviertes $100 M y recibes $121 M al cabo de 2 años (nada en el año 1). ¿Qué rentabilidad anual rinde (TIR)?
+Inviertes $200 M y en un año recibes $250 M. ¿Qué porcentaje ganaste? (ganancia ÷ lo invertido)
 
-- A) 21 % — _Esa es la ganancia total de los 2 años, no la tasa anual._
-- **B) 10 %** ✅
-- C) 10,5 % — _Promediaste 21 % entre 2; con interés compuesto no funciona así._
-- D) 0 % — _Que el año 1 sea cero no hace cero la TIR._
+- A) 20 % — _Dividiste entre 250; se divide entre lo invertido (200)._
+- **B) 25 %** ✅
+- C) 50 % — _Esa es la ganancia en millones, no el porcentaje._
+- D) 125 % — _Dividiste 250 entre 200 sin restar lo invertido._
 
-**Explicación:** 100 × 1,1² = 121, así que la tasa que hace VPN = 0 es 10 %.
+**Explicación:** Ganancia = 50. 50 ÷ 200 = 25 %. Ese % por año es la rentabilidad del negocio (TIR).
 
 ### E04 · Cálculo · 60 s · uso: desafio, duelo
 
-Inviertes $200 M y recibes $250 M dentro de un año. ¿Qué rentabilidad anual tiene (TIR)?
+Inviertes $50 M y en un año recibes $60 M. ¿Qué porcentaje ganaste? (ganancia ÷ lo invertido)
 
-- **A) 25 %** ✅
-- B) 125 % — _Dividiste 250 entre 200 sin restar 1._
-- C) 20 % — _Dividiste la ganancia entre 250; se divide entre lo invertido (200)._
-- D) 50 % — _Esa es la ganancia en millones, no la tasa._
+- **A) 20 %** ✅
+- B) 120 % — _Dividiste 60 entre 50 sin restar lo invertido._
+- C) 10 % — _Esa es la ganancia en millones, no el porcentaje._
+- D) 16,7 % — _Dividiste la ganancia entre 60; se divide entre lo invertido (50)._
 
-**Explicación:** 250 ÷ 200 = 1,25 → TIR = 25 %.
+**Explicación:** Ganancia = 10. 10 ÷ 50 = 20 %.
 
 ### E05 · Concepto · 45 s · uso: desafio
 
-Un negocio rinde 18 % al año (TIR) y tú exiges mínimo 15 % (TMAR). ¿Qué se decide?
+Un negocio rinde 18 % al año. Tú exiges ganar mínimo 15 % al año. ¿Te conviene?
 
-- **A) Se acepta: rinde más de lo mínimo exigido (y su VPN es positivo)** ✅
-- B) Es indiferente — _Sería indiferente si la TIR fuera igual a la TMAR._
-- C) Se acepta solo si la TIR supera el 20 % — _La vara es la TMAR (15 %), no un número arbitrario._
-- D) Se rechaza: 18 % es poco — _Lo que importa es comparar con la TMAR, y 18 % > 15 %._
+- **A) Sí: rinde más que lo mínimo que exiges** ✅
+- B) Da igual — _Daría igual si rindiera exactamente 15 %._
+- C) Solo si rinde más de 20 % — _Tu mínimo es 15 %, no 20 %._
+- D) No: 18 % es poco — _Lo que importa es compararlo con tu mínimo, y 18 es más que 15._
 
-**Explicación:** TIR > TMAR ⇔ VPN > 0 (en proyectos convencionales).
+**Explicación:** Comparar lo que rinde el negocio (TIR) con lo mínimo que exiges (TMAR) es una forma de decidir.
 
 ### E06 · Cálculo · 60 s · uso: desafio, duelo
 
-Los beneficios del proyecto valen hoy $300 M y sus costos (inversión incluida) valen hoy $250 M. ¿Cuál es la relación B/C?
+En pesos de hoy, un negocio cuesta $250 M y devuelve $300 M. ¿Cuántos pesos devuelve por cada peso que cuesta? (devuelve ÷ cuesta)
 
 - **A) 1,2** ✅
-- B) 0,83 — _Invertiste la división: es beneficios ÷ costos._
-- C) 50 — _Eso es el VPN (una resta), no la relación._
-- D) 0,2 — _Calculaste (300 − 250) ÷ 250: eso no es la B/C._
+- B) 0,83 — _Dividiste al revés: es lo que devuelve ÷ lo que cuesta._
+- C) 50 — _Esa es la resta (300 − 250), no la división._
+- D) 0,2 — _Dividiste solo la ganancia (50 ÷ 250); falta el peso que se recupera._
 
-**Explicación:** 300 ÷ 250 = 1,2 > 1 → se acepta.
+**Explicación:** 300 ÷ 250 = 1,2: devuelve $1,20 por cada $1. Más de 1: conviene. Se llama relación beneficio/costo (B/C).
 
 ### E07 · Concepto · 45 s · uso: desafio
 
-Un proyecto tiene B/C = 0,9. ¿Qué se puede decir de su VPN?
+En pesos de hoy, un negocio devuelve $0,90 por cada $1 que cuesta. ¿Conviene?
 
-- A) Es positivo pero pequeño — _B/C < 1 significa beneficios < costos, es decir, VPN < 0._
-- B) Es igual a 0,9 — _La B/C es una razón; el VPN está en pesos._
-- C) No se puede saber — _Con B/C < 1 se sabe que el VPN es negativo._
-- **D) Es negativo: los beneficios no alcanzan a cubrir los costos** ✅
+- A) Sí, porque devuelve algo — _Devolver 90 centavos por cada peso es perder 10 centavos._
+- B) Sí, porque está cerca de 1 — _Cerca no basta: sigue perdiendo plata._
+- C) No se puede saber — _Sí se puede: si devuelve menos de $1 por cada $1, pierde._
+- **D) No: devuelve menos de lo que cuesta** ✅
 
-**Explicación:** B/C > 1 ⇔ VPN > 0; B/C < 1 ⇔ VPN < 0.
+**Explicación:** Más de 1: gana. Menos de 1: pierde.
 
-### E08 · Cálculo · 75 s · uso: desafio, duelo
+### E08 · Cálculo · 45 s · uso: desafio, duelo
 
-Se invierten $90 M y el negocio deja $40 M cada año durante 3 años. ¿En cuántos años se recupera la inversión (sin descontar)?
+Inviertes $90 M y el negocio deja $30 M cada año. ¿En cuántos años recuperas lo invertido?
 
-- **A) 2,25 años** ✅
-- B) 2,5 años — _Faltan 10 de 40: eso es 0,25 de año, no 0,5._
-- C) 2 años — _Al final del año 2 llevas 80: faltan 10._
-- D) 3 años — _Se recupera durante el año 3, no al final._
+- **A) 3 años** ✅
+- B) 9 años — _Dividiste 90 entre 10; cada año deja 30._
+- C) 4 años — _Al terminar el año 3 ya juntaste los $90 M._
+- D) 2 años — _En 2 años solo llevas $60 M; faltan 30._
 
-**Explicación:** Al final del año 2 se recuperan 80. Faltan 10 de los 40 del año 3: 10 ÷ 40 = 0,25 → 2,25 años.
+**Explicación:** 30 + 30 + 30 = 90: en 3 años vuelve la plata. Eso es el periodo de recuperación.
 
-### E09 · Cálculo · 90 s · uso: desafio, duelo
+### E09 · Concepto · 45 s · uso: desafio
 
-Se invierten $150 M y el negocio deja $110 M el año 1 y $121 M el año 2. Exiges 10 % al año. ¿En cuántos años se recupera la inversión DESCONTADA a hoy?
+¿Qué dice el "tiempo de recuperación" de un negocio?
 
-- A) 1,33 años — _Ese es el periodo simple: no descontaste los flujos._
-- **B) 1,5 años** ✅
-- C) 1,41 años — _Usaste el faltante descontado (50) pero el flujo sin descontar (121)._
-- D) 2 años — _Se recupera antes de terminar el año 2._
+- A) Cuánto gana el negocio en total — _Un negocio puede recuperar rápido y ganar poco._
+- **B) Qué tan rápido vuelve la plata invertida** ✅
+- C) Cuántos clientes tendrá — _Eso viene del estudio de mercado._
+- D) El porcentaje que rinde por año — _Eso es la rentabilidad, no el tiempo._
 
-**Explicación:** VP año 1 = 100, VP año 2 = 100. Tras el año 1 faltan 50: 50 ÷ 100 = 0,5 → 1,5 años.
+**Explicación:** Sirve para saber qué tan rápido vuelve la plata, no si el negocio es bueno.
 
 ### E10 · Concepto · 45 s · uso: desafio, salida
 
-Si el VPN de un proyecto es exactamente 0, significa que…
+Pasando todo a pesos de hoy, un negocio queda exactamente en $0 después de restar lo que cuesta. ¿Qué significa?
 
-- A) No gana nada: mejor no invertir — _Ganar la TMAR sí es ganar: es justo lo mínimo que exigías._
-- B) Su TIR es 0 % — _TIR = 0 % sería no ganar nada; VPN = 0 implica TIR = TMAR._
-- **C) Rinde exactamente la TMAR (su TIR es igual a la TMAR)** ✅
-- D) Pierde toda la inversión — _VPN = 0 significa que recupera la inversión más la TMAR._
+- A) Pierde toda la plata — _No pierde: recupera lo invertido y gana tu mínimo._
+- B) Es el mejor negocio posible — _Es apenas suficiente, no el mejor._
+- **C) Gana justo lo mínimo que exigías: da lo mismo hacerlo o no** ✅
+- D) No gana nada, ni siquiera el mínimo — _Sí gana: justo lo mínimo que exigías._
 
-**Explicación:** VPN = 0 → indiferente: el proyecto paga la inversión y exactamente la TMAR.
+**Explicación:** En $0 (VPN = 0), el negocio devuelve lo invertido más justo tu mínimo exigido.
 
 ### E11 · Concepto · 45 s · uso: desafio
 
-¿Qué es la TIR?
+Un negocio rinde 8 % al año y tú exiges mínimo 10 %. ¿Qué haces?
 
-- A) La utilidad dividida entre las ventas — _Ese es el margen, un dato contable._
-- B) La TMAR que exige el inversionista — _La TMAR se exige; la TIR la da el proyecto._
-- C) El tiempo que tarda en recuperar la inversión — _Ese es el periodo de recuperación._
-- **D) La rentabilidad propia del negocio: la tasa con la que el VPN queda en cero** ✅
+- A) Invierto, porque 8 % es positivo — _Hay que compararlo con tu mínimo (10 %), no con cero._
+- B) Invierto: algo gana — _Gana, pero menos que tu mínimo: otra opción te daría más._
+- C) Da igual — _Daría igual si rindiera 10 %._
+- **D) No invierto: rinde menos de lo que exijo** ✅
 
-**Explicación:** La TIR es la rentabilidad propia del proyecto. Se compara con la TMAR.
+**Explicación:** Si el negocio rinde menos que tu mínimo, la inversión segura es mejor.
 
-## F · Criterios de decisión
+## F · Escoger entre negocios (criterios)
 
 ### F01 · Concepto · 60 s · uso: desafio, salida
 
-Solo puedes hacer UNO de dos proyectos (excluyentes) y hay plata para cualquiera. Exiges 12 %. A: VPN $50 M, TIR 20 %. B: VPN $30 M, TIR 35 %. ¿Cuál eliges?
+Solo puedes hacer UNO de dos negocios. A deja $50 M de ganancia en pesos de hoy y rinde 20 % al año. B deja $30 M y rinde 35 % al año. ¿Cuál escoges?
 
-- A) Los dos — _Son excluyentes: solo se puede uno._
-- B) B, porque tiene mayor TIR — _La TIR es un %: no dice cuánto valor crea. B es más pequeño._
-- C) Ninguno, se contradicen — _Que se contradigan no impide decidir: manda el VPN._
-- **D) A, porque crea más valor (mayor VPN)** ✅
+- A) Los dos — _Solo se puede uno._
+- B) B: tiene el porcentaje más alto — _Un % alto sobre poca plata puede dejar menos. A deja 50; B, solo 30._
+- C) Ninguno — _Los dos ganan: escoge el que deja más plata._
+- **D) A: deja más plata, aunque su porcentaje sea menor** ✅
 
-**Explicación:** Ante un conflicto entre proyectos excluyentes, el VPN es el criterio que manda.
+**Explicación:** Cuando solo se puede uno, gana el que deja más plata en pesos de hoy (mayor VPN).
 
 ### F02 · Concepto · 45 s · uso: desafio
 
-En un proyecto normal (se invierte al inicio y luego entra plata cada año), si el VPN es mayor que 0, ¿qué pasa también?
+Solo puedes escoger una opción: ganar 50 % sobre $100 o ganar 20 % sobre $1.000. ¿Cuál deja más plata?
 
-- A) B/C < 1 — _B/C < 1 equivale a VPN < 0._
-- B) TIR < TMAR — _Si la TIR fuera menor que la TMAR, el VPN sería negativo._
-- **C) TIR > TMAR y B/C > 1** ✅
-- D) PR menor a un año — _El PR no está atado al signo del VPN._
+- A) Dejan lo mismo — _Una deja 50 y la otra 200._
+- B) El 50 %: es un porcentaje más alto — _El 50 % de 100 son solo $50._
+- **C) El 20 % sobre $1.000: son $200, contra $50** ✅
+- D) No se puede saber — _Sí se puede: calcula cuánta plata deja cada una._
 
-**Explicación:** En proyectos convencionales, VPN, TIR y B/C siempre coinciden en aceptar o rechazar un proyecto solo.
+**Explicación:** Por eso, para escoger entre negocios, se mira la plata que dejan y no solo el porcentaje.
 
 ### F03 · Concepto · 45 s · uso: desafio
 
-Un proyecto recupera la inversión en 1 año (PR simple), pero su VPN es −$5 M. ¿Qué haces?
+Un negocio recupera la inversión en solo 1 año, pero en pesos de hoy termina perdiendo $5 M. ¿Qué haces?
 
-- A) Lo acepto: recupera rapidísimo — _El PR mide liquidez, no rentabilidad. VPN < 0 destruye valor._
-- B) Me es indiferente — _Sería indiferente con VPN = 0, no con VPN negativo._
-- **C) Lo rechazo: recuperar rápido no significa crear valor** ✅
-- D) Lo acepto si la TIR es positiva — _Una TIR positiva pero menor que la TMAR da VPN < 0._
+- A) Lo hago: recupera rapidísimo — _Recupera rápido, pero al final deja pérdida._
+- B) Me da igual — _Daría igual si quedara en 0, no con pérdida._
+- **C) No lo hago: recuperar rápido no es lo mismo que ganar** ✅
+- D) Lo hago si me gusta el negocio — _La decisión se toma con los números._
 
-**Explicación:** El PR responde "¿en cuánto tiempo vuelve la plata?", no "¿conviene?".
+**Explicación:** El tiempo de recuperación responde "¿qué tan rápido vuelve la plata?", no "¿conviene?".
 
-### F04 · Concepto · 75 s · uso: desafio, duelo
+### F04 · Concepto · 60 s · uso: desafio, duelo
 
-Presupuesto $100 M. Proyectos INDEPENDIENTES: A (inversión $100 M, VPN $30 M), B (inversión $50 M, VPN $20 M), C (inversión $50 M, VPN $18 M). ¿Qué haces?
+Tienes $100 M. Tres negocios que se pueden combinar: A cuesta $100 M y gana $30 M. B cuesta $50 M y gana $20 M. C cuesta $50 M y gana $18 M. ¿Qué haces?
 
-- **A) B y C: VPN total $38 M** ✅
-- B) Solo A, el de mayor VPN — _A usa todo el presupuesto y suma 30; B + C cabe y suma 38._
-- C) A y B — _Cuestan 150: no alcanza el presupuesto._
-- D) Solo B, el de mejor VPN por peso invertido — _Sobran 50 que pueden ir a C y sumar 18 más._
+- **A) B y C: caben juntos y ganan $38 M** ✅
+- B) Solo A, el que más gana — _A gana 30; B + C caben en los $100 M y ganan 38._
+- C) A y B — _Cuestan $150 M: no alcanza._
+- D) Solo B — _Sobran $50 M que pueden ir a C y ganar 18 más._
 
-**Explicación:** Con restricción de capital se maximiza el VPN TOTAL de la combinación que cabe en el presupuesto.
+**Explicación:** Con presupuesto limitado se busca la combinación que quepa y sume más.
 
-### F05 · Concepto · 60 s · uso: desafio
+### F05 · Concepto · 45 s · uso: desafio
 
-Un negocio invierte 100, recibe 230 y luego tiene que volver a poner 132. Por eso sale con dos TIR distintas (10 % y 20 %). ¿Con qué indicador decides?
+Dos socios discuten. Uno dice: "Escojamos el negocio con el porcentaje más alto". El otro: "Escojamos el que deje más plata en pesos de hoy". Si solo pueden hacer uno, ¿quién tiene razón?
 
-- A) El periodo de recuperación — _El PR no mide rentabilidad._
-- B) La TIR mayor (20 %) — _Ninguna de las dos TIR es "la" rentabilidad del proyecto._
-- C) El promedio de las dos TIR — _Promediar TIR no tiene sentido financiero._
-- **D) El VPN: da una sola respuesta clara cuando la TIR confunde** ✅
+- A) Ninguno: hay que escoger el que recupere más rápido — _Recuperar rápido no dice cuánto gana._
+- B) El primero — _Un % alto sobre poca plata puede dejar menos ganancia._
+- C) Ninguno: hay que escoger el más barato — _El más barato no siempre gana más._
+- **D) El segundo: lo que importa es cuánta plata deja** ✅
 
-**Explicación:** Con flujos no convencionales pueden aparecer varias TIR. El VPN siempre da una sola respuesta.
+**Explicación:** Entre negocios de los que solo se puede uno, manda la plata en pesos de hoy (el VPN).
 
 ### F06 · Concepto · 45 s · uso: desafio
 
-Solo puedes hacer uno de dos proyectos. A tiene mayor VPN y B mayor TIR, y los cálculos están bien. ¿Por qué puede pasar?
+El negocio A deja más plata en pesos de hoy, pero el negocio B tiene un porcentaje de ganancia más alto. ¿Cómo puede pasar?
 
-- A) Porque alguno está mal calculado — _Puede pasar con cálculos correctos._
-- B) Porque la TMAR es negativa — _No tiene que ver con el signo de la TMAR._
-- **C) Por diferencias de tamaño de la inversión o de cuándo llegan los flujos** ✅
-- D) Nunca pasa — _Pasa seguido con proyectos de distinta escala._
+- A) Alguno está mal calculado — _Pasa seguido con cálculos correctos._
+- B) Es imposible — _Es muy común con negocios de distinto tamaño._
+- **C) B es más pequeño: gana un % alto, pero sobre menos plata** ✅
+- D) Porque A tiene más empleados — _El número de empleados no explica la diferencia._
 
-**Explicación:** Un proyecto pequeño puede tener una TIR altísima y crear poco valor en pesos. Por eso manda el VPN.
+**Explicación:** Un negocio pequeño puede tener un % altísimo y dejar poca plata.
 
-### F07 · Concepto · 45 s · uso: desafio
+### F07 · Concepto · 60 s · uso: desafio
 
-TMAR 12 %. Proyecto: VPN −$5 M, TIR 10 %, B/C 0,95. ¿Decisión?
+Exiges ganar mínimo 12 % al año. Un negocio: en pesos de hoy pierde $5 M, rinde 10 % al año y devuelve $0,95 por cada $1. ¿Qué decides?
 
-- A) Indiferente — _Sería indiferente con VPN = 0._
-- B) Aceptar: la B/C es casi 1 — _"Casi 1" sigue siendo menor que 1: destruye valor._
-- C) Aceptar: la TIR es positiva — _La TIR se compara con la TMAR (12 %), no con cero._
-- **D) Rechazar: los tres indicadores coinciden** ✅
+- A) Me da igual — _Daría igual si quedara en 0._
+- B) Hacerlo: $0,95 es casi $1 — _Casi no basta: pierde 5 centavos por cada peso._
+- C) Hacerlo: rinde 10 %, que es positivo — _Hay que compararlo con tu mínimo (12 %), no con cero._
+- **D) No hacerlo: las tres cifras dicen que no alcanza** ✅
 
-**Explicación:** VPN < 0, TIR < TMAR y B/C < 1 dicen lo mismo: rechazar.
+**Explicación:** Pérdida en pesos de hoy, rinde menos que el mínimo y devuelve menos de $1: las tres dicen que no.
 
 ### F08 · Cálculo · 75 s · uso: desafio, duelo
 
-Presupuesto $150 M, proyectos INDEPENDIENTES. A: inversión $100 M, VPN $40 M. B: inversión $50 M, VPN $25 M. C: inversión $100 M, VPN $45 M. ¿Cuál es el MAYOR VPN total que cabe en el presupuesto?
+Tienes $150 M. Negocios que se pueden combinar: A cuesta $100 M y gana $40 M. B cuesta $50 M y gana $25 M. C cuesta $100 M y gana $45 M. ¿Cuál es la MAYOR ganancia total que cabe en tu plata?
 
-- A) $45 M — _Escogiste solo el de mayor VPN individual (C) y dejaste $50 M sin usar._
+- A) $45 M — _Escogiste solo C y te sobraron $50 M para B._
 - **B) $70 M** ✅
 - C) $110 M — _Sumaste los tres: cuestan $250 M y no caben._
-- D) $65 M — _A + B cabe, pero C + B cabe y suma más._
+- D) $65 M — _A + B cabe, pero C + B también cabe y gana más._
 
-**Explicación:** Combinaciones que caben en $150 M: A + B = 65; C + B = 70. Lo mejor es C + B = $70 M.
+**Explicación:** Caben A + B (gana 65) o C + B (gana 70). Lo mejor: C + B = $70 M.
 
-### F09 · Cálculo · 90 s · uso: desafio, duelo
+### F09 · Cálculo · 60 s · uso: desafio, duelo
 
-Solo puedes hacer uno de dos proyectos y exiges 10 %. A: inviertes $100 M y recibes $132 M en un año (TIR 32 %). B: inviertes $200 M y recibes $253 M en un año (TIR 26,5 %). ¿Cuál es el VPN del que conviene escoger?
+Solo puedes hacer uno. En pesos de hoy: A recibe $120 M y cuesta $100 M. B recibe $230 M y cuesta $200 M. ¿Cuánto gana el que conviene escoger?
 
 - **A) $30 M** ✅
-- B) $53 M — _No descontaste el flujo de B._
-- C) $230 M — _Olvidaste restar la inversión._
-- D) $20 M — _Ese es el VPN de A: lo escogiste por la TIR, pero entre excluyentes manda el VPN._
+- B) $50 M — _Sumaste las dos ganancias; solo se puede uno._
+- C) $230 M — _Olvidaste restar lo que cuesta._
+- D) $20 M — _Esa es la ganancia de A; B gana más._
 
-**Explicación:** VPN A = 132 ÷ 1,1 − 100 = 20. VPN B = 253 ÷ 1,1 − 200 = 30. Se escoge B: $30 M, aunque su TIR sea menor.
+**Explicación:** A gana 120 − 100 = 20. B gana 230 − 200 = 30. Se escoge B: $30 M.
 
-## G · Riesgo
+## G · ¿Y si algo sale mal? (riesgo)
 
-### G01 · Cálculo · 75 s · uso: desafio, duelo
+### G01 · Cálculo · 60 s · uso: desafio, duelo
 
-Costos fijos: $20.000.000 al año. Cada caja de café se vende a $50.000 y cuesta $30.000 producirla. ¿Cuántas cajas hay que vender para el punto de equilibrio?
+Los gastos fijos de la tienda son $2.000.000 al mes. Cada caja de café se vende a $50.000 y cuesta $30.000 hacerla, así que cada caja deja $20.000. ¿Cuántas cajas hay que vender al mes para no ganar ni perder?
 
-- A) 667 unidades — _Dividiste entre el costo variable; se divide entre el margen._
-- **B) 1.000 unidades** ✅
-- C) 250 unidades — _Sumaste precio y costo variable; hay que restarlos._
-- D) 400 unidades — _Dividiste entre el precio; se divide entre el margen (50.000 − 30.000)._
+- A) 67 unidades — _Dividiste entre lo que cuesta hacerla; se divide entre lo que deja cada caja._
+- **B) 100 unidades** ✅
+- C) 25 unidades — _Sumaste precio y costo; hay que restarlos._
+- D) 40 unidades — _Dividiste entre el precio; se divide entre lo que deja cada caja ($20.000)._
 
-**Explicación:** Margen por caja = 20.000. 20.000.000 ÷ 20.000 = 1.000 cajas.
+**Explicación:** 2.000.000 ÷ 20.000 = 100 cajas. Ese es el punto de equilibrio.
 
 ### G02 · Cálculo · 60 s · uso: desafio, duelo
 
-Costos fijos $30 M. De cada $100 que se venden, $40 quedan para cubrir esos costos (margen de contribución 40 %). ¿Cuánto hay que vender para no perder?
+Gastos fijos: $30 M. De cada $100 que vendes, te quedan $40 para pagar esos gastos. ¿Cuánto hay que vender para no perder? (Pista: 30 ÷ 0,40)
 
-- A) $12 M — _Multiplicaste 30 × 40 %; hay que dividir._
-- B) $42 M — _Le sumaste el 40 % a los costos fijos._
-- C) $50 M — _Dividiste entre 60 % (el costo variable), no entre el margen._
+- A) $12 M — _Multiplicaste 30 × 0,40; hay que dividir._
+- B) $42 M — _Le sumaste 40 % a los gastos fijos._
+- C) $50 M — _Dividiste entre 0,60; se divide entre lo que te queda (0,40)._
 - **D) $75 M** ✅
 
 **Explicación:** 30 ÷ 0,40 = $75 M en ventas.
 
 ### G03 · Concepto · 45 s · uso: desafio
 
-¿Qué es el análisis de sensibilidad?
+¿Qué es analizar la "sensibilidad" de un proyecto?
 
-- A) Pedir otra cotización de la maquinaria — _Eso mejora un insumo, pero no es el análisis._
-- B) Cambiar todas las variables al tiempo — _Eso es análisis de escenarios._
-- **C) Cambiar UNA variable a la vez (precio, ventas, costos) y ver cuánto cambia el VPN** ✅
-- D) Calcular la TIR dos veces para confirmarla — _Eso es verificar un cálculo, no analizar riesgo._
+- A) Preguntarles a los clientes si les gusta el producto — _Eso es estudio de mercado._
+- B) Cambiar todas las cifras al tiempo — _Eso es armar escenarios._
+- **C) Cambiar UNA cifra a la vez (precio, ventas o costos) y ver cuánto cambia la ganancia** ✅
+- D) Repetir las cuentas para ver si están bien — _Eso es revisar, no medir el riesgo._
 
-**Explicación:** La sensibilidad muestra de qué variable depende más el resultado.
+**Explicación:** Así se descubre de qué cifra depende más el resultado.
 
 ### G04 · Cálculo · 60 s · uso: desafio, duelo
 
-El VPN es $60 M. Cada 1 % que baja el precio, el VPN baja $5 M. ¿Cuánto puede bajar el precio antes de que el VPN llegue a 0?
+En pesos de hoy, el negocio gana $60 M. Cada 1 % que baja el precio, esa ganancia baja $5 M. ¿Cuánto puede bajar el precio antes de que la ganancia llegue a 0?
 
 - A) 300 % — _Multiplicaste 60 × 5; hay que dividir._
-- B) 60 % — _Ese es el VPN, no la caída en %._
-- C) 5 % — _Ese es el impacto de cada punto, no la caída máxima._
+- B) 60 % — _Esa es la ganancia, no la caída en %._
+- C) 5 % — _Eso es lo que baja la ganancia por cada 1 %, no la caída máxima._
 - **D) 12 %** ✅
 
-**Explicación:** 60 ÷ 5 = 12 %. Con una caída mayor del 12 %, el VPN se vuelve negativo.
+**Explicación:** 60 ÷ 5 = 12 %. Si el precio baja más de 12 %, el negocio pierde.
 
-### G05 · Cálculo · 90 s · uso: desafio, duelo
+### G05 · Cálculo · 75 s · uso: desafio, duelo
 
-Tres futuros posibles: malo (VPN −$20 M, 20 % de probabilidad), normal ($30 M, 50 %) y bueno ($70 M, 30 %). ¿Cuál es el VPN esperado?
+Tres futuros: malo, pierdes $20 M (25 % de probabilidad); normal, ganas $20 M (50 %); bueno, ganas $40 M (25 %). Multiplica cada resultado por su probabilidad y suma. ¿Cuánto se espera ganar?
 
-- A) $80 M — _Sumaste los tres VPN._
-- **B) $32 M** ✅
-- C) $26,7 M — _Promediaste sin ponderar por la probabilidad._
-- D) $21 M — _Solo ponderaste el escenario optimista._
+- A) $13,3 M — _Promediaste los tres sin tener en cuenta las probabilidades._
+- **B) $15 M** ✅
+- C) $40 M — _Sumaste los tres resultados sin multiplicar por la probabilidad._
+- D) $10 M — _Solo tomaste el futuro normal (20 × 50 %)._
 
-**Explicación:** −20 × 0,2 + 30 × 0,5 + 70 × 0,3 = −4 + 15 + 21 = $32 M.
+**Explicación:** −20 × 0,25 + 20 × 0,5 + 40 × 0,25 = −5 + 10 + 10 = $15 M.
 
 ### G06 · Concepto · 45 s · uso: desafio
 
-Si cada variable sube 10 % (una a la vez), el VPN cambia así: precio +$50 M, costo de materia prima −$20 M, inversión −$10 M. ¿Cuál es la variable más sensible?
+Si cada cifra sube 10 % (una a la vez), la ganancia cambia así: precio, +$50 M; materia prima, −$20 M; inversión, −$10 M. ¿Qué cifra hay que estimar con más cuidado?
 
 - A) La materia prima — _Mueve 20, menos que el precio (50)._
-- B) La inversión — _Es la que MENOS mueve el VPN (10)._
-- C) Todas por igual — _Con el mismo 10 % de cambio, el impacto es distinto en cada una._
-- **D) El precio** ✅
+- B) La inversión — _Es la que MENOS mueve la ganancia (10)._
+- C) Todas por igual — _Con el mismo 10 % de cambio, cada una mueve la ganancia distinto._
+- **D) El precio: es la que más mueve la ganancia** ✅
 
-**Explicación:** El precio mueve 50, el mayor cambio: hay que estimarlo con mucho cuidado.
+**Explicación:** La cifra que más mueve el resultado es la más delicada: hay que estimarla con mucho cuidado.
 
 ### G07 · Concepto · 45 s · uso: desafio
 
-El VPN dio $40 M. ¿Para qué hacer análisis de riesgo?
+Las cuentas dicen que el negocio gana $40 M. ¿Para qué probar qué pasa si algo sale mal?
 
-- A) Para subir el VPN — _El análisis de riesgo no cambia el VPN; muestra qué tan frágil es._
-- **B) Porque se basa en supuestos: si cambian el precio, las ventas o los costos, el VPN podría volverse negativo** ✅
-- C) No hace falta: un VPN positivo es una garantía — _El VPN es una estimación: depende de supuestos que pueden fallar._
-- D) Solo porque lo exige el banco — _Lo necesita cualquiera que tome la decisión._
+- A) Para que dé más ganancia — _Probar no cambia la ganancia: muestra qué tan frágil es._
+- **B) Porque son estimaciones: si cambian el precio, las ventas o los costos, la ganancia podría volverse pérdida** ✅
+- C) No hace falta: si dio ganancia, está garantizada — _Las cifras son estimaciones que pueden fallar._
+- D) Solo porque lo pide el banco — _Lo necesita cualquiera que vaya a decidir._
 
-**Explicación:** Un VPN positivo con supuestos frágiles puede ser una mala apuesta.
+**Explicación:** Una ganancia que depende de cifras frágiles puede ser una mala apuesta.
 
 ### G08 · Concepto · 45 s · uso: desafio
 
-¿Cuál es la diferencia entre análisis de sensibilidad y análisis de escenarios?
+¿En qué se diferencian el análisis de sensibilidad y el de escenarios?
 
-- **A) La sensibilidad mueve una variable a la vez; los escenarios mueven varias juntas** ✅
-- B) La sensibilidad mueve varias y los escenarios una — _Es al revés._
-- C) Son lo mismo — _Uno aísla una variable y el otro combina varias._
-- D) Los escenarios solo se usan para calcular la TIR — _Los escenarios sirven para cualquier indicador._
+- **A) Sensibilidad mueve una cifra a la vez; escenarios mueve varias juntas (futuro malo, normal, bueno)** ✅
+- B) Sensibilidad mueve varias y escenarios una — _Es al revés._
+- C) Son lo mismo — _Uno mueve una sola cifra y el otro combina varias._
+- D) Los escenarios solo sirven para el precio — _Pueden combinar cualquier cifra._
 
-**Explicación:** Pesimista, probable y optimista son combinaciones de varias variables a la vez.
+**Explicación:** Malo, normal y bueno son combinaciones de varias cifras a la vez.
 
-## Chequeo de estrella "Sello VPN+" (30 s)
+## Chequeo de estrella "Sello Buen Negocio" (30 s)
 
-- **S01.** Sello VPN+ · Inviertes $100 M y recibes $120 M en el año 1. TMAR 10 %. ¿Cómo es el VPN? → **VPN > 0: ¡crea valor!** (VP de lo que recibes = 109,09; VPN = 9,09.)
-- **S02.** Sello VPN+ · Inviertes $100 M y recibes $115 M en el año 1. TMAR 20 %. ¿Cómo es el VPN? → **VPN < 0: destruye valor** (VP de lo que recibes = 95,83; VPN = −4,17.)
-- **S03.** Sello VPN+ · Inviertes $100 M y recibes $121 M en el año 2. TMAR 10 %. ¿Cómo es el VPN? → **VPN = 0: rinde justo la TMAR** (VP de lo que recibes = 100; VPN = 0.)
-- **S04.** Sello VPN+ · Inviertes $50 M y recibes $30 M en el año 1 y $30 M en el año 2. TMAR 10 %. ¿Cómo es el VPN? → **VPN > 0: ¡crea valor!** (VP de lo que recibes = 52,07; VPN = 2,07.)
-- **S05.** Sello VPN+ · Inviertes $200 M y recibes $110 M en el año 1 y $110 M en el año 2. TMAR 10 %. ¿Cómo es el VPN? → **VPN < 0: destruye valor** (VP de lo que recibes = 190,91; VPN = −9,09.)
-- **S06.** Sello VPN+ · Inviertes $100 M y recibes $125 M en el año 1. TMAR 25 %. ¿Cómo es el VPN? → **VPN = 0: rinde justo la TMAR** (VP de lo que recibes = 100; VPN = 0.)
+- **S01.** Pones $100 M en un negocio y en un año te devuelve $120 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más? → **El negocio gana más: ¡conviene!** (La opción segura te daría $110 M; el negocio, $120 M: el negocio gana más.)
+- **S02.** Pones $100 M en un negocio y en un año te devuelve $115 M. Si en cambio dejas esa plata en una opción segura que paga 20 % al año, ¿qué gana más? → **La opción segura gana más: no conviene** (La opción segura te daría $120 M; el negocio, $115 M: la opción segura gana más.)
+- **S03.** Pones $100 M en un negocio y en un año te devuelve $110 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más? → **Dan lo mismo: da igual** (La opción segura te daría $110 M; el negocio, $110 M: dan lo mismo.)
+- **S04.** Pones $200 M en un negocio y en un año te devuelve $230 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más? → **El negocio gana más: ¡conviene!** (La opción segura te daría $220 M; el negocio, $230 M: el negocio gana más.)
+- **S05.** Pones $50 M en un negocio y en un año te devuelve $60 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más? → **El negocio gana más: ¡conviene!** (La opción segura te daría $55 M; el negocio, $60 M: el negocio gana más.)
+- **S06.** Pones $200 M en un negocio y en un año te devuelve $210 M. Si en cambio dejas esa plata en una opción segura que paga 10 % al año, ¿qué gana más? → **La opción segura gana más: no conviene** (La opción segura te daría $220 M; el negocio, $210 M: la opción segura gana más.)
 
-## Mini-juego global 1 · ¿Entra o no entra?
+## Mini-juego global 1 · ¿Cuenta o no cuenta?
 
-- Compra de la maquinaria → **ENTRA** (Inversión del año 0.)
-- La depreciación como salida de dinero → **NO ENTRA** (No sale plata: solo reduce impuestos.)
-- Estudio de mercado que ya se pagó → **NO ENTRA** (Costo hundido.)
-- Capital de trabajo → **ENTRA** (Inversión que se recupera al final.)
-- Valor de salvamento al final → **ENTRA** (Entrada del último año.)
-- Impuesto de renta → **ENTRA** (Es una salida real de dinero.)
-- Arriendo que dejas de recibir por usar tu lote → **ENTRA** (Costo de oportunidad.)
-- Intereses del préstamo (en el flujo del proyecto) → **NO ENTRA** (El flujo del proyecto no incluye la financiación.)
-- Ventas del año → **ENTRA** (Ingreso operativo.)
-- Sueldo del administrador → **ENTRA** (Gasto operativo.)
+- Comprar la maquinaria → **CUENTA** (Es plata que sale al inicio.)
+- El desgaste de la máquina, como si fuera plata que sale → **NO CUENTA** (No sale plata: la máquina ya se pagó.)
+- Un estudio que ya se pagó y no se devuelve → **NO CUENTA** (Ya se gastó, hagan o no el proyecto.)
+- La plata para arrancar (mercancía y caja) → **CUENTA** (Sale al inicio y vuelve al final.)
+- Lo que reciben al vender la máquina usada al final → **CUENTA** (Es plata que entra el último año.)
+- Los impuestos → **CUENTA** (Es plata que sale de verdad.)
+- El arriendo que dejan de recibir por usar su propio lote → **CUENTA** (Es plata que dejan de ganar.)
+- Lo que la competencia gastó en publicidad → **NO CUENTA** (No es plata de su proyecto.)
+- Las ventas del año → **CUENTA** (Es plata que entra.)
+- El sueldo del administrador → **CUENTA** (Es plata que sale cada mes.)
 
-## Mini-juego global 2 · Carrera del descuento
+## Mini-juego global 2 · Carrera relámpago
 
-- VPN = +$20 M → **Aceptar** (la otra opción: Rechazar)
-- TIR 12 %, TMAR 15 % → **Rechazar** (la otra opción: Aceptar)
-- B/C = 1,3 → **Aceptar** (la otra opción: Rechazar)
-- $110 M que te dan en 1 año, exigiendo 10 %: ¿cuánto valen hoy? → **$100 M** (la otra opción: $110 M)
-- Recuperar la inversión con plata traída a hoy, ¿tarda igual o más que sin traerla? → **Sí** (la otra opción: No)
-- VPN = 0 implica… → **TIR = TMAR** (la otra opción: TIR = 0 %)
-- Dos proyectos de los que solo puedes escoger uno y los indicadores se contradicen: manda… → **El VPN** (la otra opción: La TIR)
-- B/C = 0,8 → **VPN < 0** (la otra opción: VPN > 0)
-- Tus $100 M ganan 20 % en 1 año: ¿cuánto tienes? → **$120 M** (la otra opción: $83 M)
-- El PR mide… → **Liquidez** (la otra opción: Rentabilidad)
+- El negocio gana más que tu mínimo exigido → **Conviene** (la otra opción: No conviene)
+- Rinde 12 % al año y tú exiges 15 % → **No conviene** (la otra opción: Conviene)
+- Devuelve $1,30 por cada $1 que cuesta → **Conviene** (la otra opción: No conviene)
+- $110 M dentro de un año, si tu plata gana 10 %: ¿cuánto valen hoy? → **$100 M** (la otra opción: $110 M)
+- ¿Qué vale más: un peso hoy o un peso dentro de un año? → **Hoy** (la otra opción: En un año)
+- En pesos de hoy el negocio queda en $0 → **Gana justo tu mínimo** (la otra opción: Pierde todo)
+- Solo puedes hacer uno: ¿el de % más alto o el que deja más plata? → **Más plata** (la otra opción: Más %)
+- Devuelve $0,80 por cada $1 que cuesta → **Pierde** (la otra opción: Gana)
+- $100 M que ganan 20 % en un año: ¿cuánto tienes? → **$120 M** (la otra opción: $80 M)
+- El tiempo de recuperación dice… → **Qué tan rápido vuelve la plata** (la otra opción: Cuánto gana)
 
 ## Mini-juego global 3 · Termómetro del riesgo
 
-- **T1.** Con un precio de $10.000 el VPN es $120 M. Por cada $1.000 que baja el precio, el VPN baja $40 M. ¿Con qué precio el VPN llega a 0? → **7.000** (120 ÷ 40 = 3 bajadas de $1.000 → precio crítico $7.000.)
-- **T2.** Vendiendo 1.000 unidades el VPN es $90 M. Por cada 100 unidades menos, el VPN baja $15 M. ¿Con cuántas unidades el VPN llega a 0? → **400 unidades** (90 ÷ 15 = 6 bajadas de 100 → 400 unidades.)
-- **T3.** Con una TMAR del 10 % el VPN es $50 M. Por cada punto que sube la TMAR, el VPN baja unos $10 M. ¿Con qué TMAR el VPN llega a 0 (≈ la TIR)? → **15 %** (50 ÷ 10 = 5 puntos → 15 %, que es aproximadamente la TIR (aproximación lineal).)
+- **T1.** Con un precio de $10.000 el negocio gana $120 M. Por cada $1.000 que baja el precio, la ganancia baja $40 M. ¿Con qué precio la ganancia llega a 0? → **7.000** (120 ÷ 40 = 3 bajadas de $1.000. Precio límite: $7.000. Por debajo de eso, el negocio pierde.)
+- **T2.** Vendiendo 1.000 unidades el negocio gana $90 M. Por cada 100 unidades menos, la ganancia baja $15 M. ¿Con cuántas unidades la ganancia llega a 0? → **400 unidades** (90 ÷ 15 = 6 bajadas de 100. Límite: 400 unidades.)
+- **T3.** Si hacer cada unidad cuesta $4.000, el negocio gana $50 M. Por cada $500 que sube ese costo, la ganancia baja $10 M. ¿Con qué costo la ganancia llega a 0? → **6.500** (50 ÷ 10 = 5 subidas de $500. Costo límite: $6.500. Por encima de eso, el negocio pierde.)
 
 ## Mini-juego individual · Ordena
 
-- **Ordena el flujo de caja operativo:** Ingresos → − Costos y gastos → − Depreciación → = Utilidad antes de impuestos → − Impuestos → = Utilidad neta → + Depreciación → = Flujo de caja operativo
-- **Ordena los pasos de la evaluación financiera:** Definir horizonte e insumos → Armar el flujo de caja → Descontar a la TMAR → Calcular VPN, TIR, B/C y PR → Analizar el riesgo → Decidir
+- **Ordena las cuentas de un año:** Ventas → − Gastos → = Ganancia antes de impuestos → − Impuestos → = Plata que queda en el bolsillo
+- **Ordena los pasos para decidir si un negocio conviene:** Reunir las cifras (costos, ventas, años) → Calcular la plata que entra y sale cada año → Pasar todo a pesos de hoy → Ver si gana más que el mínimo exigido → Probar qué pasa si algo sale mal → Decidir
 
 ## Mini-juego individual · Caza el error
 
 Usa las preguntas con uso `caza` (C04, C10, C11).
 
-## Jefe final · Junta Directiva del Nevado (TMAR 10 %)
+## Jefe final · Junta Directiva del Nevado (mínimo exigido o TMAR: 10 %)
 
 | Proyecto | Flujos | VPN | TIR | B/C | PR simple | PR descontado |
 |---|---|---|---|---|---|---|
@@ -747,16 +747,16 @@ Usa las preguntas con uso `caza` (C04, C10, C11).
 | P2 App de domicilios de arepas | -100 / 80 / 80 | 38,8 | 38 % | 1,39 | 1,25 años | 1,41 años |
 | P3 Puesto de raspados en la feria | -100 / 105 | −4,5 | 5 % | 0,95 | 0,95 años | no recupera |
 
-**Fase 1:** La empresa tiene $400 M disponibles y solo puede hacer UNO. ¿Cuál aprueba la Junta? → **P1**
+**Fase 1:** Hay $400 M y solo se puede aprobar UNO. ¿Cuál aprueba la Junta? → **P1**
 
-- **Tiene el mayor VPN: es el que más valor crea en pesos de hoy** ✅
-- Tiene la mayor TIR — _La mayor TIR es de P2, y la TIR no ve el tamaño del proyecto._
-- Recupera la inversión más rápido — _El más rápido es P3, y tiene VPN negativo._
+- **Es el que deja más plata en pesos de hoy** ✅
+- Es el que rinde el porcentaje más alto — _Ese es P2, pero es pequeño: deja menos plata ($38,8 M contra $97,4 M)._
+- Es el que recupera la plata más rápido — _Ese es P3, y en pesos de hoy pierde plata._
 
-**Fase 2:** ¡Giro! El presupuesto se recorta a $100 M. ¿Cuál aprueba ahora la Junta? → **P2**
+**Fase 2:** ¡Giro! El banco recortó el presupuesto: solo hay $100 M. ¿Cuál aprueba ahora la Junta? → **P2**
 
-- **Es el único que cabe en el presupuesto con VPN > 0** ✅
-- P3, porque cabe y recupera en menos de un año — _P3 cabe, pero su VPN es negativo: destruye valor._
-- Ninguno, porque P1 ya no cabe — _P2 cabe y crea valor._
+- **Es el único que cabe y además gana plata en pesos de hoy** ✅
+- Cabe y recupera la plata en menos de un año — _Ese es P3: cabe, pero en pesos de hoy pierde plata._
+- Ninguno sirve, porque P1 ya no cabe — _P2 cabe y gana plata._
 
-_Plan B del presentador: "¡La TMAR sube al 25 %!" → P1 (TIR ≈ 23 %) queda con VPN negativo y P2 (TIR ≈ 38 %) sigue siendo positivo → P2._
+_Plan B del presentador: "¡Ahora la Junta exige ganar mínimo 25 % al año!" P1 rinde 23 % (no alcanza) y P2 rinde 38 % (sí alcanza) → P2._

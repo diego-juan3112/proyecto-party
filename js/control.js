@@ -7,6 +7,8 @@ import { conectarCliente } from './red.js';
 
 const LETRAS = 'ABCD';
 const NOMBRE_ITEM = Object.fromEntries(CONFIG.tienda.map(t => [t.id, t.nombre]));
+// Para el jugador, "bloque B" no dice nada: se muestra el nombre de la zona.
+const lugar = b => CONFIG.zonas.find(z => z.bloque === b)?.nombre ?? 'Arranque';
 
 // Firebase puede devolver arreglos como objetos {0:…,1:…} o quitar los vacíos.
 export function norm(v) {
@@ -59,7 +61,7 @@ export function renderTarea(t, enviar, local, ctx = {}) {
     case 'desafio':
       if (t.etapa === 'leccion') {
         return h('div',
-          h('div.tarjeta.leccion', h('span.etq', `Mini-lección · bloque ${t.bloque}`), h('p.cuerpo-leccion', t.leccion), barra()),
+          h('div.tarjeta.leccion', h('span.etq', `Mini-lección · ${lugar(t.bloque)}`), h('p.cuerpo-leccion', t.leccion), barra()),
           h('button.boton.ancho', { style: { marginTop: '14px' }, on: { click: () => { local.enviado = false; enviar({ tipo: 'listo', tareaId: t.id }); local.esperandoReto = true; if (local.repintar) local.repintar(); } } }, 'Ya entendimos: ver el reto'));
       }
     // falls through
@@ -67,15 +69,15 @@ export function renderTarea(t, enviar, local, ctx = {}) {
       const titulos = { desafio: 'Desafío', duelo: `Duelo contra ${t.rival || 'otro equipo'}`, dueloBanco: 'Duelo contra el Banco', caza: 'Caza el error', practica: 'Pregunta de práctica' };
       return h('div.tarjeta',
         h('span.etapa', 'Paso 2 de 3 · Respondan juntos'),
-        h('span.etq', `${titulos[t.tipo]} · bloque ${t.bloque}${t.calculadora ? ' · Calculadora dorada: +30 s' : ''}`),
+        h('span.etq', `${titulos[t.tipo]} · ${lugar(t.bloque)}${t.calculadora ? ' · Calculadora dorada: +30 s' : ''}`),
         barra(),
         h('p.enunciado', t.enunciado),
         opciones(arr(t.opciones), arr(t.ocultas), k => mandar({ tipo: 'responder', opcion: k })));
     }
     case 'estrella':
       return h('div.tarjeta',
-        h('h2', '⭐ Sello VPN+'),
-        h('p', `Pasaron por la estrella. Cuesta ${t.precio} monedas y solo se paga si aciertan.`),
+        h('h2', '⭐ Sello Buen Negocio'),
+        h('p', `Pasaron por la estrella. Cuesta ${t.precio} monedas y solo se paga si aciertan. Comparen el negocio con la opción segura.`),
         barra(),
         h('p.enunciado', t.enunciado),
         opciones(arr(t.opciones), [], k => mandar({ tipo: 'responder', opcion: k })),
@@ -85,12 +87,13 @@ export function renderTarea(t, enviar, local, ctx = {}) {
       const total = n * t.flujo + t.salvamento;
       const flujos = [-t.costo, ...Array(n).fill(t.flujo)]; flujos[flujos.length - 1] += t.salvamento;
       if (n === 0) flujos.push(t.salvamento);
-      const vpnInv = flujos.reduce((s, f, i) => s + f / (1 + t.tmar) ** i, 0);
+      // Lo que deja la inversión en "monedas de hoy" (es su VPN, dicho sin jerga).
+      const hoy = flujos.reduce((s, f, i) => s + f / (1 + t.tmar) ** i, 0);
       return h('div.tarjeta',
         h('h2', '🏗️ Casilla de inversión'),
-        h('p', `Si invierten ${t.costo} monedas ahora, reciben ${t.flujo} en cada una de las ${n} zonas que faltan y ${t.salvamento} de salvamento al final: ${total} en total.`),
-        h('p', h('b', `Su flujo: ${flujos.map(f => signo(f)).join(' · ')}`)),
-        h('p.nota', `Pista del Estratega: el VPN de esa inversión al ${num(t.tmar * 100)} % es ${num(vpnInv, 1)}.`),
+        h('p', `Si pagan ${t.costo} monedas ahora, reciben ${t.flujo} en cada una de las ${n} zonas que faltan y ${t.salvamento} más al final: ${total} en total.`),
+        h('p', h('b', `Pagan ${t.costo} → reciben ${total}`)),
+        h('p.nota', `Pista del Estratega: la plata que llega tarde vale un poco menos. Pasado a monedas de hoy, invertir les deja ${signo(Math.round(hoy * 10) / 10)}: ${hoy > 0 ? 'conviene' : 'no conviene'}.`),
         barra(),
         h('div.botones-par', h('button.boton', { on: { click: () => mandar({ tipo: 'invertir', si: true }) } }, 'Invertir'), h('button.boton.secundario', { on: { click: () => mandar({ tipo: 'invertir', si: false }) } }, 'No invertir')));
     }
@@ -124,7 +127,7 @@ export function renderTarea(t, enviar, local, ctx = {}) {
       local.monto = Math.min(local.monto ?? 0, t.max);
       const valor = h('span.valor', String(local.monto));
       const cambiar = d => { local.monto = Math.max(0, Math.min(t.max, local.monto + d)); valor.textContent = local.monto; };
-      const nombres = { entra: '¿Entra o no entra al flujo?', carrera: 'Carrera del descuento', termometro: 'Termómetro del riesgo' };
+      const nombres = { entra: '¿Cuenta o no cuenta?', carrera: 'Carrera relámpago', termometro: 'Termómetro del riesgo' };
       return h('div.tarjeta',
         h('h2', '🎲 Apuesta'),
         h('p', `Se viene "${nombres[t.minijuego] || 'el mini-juego'}". ¿Cuántas monedas apuestan a quedar en el top 3? Si lo logran, las ganan; si no, las pierden.`),
@@ -174,13 +177,13 @@ function renderMinijuego(t, mandar, local, barra) {
     if (i >= items.length) { local.autoEnviar(); return h('div.tarjeta.espera', h('h2', '¡Listo!'), h('p', 'Respuestas enviadas.')); }
     const it = items[i];
     const responder = v => { local.resp.push(v); repintar(); };
-    const titulo = t.mg === 'entra' ? '¿Entra o no entra al flujo del proyecto?' : 'Carrera del descuento';
+    const titulo = t.mg === 'entra' ? '¿Es plata que entra o sale por hacer el proyecto?' : 'Carrera relámpago';
     return h('div.tarjeta.tarjeta-mg',
       h('h2', titulo), barra(),
       h('div.contador-mg', `${i + 1} de ${items.length}`),
       h('div.item', t.mg === 'entra' ? it : it.t),
       t.mg === 'entra'
-        ? h('div.botones-par', h('button.boton', { on: { click: () => responder(true) } }, 'Entra'), h('button.boton.rojo', { on: { click: () => responder(false) } }, 'No entra'))
+        ? h('div.botones-par', h('button.boton', { on: { click: () => responder(true) } }, 'Cuenta'), h('button.boton.rojo', { on: { click: () => responder(false) } }, 'No cuenta'))
         : h('div.botones-par', h('button.boton', { on: { click: () => responder(0) } }, it.a), h('button.boton.azul', { on: { click: () => responder(1) } }, it.b)));
   }
   // termómetro
@@ -210,16 +213,17 @@ export function renderResultado(u) {
 }
 
 const CHULETA = [
-  ['💡 La pregunta de fondo', '¿Conviene meter plata en este negocio? Todo lo demás sirve para responder eso.'],
-  ['⏳ Plata de hoy vs. de mañana', 'Un peso hoy vale más que uno mañana, porque hoy lo puedes invertir. Por eso la plata del futuro se lleva a valor de hoy ("descontar").'],
+  ['💡 La pregunta de fondo', '¿Vale la pena meterle plata a este negocio? Todo el juego sirve para responder eso.'],
+  ['⏳ Plata de hoy vs. de mañana', 'Un peso hoy vale más que uno mañana, porque hoy lo puedes poner a ganar. Si algo paga 10 % al año, $100 hoy son $110 en un año, y $110 dentro de un año valen $100 hoy (110 ÷ 1,1).'],
   ['💰 Flujo de caja', 'La plata que de verdad entra y sale cada año. Lo que ya se gastó no cuenta; lo que dejas de ganar por usar algo tuyo, sí.'],
-  ['✅ VPN', 'Cuánto valor crea el negocio, en pesos de hoy. Mayor que 0: conviene. Menor que 0: no conviene.'],
-  ['📈 TIR', 'Lo que rinde el negocio por año. Si rinde más que lo mínimo que exigimos (la TMAR): conviene.'],
-  ['⚖️ B/C', 'Lo que trae el negocio ÷ lo que cuesta, en pesos de hoy. Mayor que 1: conviene.'],
-  ['⏱ Recuperación', 'Cuánto tarda el negocio en devolver la inversión. Dice qué tan rápido vuelve la plata, no qué tan bueno es.'],
-  ['🏭 Depreciación', 'Lo que se desgasta una máquina cada año: (costo − lo que valdrá al final) ÷ años de vida. No es plata que sale, pero baja los impuestos.'],
-  ['⚠️ Riesgo', 'Cambia una cosa (precio, ventas) o varias a la vez y mira si el VPN sigue siendo positivo.'],
-  ['🥊 Si se contradicen', 'Entre dos proyectos de los que solo puedes escoger uno, manda el VPN.'],
+  ['🎯 Mínimo exigido (TMAR)', 'Lo mínimo que quieres ganar al año, por ejemplo lo que te pagaría una inversión segura.'],
+  ['✅ Ganancia en pesos de hoy (VPN)', 'Pasa a pesos de hoy lo que devuelve el negocio y réstale lo que cuesta. Positivo: conviene. Negativo: no conviene.'],
+  ['📈 Rentabilidad (TIR)', 'Cuánto gana el negocio en % por año. Si es más que tu mínimo exigido: conviene.'],
+  ['⚖️ Beneficio/costo (B/C)', 'Cuántos pesos devuelve por cada peso que cuesta. Más de 1: conviene.'],
+  ['⏱ Recuperación', 'Cuánto tarda en volver la plata invertida. Dice qué tan rápido vuelve, no si el negocio es bueno.'],
+  ['🏭 Desgaste (depreciación)', 'Lo que se desgasta una máquina cada año: costo ÷ años. No es plata que sale del bolsillo.'],
+  ['⚠️ Riesgo', '¿Qué pasa si el precio baja o se vende menos? Si la ganancia aguanta, el negocio es más seguro.'],
+  ['🥊 Si solo puedes uno', 'Escoge el que deja más plata en pesos de hoy, aunque otro tenga un porcentaje más alto.'],
 ];
 
 const COMO_SE_JUEGA = [
@@ -293,7 +297,7 @@ export async function iniciarControl(raiz, { red, sala }) {
     refCabeza = { mon: h('span', `🪙 ${yo?.monedas ?? 0}`), est: h('span.est', `⭐ ${yo?.estrellas ?? 0}`) };
     return h('div', h('div.tel-cabeza',
       h('div.ficha', { style: { '--c': m.color } }, mascotaSVG(m.id)),
-      h('div.nombre', yo?.nombre ?? '…', h('small', zona ? `${zona.icono} Zona ${zona.bloque} · ${zona.nombre}` : `Sala ${sala}`)),
+      h('div.nombre', yo?.nombre ?? '…', h('small', zona ? `${zona.icono} ${zona.nombre}` : `Sala ${sala}`)),
       h('div.marcadores', refCabeza.est, refCabeza.mon)), h('div.franja-fina'));
   }
   function actualizarCabeza() {
@@ -330,7 +334,7 @@ export async function iniciarControl(raiz, { red, sala }) {
     switch (e.fase) {
       case 'lobby': return [h('div.tarjeta.espera', h('h2', '¡Están dentro!'), h('p', 'Esperen a que el presentador empiece. Mientras tanto, lean cómo se juega.')), h('div.tarjeta.como', h('h2', 'Cómo se juega'), pasosComoSeJuega())];
       case 'intro': return [h('div.tarjeta.espera', h('h2', 'Miren la pantalla'), h('p', 'El guía está explicando las reglas.')), h('div.tarjeta.como', h('h2', 'Cómo se juega'), pasosComoSeJuega())];
-      case 'zona_intro': return h('div.tarjeta.espera', h('h2', `${z.icono} ${z.nombre}`), h('p', 'La Chiva los deja en una nueva zona. Lean la mini-lección en la pantalla.'));
+      case 'zona_intro': return h('div.tarjeta.espera', h('h2', `${z.icono} ${z.nombre}`), h('p', h('b', z.pregunta)), h('p', 'La Chiva los deja en una nueva zona. Lean la mini-lección en la pantalla.'));
       case 'tirar': case 'mover': return h('div.tarjeta.espera', h('h2', mio?.dado ? `Sacaron ${mio.dado.total}` : 'Tirando…'), mio?.dado ? h('p', arr(mio.dado.valores).map(v => dadoSVG(v, 'dado')), ' Avanzando en el anillo…') : null);
       case 'casillas': return h('div.tarjeta.espera', h('h2', 'Turno resuelto'), h('p', 'Esperen a que los demás equipos terminen.'));
       case 'resultado_turno': return h('div.tarjeta.espera', h('h2', 'Fin del turno'), h('p', 'Miren el marcador en la pantalla.'));
