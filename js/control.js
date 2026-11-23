@@ -210,16 +210,28 @@ export function renderResultado(u) {
 }
 
 const CHULETA = [
-  ['VPN', '−Inversión + Σ FCₜ ÷ (1 + TMAR)ᵗ. Mayor que 0: se acepta.'],
-  ['TIR', 'La tasa que hace VPN = 0. Mayor que la TMAR: se acepta.'],
-  ['B/C', 'VP de beneficios ÷ VP de costos (con la inversión). Mayor que 1: se acepta.'],
-  ['PR', 'Cuánto tarda en recuperar la inversión. Simple: sin descontar. Descontado: con flujos traídos a hoy.'],
-  ['Valor presente', 'VP = VF ÷ (1 + i)ⁿ. Valor futuro: VF = VP × (1 + i)ⁿ.'],
-  ['Flujo operativo', '(Ingresos − Costos − Depreciación) × (1 − t) + Depreciación.'],
-  ['Depreciación', '(Costo − Salvamento) ÷ Vida útil. Escudo fiscal = Depreciación × t.'],
-  ['Punto de equilibrio', 'Costos fijos ÷ (Precio − Costo variable unitario).'],
-  ['Si se contradicen', 'Entre proyectos excluyentes manda el VPN.'],
+  ['💡 La pregunta de fondo', '¿Conviene meter plata en este negocio? Todo lo demás sirve para responder eso.'],
+  ['⏳ Plata de hoy vs. de mañana', 'Un peso hoy vale más que uno mañana, porque hoy lo puedes invertir. Por eso la plata del futuro se lleva a valor de hoy ("descontar").'],
+  ['💰 Flujo de caja', 'La plata que de verdad entra y sale cada año. Lo que ya se gastó no cuenta; lo que dejas de ganar por usar algo tuyo, sí.'],
+  ['✅ VPN', 'Cuánto valor crea el negocio, en pesos de hoy. Mayor que 0: conviene. Menor que 0: no conviene.'],
+  ['📈 TIR', 'Lo que rinde el negocio por año. Si rinde más que lo mínimo que exigimos (la TMAR): conviene.'],
+  ['⚖️ B/C', 'Lo que trae el negocio ÷ lo que cuesta, en pesos de hoy. Mayor que 1: conviene.'],
+  ['⏱ Recuperación', 'Cuánto tarda el negocio en devolver la inversión. Dice qué tan rápido vuelve la plata, no qué tan bueno es.'],
+  ['🏭 Depreciación', 'Lo que se desgasta una máquina cada año: (costo − lo que valdrá al final) ÷ años de vida. No es plata que sale, pero baja los impuestos.'],
+  ['⚠️ Riesgo', 'Cambia una cosa (precio, ventas) o varias a la vez y mira si el VPN sigue siendo positivo.'],
+  ['🥊 Si se contradicen', 'Entre dos proyectos de los que solo puedes escoger uno, manda el VPN.'],
 ];
+
+const COMO_SE_JUEGA = [
+  ['🎲', 'Tiren el dado desde el celular y su mascota avanza por el camino.'],
+  ['❓', 'Resuelvan la casilla donde cayeron: una pregunta, plata que entra o sale, la tienda o un duelo.'],
+  ['🪙', 'Las monedas son la plata de su negocio. Acertar las hace crecer.'],
+  ['⭐', 'Con 15 monedas pueden comprar una estrella acertando si un negocio conviene o no. Gana quien tenga más estrellas al final.'],
+  ['🙋', 'Se turnan los roles. El celular dice a quién le toca cada cosa; las respuestas se piensan entre todos.'],
+];
+function pasosComoSeJuega() {
+  return h('ol.como-pasos', COMO_SE_JUEGA.map(([i, t]) => h('li', h('span.como-ico', i), h('span', t))));
+}
 
 // ═════════════════════ Aplicación del celular ═════════════════════
 export async function iniciarControl(raiz, { red, sala }) {
@@ -269,7 +281,7 @@ export async function iniciarControl(raiz, { red, sala }) {
       !S.conectado ? h('div.aviso-red', 'Sin conexión. Reconectando…') : null,
       cabeza(), rolesBanda(), itemsBanda(),
       h('div.tel-cuerpo', cuerpo()),
-      h('button.boton.azul.chuleta-boton', { on: { click: () => { S.chuleta = true; S.firma = ''; pintar(); } } }, 'Chuleta'),
+      h('button.boton.azul.chuleta-boton', { on: { click: () => { S.chuleta = true; S.firma = ''; pintar(); } } }, 'Ayuda'),
       S.chuleta ? modalChuleta() : null);
   }
 
@@ -316,8 +328,8 @@ export async function iniciarControl(raiz, { red, sala }) {
     const z = CONFIG.zonas[e.zona];
     const mio = arr(e.equipos).find(x => x.id === S.equipoId);
     switch (e.fase) {
-      case 'lobby': return h('div.tarjeta.espera', h('h2', '¡Están dentro!'), h('p', 'Esperen a que el presentador empiece la expedición. Mientras tanto, decidan quién lleva el celular.'));
-      case 'intro': return h('div.tarjeta.espera', h('h2', 'Miren la pantalla'), h('p', 'El guía está explicando las reglas.'));
+      case 'lobby': return [h('div.tarjeta.espera', h('h2', '¡Están dentro!'), h('p', 'Esperen a que el presentador empiece. Mientras tanto, lean cómo se juega.')), h('div.tarjeta.como', h('h2', 'Cómo se juega'), pasosComoSeJuega())];
+      case 'intro': return [h('div.tarjeta.espera', h('h2', 'Miren la pantalla'), h('p', 'El guía está explicando las reglas.')), h('div.tarjeta.como', h('h2', 'Cómo se juega'), pasosComoSeJuega())];
       case 'zona_intro': return h('div.tarjeta.espera', h('h2', `${z.icono} ${z.nombre}`), h('p', 'La Chiva los deja en una nueva zona. Lean la mini-lección en la pantalla.'));
       case 'tirar': case 'mover': return h('div.tarjeta.espera', h('h2', mio?.dado ? `Sacaron ${mio.dado.total}` : 'Tirando…'), mio?.dado ? h('p', arr(mio.dado.valores).map(v => dadoSVG(v, 'dado')), ' Avanzando en el anillo…') : null);
       case 'casillas': return h('div.tarjeta.espera', h('h2', 'Turno resuelto'), h('p', 'Esperen a que los demás equipos terminen.'));
@@ -342,6 +354,7 @@ export async function iniciarControl(raiz, { red, sala }) {
     return h('div.tel-cuerpo',
       h('div.tarjeta',
         h('h2', 'Únanse a la expedición'),
+        h('details.como-resumen', h('summary', '¿Cómo se juega?'), pasosComoSeJuega()),
         empezo ? h('div.error', 'La partida ya empezó. Si su equipo ya estaba inscrito en este celular, recarguen la página.') : null,
         S.error ? h('div.error', S.error) : null,
         h('form.formulario', { on: { submit: async ev => {
@@ -363,9 +376,9 @@ export async function iniciarControl(raiz, { red, sala }) {
   function modalChuleta() {
     const cerrar = () => { S.chuleta = false; S.firma = ''; pintar(); };
     return h('div.modal-fondo', { on: { click: ev => { if (ev.target === ev.currentTarget) cerrar(); } } },
-      h('div.modal', { role: 'dialog', 'aria-label': 'Chuleta de fórmulas' },
+      h('div.modal', { role: 'dialog', 'aria-label': 'Ayuda del juego' },
         h('button.boton.secundario.cerrar', { on: { click: cerrar } }, 'Cerrar'),
-        h('div.chuleta', h('h2', 'Chuleta'), h('dl', CHULETA.map(([k, v]) => [h('dt', k), h('dd', v)])))));
+        h('div.chuleta', h('h2', 'Cómo se juega'), pasosComoSeJuega(), h('h2', { style: { marginTop: '18px' } }, 'Ideas clave'), h('dl', CHULETA.map(([k, v]) => [h('dt', k), h('dd', v)])))));
   }
 
   pintar();

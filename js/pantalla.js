@@ -373,7 +373,7 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
         h('ol.pasos',
           h('li', 'Un celular por equipo: escaneen el código QR.'),
           h('li', 'Escojan su mascota y escriban sus nombres.'),
-          h('li', 'Tengan a mano una calculadora (la del celular sirve).')),
+          h('li', 'En el celular lean "¿Cómo se juega?" mientras esperan.')),
         h('div.llegadas', S.equipos.length ? S.equipos.map(e => {
           const nueva = !ui.llegadasVistas.has(e.id); ui.llegadasVistas.add(e.id);
           return h('div.llegada' + (nueva ? '.nueva' : ''), fichaDe(e), e.nombre);
@@ -386,10 +386,10 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
       h('h2', 'Su startup cafetera sube al Nevado'),
       h('div.columnas',
         h('div',
-          h('p', h('b', '🪙 Monedas = flujo de caja. '), 'Entran con ingresos y retos; salen con costos, impuestos e inversiones.'),
-          h('p', h('b', '⭐ Estrella = Sello VPN+. '), 'Gana quien tenga más estrellas. Para comprar una hay que leer bien un VPN.'),
-          h('p', h('b', '🎲 Todos juegan a la vez: '), 'tiren el dado en el celular, avancen y resuelvan su casilla.'),
-          h('p', h('b', '🔄 Roles que rotan: '), 'Analista calcula, Contador revisa, Vocero confirma y defiende, Estratega decide.')),
+          h('p', h('b', '🪙 Monedas = la plata de su negocio. '), 'Entran con ingresos y respuestas correctas; salen con costos e impuestos.'),
+          h('p', h('b', '⭐ Estrellas: '), 'gana quien tenga más. Para comprar una hay que acertar si un negocio conviene o no.'),
+          h('p', h('b', '🎲 Cada turno tiene 3 pasos: '), '1 tiren el dado, 2 resuelvan su casilla, 3 miren el resultado.'),
+          h('p', h('b', '🔄 Roles: '), 'uno calcula, otro revisa, otro responde y otro decide. Se turnan en cada zona.')),
         h('div',
           h('p', h('b', 'Lección A · ¿Para qué evaluamos?')),
           h('p', BANCO.LECCIONES.para_que),
@@ -499,12 +499,12 @@ export async function iniciarPantalla(raiz, { red, demo = 0 }) {
 
   function escenaCierre() {
     const filas = [
-      ['VPN', '−Inversión + Σ FC ÷ (1 + TMAR)ᵗ', 'Mayor que 0: se acepta', 'Manda si hay contradicción'],
-      ['TIR', 'La tasa con la que VPN = 0', 'Mayor que la TMAR: se acepta', 'No ve el tamaño; puede haber varias'],
-      ['B/C', 'VP beneficios ÷ VP costos', 'Mayor que 1: se acepta', 'Equivale a VPN > 0'],
-      ['PR', 'Tiempo para recuperar (simple o descontado)', 'Menor: más líquido', 'No mide rentabilidad'],
-      ['Riesgo', 'Sensibilidad, escenarios, punto de equilibrio', 'Buscar el valor crítico', 'VPN > 0 no es garantía'],
-      ['Flujo', 'Utilidad neta + depreciación − inversiones + salvamento y capital de trabajo', 'Solo lo que cambia con la decisión', 'Hundidos no, oportunidad sí, intereses no'],
+      ['VPN', 'Cuánto valor crea, en pesos de hoy', 'Mayor que 0: se acepta', 'Si hay contradicción, manda'],
+      ['TIR', 'Lo que rinde por año', 'Mayor que lo exigido (TMAR): se acepta', 'No ve el tamaño del proyecto'],
+      ['B/C', 'Lo que trae ÷ lo que cuesta', 'Mayor que 1: se acepta', 'Dice lo mismo que el VPN'],
+      ['PR', 'Cuánto tarda en devolver la inversión', 'Menos tiempo: vuelve más rápido', 'No mide si es buen negocio'],
+      ['Riesgo', 'Qué pasa si cambian precio, ventas o costos', 'Buscar cuánto aguanta el negocio', 'Un VPN positivo no es garantía'],
+      ['Flujo', 'La plata que de verdad entra y sale', 'Solo lo que cambia por decidir', 'Lo ya gastado no cuenta'],
     ];
     return h('div.placa',
       h('h2', '¿Conviene invertir? Así se decide'),
