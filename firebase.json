@@ -6,12 +6,24 @@
       "database.rules.json",
       ".firebaserc",
       "**/.*",
+      ".git/**",
+      ".firebase/**",
       "**/node_modules/**",
       "tools/**",
       "docs/**",
       "package.json",
       "capturas/**",
       "package-lock.json"
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(html|js|css)",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      },
+      {
+        "source": "/",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      }
     ]
   },
   "database": {
