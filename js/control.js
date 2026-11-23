@@ -244,12 +244,15 @@ export async function iniciarControl(raiz, { red, sala }) {
   const tel = h('div.tel');
   limpiar(raiz, tel);
 
+  // Firebase puede avisar (por ejemplo, del estado de conexión) antes de que termine de
+  // prepararse esta función. Hasta entonces solo se guardan los datos; se dibuja al final.
+  let listo = false;
   let cli;
   try {
     cli = await conectarCliente(red, sala, {
-      onEstado: v => { S.estado = norm(v); pintar(); },
-      onEquipo: v => { S.yo = norm(v); pintar(); },
-      onConexion: ok => { S.conectado = ok; pintar(true); },
+      onEstado: v => { S.estado = norm(v); if (listo) pintar(); },
+      onEquipo: v => { S.yo = norm(v); if (listo) pintar(); },
+      onConexion: ok => { S.conectado = ok; if (listo) pintar(true); },
     });
   } catch (e) {
     limpiar(tel, h('div.tel-cuerpo', h('div.error', 'No se pudo conectar con el servidor del juego. Revisen los datos móviles y recarguen la página.')));
@@ -385,6 +388,7 @@ export async function iniciarControl(raiz, { red, sala }) {
         h('div.chuleta', h('h2', 'Cómo se juega'), pasosComoSeJuega(), h('h2', { style: { marginTop: '18px' } }, 'Ideas clave'), h('dl', CHULETA.map(([k, v]) => [h('dt', k), h('dd', v)])))));
   }
 
+  listo = true;
   pintar();
   // Si el equipo guardado ya no existe en la sala (otra partida), olvidarlo
   setTimeout(() => {

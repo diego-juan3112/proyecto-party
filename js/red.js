@@ -21,7 +21,16 @@ async function cargarFirebase() {
   const app = initializeApp(firebaseConfig);
   // Identidad anónima: no pide datos y se conserva al recargar (las reglas la usan para
   // que solo la pantalla escriba el estado y solo cada celular envíe las acciones de su equipo).
-  const cred = await auth.signInAnonymously(auth.getAuth(app));
+  // El servicio de Google a veces responde 503 por un momento: se reintenta antes de rendirse.
+  const autenticacion = auth.getAuth(app);
+  let cred;
+  for (let intento = 0; ; intento++) {
+    try { cred = await auth.signInAnonymously(autenticacion); break; }
+    catch (e) {
+      if (intento >= 4) throw e;
+      await new Promise(r => setTimeout(r, 1000 * 2 ** intento)); // 1, 2, 4 y 8 s
+    }
+  }
   fbCache = { db, base: db.getDatabase(app), uid: cred.user.uid };
   return fbCache;
 }
