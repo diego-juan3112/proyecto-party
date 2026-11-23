@@ -407,7 +407,7 @@ export const ITEMS = [
   },
   {
     id: 'E03', bloque: 'E', uso: ['desafio', 'duelo'], leccion: 'tir', tiempo: 75,
-    enunciado: 'Inviertes $100 M y recibes $121 M en el año 2 (nada en el año 1). ¿Cuál es la TIR?',
+    enunciado: 'Inviertes $100 M y recibes $121 M al cabo de 2 años (nada en el año 1). ¿Qué rentabilidad anual rinde (TIR)?',
     calc: { formula: 'tir', datos: { flujos: [-100, 0, 121] } }, unidad: '%', dec: 1,
     distractores: [
       { v: 21, error: 'Esa es la ganancia total de los 2 años, no la tasa anual.' },
@@ -418,7 +418,7 @@ export const ITEMS = [
   },
   {
     id: 'E04', bloque: 'E', uso: ['desafio', 'duelo'], leccion: 'tir', tiempo: 60,
-    enunciado: 'Inviertes $200 M y recibes $250 M dentro de un año. ¿Cuál es la TIR?',
+    enunciado: 'Inviertes $200 M y recibes $250 M dentro de un año. ¿Qué rentabilidad anual tiene (TIR)?',
     calc: { formula: 'tir', datos: { flujos: [-200, 250] } }, unidad: '%', dec: 1,
     distractores: [
       { v: 20, error: 'Dividiste la ganancia entre 250; se divide entre lo invertido (200).' },
@@ -429,7 +429,7 @@ export const ITEMS = [
   },
   {
     id: 'E05', bloque: 'E', uso: ['desafio'], leccion: 'tir', tiempo: 45,
-    enunciado: 'Un proyecto tiene TIR = 18 % y la TMAR es 15 %. ¿Qué se decide?',
+    enunciado: 'Un negocio rinde 18 % al año (TIR) y tú exiges mínimo 15 % (TMAR). ¿Qué se decide?',
     opciones: [
       { t: 'Se acepta: rinde más de lo mínimo exigido (y su VPN es positivo)', ok: true },
       { t: 'Se rechaza: 18 % es poco', porque: 'Lo que importa es comparar con la TMAR, y 18 % > 15 %.' },
@@ -497,7 +497,7 @@ export const ITEMS = [
     id: 'E11', bloque: 'E', uso: ['desafio'], leccion: 'tir', tiempo: 45,
     enunciado: '¿Qué es la TIR?',
     opciones: [
-      { t: 'La tasa de descuento que hace el VPN igual a cero', ok: true },
+      { t: 'La rentabilidad propia del negocio: la tasa con la que el VPN queda en cero', ok: true },
       { t: 'La TMAR que exige el inversionista', porque: 'La TMAR se exige; la TIR la da el proyecto.' },
       { t: 'La utilidad dividida entre las ventas', porque: 'Ese es el margen, un dato contable.' },
       { t: 'El tiempo que tarda en recuperar la inversión', porque: 'Ese es el periodo de recuperación.' },
@@ -519,7 +519,7 @@ export const ITEMS = [
   },
   {
     id: 'F02', bloque: 'F', uso: ['desafio'], leccion: 'criterios', tiempo: 45,
-    enunciado: 'En un proyecto convencional (inversión al inicio y luego flujos positivos), si VPN > 0, entonces necesariamente…',
+    enunciado: 'En un proyecto normal (se invierte al inicio y luego entra plata cada año), si el VPN es mayor que 0, ¿qué pasa también?',
     opciones: [
       { t: 'TIR > TMAR y B/C > 1', ok: true },
       { t: 'TIR < TMAR', porque: 'Si la TIR fuera menor que la TMAR, el VPN sería negativo.' },
@@ -553,9 +553,9 @@ export const ITEMS = [
   },
   {
     id: 'F05', bloque: 'F', uso: ['desafio'], leccion: 'criterios', tiempo: 60,
-    enunciado: 'Un proyecto tiene flujos −100, +230, −132 (el signo cambia dos veces). Tiene dos TIR: 10 % y 20 %. ¿Qué indicador usas para decidir?',
+    enunciado: 'Un negocio invierte 100, recibe 230 y luego tiene que volver a poner 132. Por eso sale con dos TIR distintas (10 % y 20 %). ¿Con qué indicador decides?',
     opciones: [
-      { t: 'El VPN a la TMAR: con varias TIR, la TIR no sirve para decidir', ok: true },
+      { t: 'El VPN: da una sola respuesta clara cuando la TIR confunde', ok: true },
       { t: 'La TIR mayor (20 %)', porque: 'Ninguna de las dos TIR es "la" rentabilidad del proyecto.' },
       { t: 'El promedio de las dos TIR', porque: 'Promediar TIR no tiene sentido financiero.' },
       { t: 'El periodo de recuperación', porque: 'El PR no mide rentabilidad.' },
@@ -565,7 +565,7 @@ export const ITEMS = [
   },
   {
     id: 'F06', bloque: 'F', uso: ['desafio'], leccion: 'criterios', tiempo: 45,
-    enunciado: 'Entre dos proyectos excluyentes, A tiene mayor VPN y B mayor TIR, y ambos cálculos están bien. ¿Por qué puede pasar?',
+    enunciado: 'Solo puedes hacer uno de dos proyectos. A tiene mayor VPN y B mayor TIR, y los cálculos están bien. ¿Por qué puede pasar?',
     opciones: [
       { t: 'Por diferencias de tamaño de la inversión o de cuándo llegan los flujos', ok: true },
       { t: 'Porque alguno está mal calculado', porque: 'Puede pasar con cálculos correctos.' },
@@ -599,7 +599,7 @@ export const ITEMS = [
   },
   {
     id: 'F09', bloque: 'F', uso: ['desafio', 'duelo'], leccion: 'criterios', tiempo: 90,
-    enunciado: 'Proyectos EXCLUYENTES, TMAR 10 %. A: inviertes $100 M y recibes $132 M en un año (TIR 32 %). B: inviertes $200 M y recibes $253 M en un año (TIR 26,5 %). ¿Cuál es el VPN del proyecto que debes escoger?',
+    enunciado: 'Solo puedes hacer uno de dos proyectos y exiges 10 %. A: inviertes $100 M y recibes $132 M en un año (TIR 32 %). B: inviertes $200 M y recibes $253 M en un año (TIR 26,5 %). ¿Cuál es el VPN del que conviene escoger?',
     calc: { formula: 'vpn', datos: { flujos: [-200, 253], tasa: 0.1 } }, unidad: 'M', dec: 1,
     distractores: [
       { v: 20, error: 'Ese es el VPN de A: lo escogiste por la TIR, pero entre excluyentes manda el VPN.' },
@@ -730,12 +730,12 @@ export const MG_CARRERA = [
   { t: 'VPN = +$20 M', a: 'Aceptar', b: 'Rechazar', ok: 0 },
   { t: 'TIR 12 %, TMAR 15 %', a: 'Aceptar', b: 'Rechazar', ok: 1 },
   { t: 'B/C = 1,3', a: 'Aceptar', b: 'Rechazar', ok: 0 },
-  { t: 'VP de $110 M dentro de 1 año (TMAR 10 %)', a: '$100 M', b: '$110 M', ok: 0, chequeo: { formula: 'vp', datos: { monto: 110, tasa: 0.1, n: 1 }, esperado: 100 } },
-  { t: '¿El PR descontado es mayor o igual que el simple?', a: 'Sí', b: 'No', ok: 0 },
+  { t: '$110 M que te dan en 1 año, exigiendo 10 %: ¿cuánto valen hoy?', a: '$100 M', b: '$110 M', ok: 0, chequeo: { formula: 'vp', datos: { monto: 110, tasa: 0.1, n: 1 }, esperado: 100 } },
+  { t: 'Recuperar la inversión con plata traída a hoy, ¿tarda igual o más que sin traerla?', a: 'Sí', b: 'No', ok: 0 },
   { t: 'VPN = 0 implica…', a: 'TIR = TMAR', b: 'TIR = 0 %', ok: 0 },
-  { t: 'Proyectos excluyentes en conflicto: manda…', a: 'La TIR', b: 'El VPN', ok: 1 },
+  { t: 'Dos proyectos de los que solo puedes escoger uno y los indicadores se contradicen: manda…', a: 'La TIR', b: 'El VPN', ok: 1 },
   { t: 'B/C = 0,8', a: 'VPN > 0', b: 'VPN < 0', ok: 1 },
-  { t: 'VF de $100 M en 1 año al 20 %', a: '$120 M', b: '$83 M', ok: 0, chequeo: { formula: 'vf', datos: { monto: 100, tasa: 0.2, n: 1 }, esperado: 120 } },
+  { t: 'Tus $100 M ganan 20 % en 1 año: ¿cuánto tienes?', a: '$120 M', b: '$83 M', ok: 0, chequeo: { formula: 'vf', datos: { monto: 100, tasa: 0.2, n: 1 }, esperado: 120 } },
   { t: 'El PR mide…', a: 'Rentabilidad', b: 'Liquidez', ok: 1 },
 ];
 

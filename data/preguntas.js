@@ -1263,7 +1263,7 @@ export const PREGUNTAS = [
   "tiempo": 75,
   "leccion": "tir",
   "tipo": "calculo",
-  "enunciado": "Inviertes $100 M y recibes $121 M en el año 2 (nada en el año 1). ¿Cuál es la TIR?",
+  "enunciado": "Inviertes $100 M y recibes $121 M al cabo de 2 años (nada en el año 1). ¿Qué rentabilidad anual rinde (TIR)?",
   "opciones": [
    {
     "t": "21 %",
@@ -1307,7 +1307,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "tir",
   "tipo": "calculo",
-  "enunciado": "Inviertes $200 M y recibes $250 M dentro de un año. ¿Cuál es la TIR?",
+  "enunciado": "Inviertes $200 M y recibes $250 M dentro de un año. ¿Qué rentabilidad anual tiene (TIR)?",
   "opciones": [
    {
     "t": "25 %"
@@ -1349,7 +1349,7 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "tir",
   "tipo": "concepto",
-  "enunciado": "Un proyecto tiene TIR = 18 % y la TMAR es 15 %. ¿Qué se decide?",
+  "enunciado": "Un negocio rinde 18 % al año (TIR) y tú exiges mínimo 15 % (TMAR). ¿Qué se decide?",
   "opciones": [
    {
     "t": "Se acepta: rinde más de lo mínimo exigido (y su VPN es positivo)"
@@ -1586,7 +1586,7 @@ export const PREGUNTAS = [
     "porque": "Ese es el periodo de recuperación."
    },
    {
-    "t": "La tasa de descuento que hace el VPN igual a cero"
+    "t": "La rentabilidad propia del negocio: la tasa con la que el VPN queda en cero"
    }
   ],
   "correcta": 3,
@@ -1632,7 +1632,7 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "criterios",
   "tipo": "concepto",
-  "enunciado": "En un proyecto convencional (inversión al inicio y luego flujos positivos), si VPN > 0, entonces necesariamente…",
+  "enunciado": "En un proyecto normal (se invierte al inicio y luego entra plata cada año), si el VPN es mayor que 0, ¿qué pasa también?",
   "opciones": [
    {
     "t": "B/C < 1",
@@ -1745,7 +1745,7 @@ export const PREGUNTAS = [
   "tiempo": 60,
   "leccion": "criterios",
   "tipo": "concepto",
-  "enunciado": "Un proyecto tiene flujos −100, +230, −132 (el signo cambia dos veces). Tiene dos TIR: 10 % y 20 %. ¿Qué indicador usas para decidir?",
+  "enunciado": "Un negocio invierte 100, recibe 230 y luego tiene que volver a poner 132. Por eso sale con dos TIR distintas (10 % y 20 %). ¿Con qué indicador decides?",
   "opciones": [
    {
     "t": "El periodo de recuperación",
@@ -1760,7 +1760,7 @@ export const PREGUNTAS = [
     "porque": "Promediar TIR no tiene sentido financiero."
    },
    {
-    "t": "El VPN a la TMAR: con varias TIR, la TIR no sirve para decidir"
+    "t": "El VPN: da una sola respuesta clara cuando la TIR confunde"
    }
   ],
   "correcta": 3,
@@ -1801,7 +1801,7 @@ export const PREGUNTAS = [
   "tiempo": 45,
   "leccion": "criterios",
   "tipo": "concepto",
-  "enunciado": "Entre dos proyectos excluyentes, A tiene mayor VPN y B mayor TIR, y ambos cálculos están bien. ¿Por qué puede pasar?",
+  "enunciado": "Solo puedes hacer uno de dos proyectos. A tiene mayor VPN y B mayor TIR, y los cálculos están bien. ¿Por qué puede pasar?",
   "opciones": [
    {
     "t": "Porque alguno está mal calculado",
@@ -1905,7 +1905,7 @@ export const PREGUNTAS = [
   "tiempo": 90,
   "leccion": "criterios",
   "tipo": "calculo",
-  "enunciado": "Proyectos EXCLUYENTES, TMAR 10 %. A: inviertes $100 M y recibes $132 M en un año (TIR 32 %). B: inviertes $200 M y recibes $253 M en un año (TIR 26,5 %). ¿Cuál es el VPN del proyecto que debes escoger?",
+  "enunciado": "Solo puedes hacer uno de dos proyectos y exiges 10 %. A: inviertes $100 M y recibes $132 M en un año (TIR 32 %). B: inviertes $200 M y recibes $253 M en un año (TIR 26,5 %). ¿Cuál es el VPN del que conviene escoger?",
   "opciones": [
    {
     "t": "$30 M"
@@ -2523,7 +2523,7 @@ export const MG_CARRERA = [
   "ok": 0
  },
  {
-  "t": "VP de $110 M dentro de 1 año (TMAR 10 %)",
+  "t": "$110 M que te dan en 1 año, exigiendo 10 %: ¿cuánto valen hoy?",
   "a": "$100 M",
   "b": "$110 M",
   "ok": 0,
@@ -2538,7 +2538,7 @@ export const MG_CARRERA = [
   }
  },
  {
-  "t": "¿El PR descontado es mayor o igual que el simple?",
+  "t": "Recuperar la inversión con plata traída a hoy, ¿tarda igual o más que sin traerla?",
   "a": "Sí",
   "b": "No",
   "ok": 0
@@ -2550,7 +2550,7 @@ export const MG_CARRERA = [
   "ok": 0
  },
  {
-  "t": "Proyectos excluyentes en conflicto: manda…",
+  "t": "Dos proyectos de los que solo puedes escoger uno y los indicadores se contradicen: manda…",
   "a": "La TIR",
   "b": "El VPN",
   "ok": 1
@@ -2562,7 +2562,7 @@ export const MG_CARRERA = [
   "ok": 1
  },
  {
-  "t": "VF de $100 M en 1 año al 20 %",
+  "t": "Tus $100 M ganan 20 % en 1 año: ¿cuánto tienes?",
   "a": "$120 M",
   "b": "$83 M",
   "ok": 0,

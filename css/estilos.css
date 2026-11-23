@@ -361,6 +361,13 @@ p { margin: 0 0 .6em; }
 .mascota-op[disabled] { opacity: .3; }
 .error { background: #fbe0e0; color: #7d1020; border-radius: 12px; padding: 10px 12px; font-weight: 700; }
 
+.como-pasos { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.como-pasos li { display: flex; gap: 12px; align-items: flex-start; font-size: 1.05rem; line-height: 1.4; }
+.como-ico { font-size: 1.6rem; line-height: 1.1; flex: none; width: 2rem; text-align: center; }
+.tarjeta.como { margin-top: 14px; }
+.como-resumen { background: rgba(42, 26, 18, .08); border-radius: 14px; padding: 10px 14px; margin: 0 0 14px; }
+.como-resumen summary { font-weight: 700; cursor: pointer; }
+.como-resumen .como-pasos { margin-top: 10px; }
 .chuleta-boton { position: fixed; bottom: 14px; right: 14px; z-index: 20; font-size: .95rem; padding: .55em 1.1em; }
 .chuleta { color: var(--claro); padding: 8px 18px 22px; }
 .chuleta h2 { color: var(--amarillo); font-size: 1.6rem; margin: 6px 0 10px; }
