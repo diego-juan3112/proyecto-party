@@ -401,7 +401,7 @@ Inviertes $100 M y recibes $132 M dentro de un año. Exiges 20 % al año. ¿Cuá
 
 ### E03 · Cálculo · 75 s · uso: desafio, duelo
 
-Inviertes $100 M y recibes $121 M en el año 2 (nada en el año 1). ¿Cuál es la TIR?
+Inviertes $100 M y recibes $121 M al cabo de 2 años (nada en el año 1). ¿Qué rentabilidad anual rinde (TIR)?
 
 - A) 21 % — _Esa es la ganancia total de los 2 años, no la tasa anual._
 - **B) 10 %** ✅
@@ -412,7 +412,7 @@ Inviertes $100 M y recibes $121 M en el año 2 (nada en el año 1). ¿Cuál es l
 
 ### E04 · Cálculo · 60 s · uso: desafio, duelo
 
-Inviertes $200 M y recibes $250 M dentro de un año. ¿Cuál es la TIR?
+Inviertes $200 M y recibes $250 M dentro de un año. ¿Qué rentabilidad anual tiene (TIR)?
 
 - **A) 25 %** ✅
 - B) 125 % — _Dividiste 250 entre 200 sin restar 1._
@@ -423,7 +423,7 @@ Inviertes $200 M y recibes $250 M dentro de un año. ¿Cuál es la TIR?
 
 ### E05 · Concepto · 45 s · uso: desafio
 
-Un proyecto tiene TIR = 18 % y la TMAR es 15 %. ¿Qué se decide?
+Un negocio rinde 18 % al año (TIR) y tú exiges mínimo 15 % (TMAR). ¿Qué se decide?
 
 - **A) Se acepta: rinde más de lo mínimo exigido (y su VPN es positivo)** ✅
 - B) Es indiferente — _Sería indiferente si la TIR fuera igual a la TMAR._
@@ -494,7 +494,7 @@ Si el VPN de un proyecto es exactamente 0, significa que…
 - A) La utilidad dividida entre las ventas — _Ese es el margen, un dato contable._
 - B) La TMAR que exige el inversionista — _La TMAR se exige; la TIR la da el proyecto._
 - C) El tiempo que tarda en recuperar la inversión — _Ese es el periodo de recuperación._
-- **D) La tasa de descuento que hace el VPN igual a cero** ✅
+- **D) La rentabilidad propia del negocio: la tasa con la que el VPN queda en cero** ✅
 
 **Explicación:** La TIR es la rentabilidad propia del proyecto. Se compara con la TMAR.
 
@@ -513,7 +513,7 @@ Solo puedes hacer UNO de dos proyectos (excluyentes) y hay plata para cualquiera
 
 ### F02 · Concepto · 45 s · uso: desafio
 
-En un proyecto convencional (inversión al inicio y luego flujos positivos), si VPN > 0, entonces necesariamente…
+En un proyecto normal (se invierte al inicio y luego entra plata cada año), si el VPN es mayor que 0, ¿qué pasa también?
 
 - A) B/C < 1 — _B/C < 1 equivale a VPN < 0._
 - B) TIR < TMAR — _Si la TIR fuera menor que la TMAR, el VPN sería negativo._
@@ -546,18 +546,18 @@ Presupuesto $100 M. Proyectos INDEPENDIENTES: A (inversión $100 M, VPN $30 M), 
 
 ### F05 · Concepto · 60 s · uso: desafio
 
-Un proyecto tiene flujos −100, +230, −132 (el signo cambia dos veces). Tiene dos TIR: 10 % y 20 %. ¿Qué indicador usas para decidir?
+Un negocio invierte 100, recibe 230 y luego tiene que volver a poner 132. Por eso sale con dos TIR distintas (10 % y 20 %). ¿Con qué indicador decides?
 
 - A) El periodo de recuperación — _El PR no mide rentabilidad._
 - B) La TIR mayor (20 %) — _Ninguna de las dos TIR es "la" rentabilidad del proyecto._
 - C) El promedio de las dos TIR — _Promediar TIR no tiene sentido financiero._
-- **D) El VPN a la TMAR: con varias TIR, la TIR no sirve para decidir** ✅
+- **D) El VPN: da una sola respuesta clara cuando la TIR confunde** ✅
 
 **Explicación:** Con flujos no convencionales pueden aparecer varias TIR. El VPN siempre da una sola respuesta.
 
 ### F06 · Concepto · 45 s · uso: desafio
 
-Entre dos proyectos excluyentes, A tiene mayor VPN y B mayor TIR, y ambos cálculos están bien. ¿Por qué puede pasar?
+Solo puedes hacer uno de dos proyectos. A tiene mayor VPN y B mayor TIR, y los cálculos están bien. ¿Por qué puede pasar?
 
 - A) Porque alguno está mal calculado — _Puede pasar con cálculos correctos._
 - B) Porque la TMAR es negativa — _No tiene que ver con el signo de la TMAR._
@@ -590,7 +590,7 @@ Presupuesto $150 M, proyectos INDEPENDIENTES. A: inversión $100 M, VPN $40 M. B
 
 ### F09 · Cálculo · 90 s · uso: desafio, duelo
 
-Proyectos EXCLUYENTES, TMAR 10 %. A: inviertes $100 M y recibes $132 M en un año (TIR 32 %). B: inviertes $200 M y recibes $253 M en un año (TIR 26,5 %). ¿Cuál es el VPN del proyecto que debes escoger?
+Solo puedes hacer uno de dos proyectos y exiges 10 %. A: inviertes $100 M y recibes $132 M en un año (TIR 32 %). B: inviertes $200 M y recibes $253 M en un año (TIR 26,5 %). ¿Cuál es el VPN del que conviene escoger?
 
 - **A) $30 M** ✅
 - B) $53 M — _No descontaste el flujo de B._
@@ -716,12 +716,12 @@ El VPN dio $40 M. ¿Para qué hacer análisis de riesgo?
 - VPN = +$20 M → **Aceptar** (la otra opción: Rechazar)
 - TIR 12 %, TMAR 15 % → **Rechazar** (la otra opción: Aceptar)
 - B/C = 1,3 → **Aceptar** (la otra opción: Rechazar)
-- VP de $110 M dentro de 1 año (TMAR 10 %) → **$100 M** (la otra opción: $110 M)
-- ¿El PR descontado es mayor o igual que el simple? → **Sí** (la otra opción: No)
+- $110 M que te dan en 1 año, exigiendo 10 %: ¿cuánto valen hoy? → **$100 M** (la otra opción: $110 M)
+- Recuperar la inversión con plata traída a hoy, ¿tarda igual o más que sin traerla? → **Sí** (la otra opción: No)
 - VPN = 0 implica… → **TIR = TMAR** (la otra opción: TIR = 0 %)
-- Proyectos excluyentes en conflicto: manda… → **El VPN** (la otra opción: La TIR)
+- Dos proyectos de los que solo puedes escoger uno y los indicadores se contradicen: manda… → **El VPN** (la otra opción: La TIR)
 - B/C = 0,8 → **VPN < 0** (la otra opción: VPN > 0)
-- VF de $100 M en 1 año al 20 % → **$120 M** (la otra opción: $83 M)
+- Tus $100 M ganan 20 % en 1 año: ¿cuánto tienes? → **$120 M** (la otra opción: $83 M)
 - El PR mide… → **Liquidez** (la otra opción: Rentabilidad)
 
 ## Mini-juego global 3 · Termómetro del riesgo
