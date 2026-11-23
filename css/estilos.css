@@ -108,6 +108,9 @@ p { margin: 0 0 .6em; }
 .letrero .nombre { font-family: var(--display); font-size: 1.5em; line-height: 1; }
 .cabecera .fase { font-size: 1.15em; color: var(--claro-suave); flex: 1; }
 .cabecera .fase b { color: var(--claro); font-weight: 700; }
+.etapa { display: inline-block; background: var(--amarillo); color: var(--tinto); font-family: var(--display); font-size: .85em; letter-spacing: .03em; padding: .15em .7em .1em; border-radius: 999px; margin-right: .6em; vertical-align: middle; }
+.tarjeta > .etapa { display: block; width: fit-content; margin: 0 0 .6em; }
+.centro .instruccion { font-size: 1.1em; color: var(--claro); max-width: 24ch; line-height: 1.3; margin: .6em auto .8em; }
 .crono { font-family: var(--display); font-size: 2.2em; min-width: 3.2ch; text-align: right; color: var(--amarillo); font-variant-numeric: tabular-nums; }
 .crono.urgente { color: #ff8a8a; }
 .controles { display: flex; gap: .4em; }
@@ -130,7 +133,7 @@ p { margin: 0 0 .6em; }
 }
 .casilla::before { content: ''; position: absolute; inset: 0 0 auto; height: 13%; background: var(--franja); background-size: 60% 100%; }
 .casilla .icono { font-size: 2.1em; line-height: 1; margin-top: .25em; }
-.casilla .etq { font-size: .72em; font-weight: 700; color: var(--tinto-suave); margin-top: -.3em; }
+.casilla .etq { font-size: .85em; font-weight: 700; color: var(--tinto-suave); margin-top: -.3em; }
 .casilla .n { position: absolute; bottom: .25em; right: .45em; font-size: .62em; color: var(--tinto-suave); opacity: .7; }
 .casilla.con-estrella { box-shadow: 0 .35em 0 #b98b0c, 0 0 0 .3em var(--amarillo), 0 0 2.2em rgba(255, 201, 52, .55); }
 .marca-estrella { position: absolute; font-size: 2.2em; filter: drop-shadow(0 3px 0 rgba(0, 0, 0, .3)); transform: translate(-50%, -50%); z-index: 3; pointer-events: none; }
@@ -274,7 +277,7 @@ p { margin: 0 0 .6em; }
 .tarjeta { background: var(--costal); color: var(--tinto); border-radius: 22px; padding: 18px; box-shadow: var(--sombra-placa); }
 .tarjeta h2 { font-size: 1.7rem; margin-bottom: .35em; }
 .tarjeta .etq { font-weight: 700; color: var(--tinto-suave); font-size: .92rem; margin-bottom: 6px; display: block; }
-.tarjeta .enunciado { font-size: 1.1rem; line-height: 1.5; margin: 0 0 14px; }
+.tarjeta .enunciado { font-size: 1.2rem; line-height: 1.5; margin: 0 0 14px; }
 .tarjeta.leccion { background: var(--claro); border-left: 10px solid var(--azul); }
 .tarjeta.leccion .cuerpo-leccion { font-size: 1.06rem; line-height: 1.6; }
 .tarjeta.espera { background: transparent; color: var(--claro); box-shadow: none; text-align: center; padding: 30px 8px; }
@@ -298,9 +301,10 @@ p { margin: 0 0 .6em; }
 .opcion.elegida { box-shadow: 0 0 0 3px var(--tinto); }
 .opcion.correcta { box-shadow: 0 0 0 3px var(--hoja); }
 
-.barra-tiempo { height: 10px; border-radius: 999px; background: rgba(42, 26, 18, .12); overflow: hidden; margin: 4px 0 14px; }
+.barra-tiempo { height: 14px; border-radius: 999px; background: rgba(42, 26, 18, .12); overflow: hidden; margin: 4px 0 14px; }
 .barra-tiempo i { display: block; height: 100%; background: var(--franja); border-radius: 999px; transition: width .25s linear; }
-.tiempo-texto { display: flex; justify-content: space-between; font-size: .88rem; color: var(--tinto-suave); }
+.tiempo-texto { display: flex; justify-content: space-between; align-items: baseline; font-size: 1rem; font-weight: 700; color: var(--tinto-suave); }
+.tiempo-texto span:last-child { font-family: var(--display); font-size: 1.5rem; color: var(--tinto); font-variant-numeric: tabular-nums; }
 
 .resultado { border-radius: 22px; padding: 18px; color: var(--tinto); box-shadow: var(--sombra-placa); }
 .resultado.bien { background: #d9f2d9; border-left: 10px solid var(--hoja); }
